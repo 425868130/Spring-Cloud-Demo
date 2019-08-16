@@ -1,48 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0d275727-f548-43dd-a1f2-e899aea261bc" name="Default Changelist" comment="spring cloud Demo">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="0d275727-f548-43dd-a1f2-e899aea261bc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-center/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/auth-center/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-center/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-center/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-center/src/main/java/com/example/authcenter/AuthCenterApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-center/src/main/java/com/example/authcenter/AuthCenterApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-center/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-center/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-center/src/test/java/com/example/authcenter/AuthCenterApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-center/src/test/java/com/example/authcenter/AuthCenterApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/common/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-client01/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-client01/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-client01/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-client01/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-client01/src/main/java/com/example/client01/EurekaClient01Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-client01/src/main/java/com/example/client01/EurekaClient01Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-client01/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-client01/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-client01/src/test/java/com/example/client01/EurekaClient01ApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-client01/src/test/java/com/example/client01/EurekaClient01ApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-client02/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-client02/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-client02/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-client02/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-client02/src/main/java/com/example/client02/EurekaClient02Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-client02/src/main/java/com/example/client02/EurekaClient02Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-client02/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-client02/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-client02/src/test/java/com/example/client02/EurekaClient02ApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-client02/src/test/java/com/example/client02/EurekaClient02ApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/src/main/java/com/example/eureka/EurekaServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/src/main/java/com/example/eureka/EurekaServerApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/src/test/java/com/example/eureka/EurekaServerApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/src/test/java/com/example/eureka/EurekaServerApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feign-client/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/feign-client/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feign-client/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/feign-client/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feign-client/src/main/java/com/example/feign/FeignClientApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/feign-client/src/main/java/com/example/feign/FeignClientApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feign-client/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/feign-client/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feign-client/src/test/java/com/example/feign/FeignClientApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/feign-client/src/test/java/com/example/feign/FeignClientApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/src/main/java/com/example/gateway/GatewayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/main/java/com/example/gateway/GatewayApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/src/test/java/com/example/gateway/GatewayApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/test/java/com/example/gateway/GatewayApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -289,7 +250,14 @@
       <option name="project" value="LOCAL" />
       <updated>1557738064660</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="spring cloud Demo">
+      <created>1565924937932</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1565924937932</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">

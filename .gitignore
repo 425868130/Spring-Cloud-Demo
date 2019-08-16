@@ -55,3 +55,4 @@ HELP.md
 *mvnw
 *mvnw.cmd
 .idea
+.idea/deployment.xml
