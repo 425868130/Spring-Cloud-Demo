@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>spring-cloud-demo</artifactId>
+    <artifactId>cloud-demo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>spring-cloud-demo</name>
+    <name>cloud-demo</name>
     <description>Demo project for Spring Cloud</description>
 
     <properties>

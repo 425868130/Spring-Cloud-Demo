@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="gateway" />
+        <module name="eureka-server" />
+        <module name="cloud-demo" />
+        <module name="auth-center" />
+        <module name="eureka-client02" />
+        <module name="eureka-client01" />
+        <module name="common" />
+        <module name="feign-client" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="auth-center" target="1.8" />
+      <module name="cloud-demo" target="1.8" />
+      <module name="common" target="1.8" />
+      <module name="eureka-client01" target="1.8" />
+      <module name="eureka-client02" target="1.8" />
+      <module name="eureka-server" target="1.8" />
+      <module name="feign-client" target="1.8" />
+      <module name="gateway" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="auth-center" options="-parameters" />
+      <module name="cloud-demo" options="-parameters" />
+      <module name="common" options="" />
+      <module name="eureka-client01" options="-parameters" />
+      <module name="eureka-client02" options="-parameters" />
+      <module name="eureka-server" options="-parameters" />
+      <module name="feign-client" options="-parameters" />
+      <module name="gateway" options="-parameters" />
+    </option>
+  </component>
+</project>

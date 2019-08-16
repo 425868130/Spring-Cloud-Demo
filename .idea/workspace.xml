@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0d275727-f548-43dd-a1f2-e899aea261bc" name="Default Changelist" comment="spring cloud Demo">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-center/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/auth-center/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-center/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-center/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-center/src/main/java/com/example/authcenter/AuthCenterApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-center/src/main/java/com/example/authcenter/AuthCenterApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-center/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-center/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-center/src/test/java/com/example/authcenter/AuthCenterApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-center/src/test/java/com/example/authcenter/AuthCenterApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/common/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-client01/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-client01/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-client01/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-client01/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-client01/src/main/java/com/example/client01/EurekaClient01Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-client01/src/main/java/com/example/client01/EurekaClient01Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-client01/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-client01/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-client01/src/test/java/com/example/client01/EurekaClient01ApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-client01/src/test/java/com/example/client01/EurekaClient01ApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-client02/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-client02/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-client02/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-client02/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-client02/src/main/java/com/example/client02/EurekaClient02Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-client02/src/main/java/com/example/client02/EurekaClient02Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-client02/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-client02/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-client02/src/test/java/com/example/client02/EurekaClient02ApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-client02/src/test/java/com/example/client02/EurekaClient02ApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/src/main/java/com/example/eureka/EurekaServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/src/main/java/com/example/eureka/EurekaServerApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/src/test/java/com/example/eureka/EurekaServerApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/src/test/java/com/example/eureka/EurekaServerApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feign-client/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/feign-client/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feign-client/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/feign-client/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feign-client/src/main/java/com/example/feign/FeignClientApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/feign-client/src/main/java/com/example/feign/FeignClientApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feign-client/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/feign-client/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feign-client/src/test/java/com/example/feign/FeignClientApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/feign-client/src/test/java/com/example/feign/FeignClientApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/src/main/java/com/example/gateway/GatewayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/main/java/com/example/gateway/GatewayApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/src/test/java/com/example/gateway/GatewayApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/test/java/com/example/gateway/GatewayApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="testRunner" value="GRADLE" />
+    <option name="delegatedBuild" value="true" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="cloud-demo" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="F:\apache-maven-3.3.3\repository" />
+        <option name="userSettingsFile" value="D:\Program Files\apache-maven-3.6.0\conf\settings_qukan.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1OzCo9UpzDm25m5oDqLTsfr0zLs" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="HTTP Request" />
+    <property name="last_opened_file_path" value="E:/program/ideaWorkspace/qukan_180627-revision" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\MyProject\cloud-demo\feign-client\src\test\api" />
+    </key>
+  </component>
+  <component name="RestClientSettings">
+    <option name="REQUEST_HISTORY">
+      <list>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8109/get" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8109" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8103/getMember" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="https://httpbin.org/status/404" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="https://httpbin.org/status/200" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="https://httpbin.org/basic-auth/user/passwd" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+      </list>
+    </option>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.AuthCenterApplication">
+    <configuration name="scratch#1 (1)" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/scratch.http">
+      <method v="2" />
+    </configuration>
+    <configuration name="scratch#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/feign-client/src/test/api/scratch.http">
+      <method v="2" />
+    </configuration>
+    <configuration name="test-responses#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/test-responses.http">
+      <method v="2" />
+    </configuration>
+    <configuration name="test-responses#2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/com/intellij/ws/rest/client/requests/collection/test-responses.http" index="2">
+      <method v="2" />
+    </configuration>
+    <configuration name="test#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/feign-client/src/test/api/test.http">
+      <method v="2" />
+    </configuration>
+    <configuration name="AuthCenterApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="auth-center" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.authcenter.AuthCenterApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CloudDemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="cloud-demo" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.cloud.CloudDemoApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommonApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="common" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.common.CommonApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EurekaClient01Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="eureka-client01" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.client01.EurekaClient01Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EurekaClient02Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="eureka-client02" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.client02.EurekaClient02Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EurekaServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="eureka-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.eureka.EurekaServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FeignClientApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="feign-client" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.feign.FeignClientApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="gateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.gateway.GatewayApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="HTTP Request.scratch#1 (1)" />
+        <item itemvalue="HTTP Request.test#1" />
+        <item itemvalue="HTTP Request.scratch#1" />
+        <item itemvalue="HTTP Request.test-responses#2" />
+        <item itemvalue="HTTP Request.test-responses#1" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\Administrator\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0d275727-f548-43dd-a1f2-e899aea261bc" name="Default Changelist" comment="" />
+      <created>1557728733324</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1557728733324</updated>
+      <workItem from="1557728735967" duration="10808000" />
+    </task>
+    <task id="LOCAL-00001" summary="spring cloud Demo">
+      <created>1557738064660</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1557738064660</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="10808000" />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="spring cloud Demo" />
+    <option name="LAST_COMMIT_MESSAGE" value="spring cloud Demo" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/eureka-client02/src/main/java/com/example/client02/controller/OrderController.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

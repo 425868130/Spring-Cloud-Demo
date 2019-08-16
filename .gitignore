@@ -37,7 +37,6 @@ HELP.md
 .sts4-cache
 
 ### IntelliJ IDEA ###
-.idea
 *.iws
 *.iml
 *.ipr
@@ -55,3 +54,4 @@ HELP.md
 */.mvn/*
 *mvnw
 *mvnw.cmd
+.idea
