@@ -1,0 +1,13 @@
+server:
+  port: 8100
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    serviceUrl:
+      #      必须配置否则会报错
+      defaultZone: http://localhost:${server.port}/eureka/
+    ###因为自己是为注册中心，不需要自己注册自己
+    register-with-eureka: false
+    ###因为自己是为注册中心，不需要检索服务
+    fetch-registry: false
