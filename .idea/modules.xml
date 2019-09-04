@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/auth-center/auth-center.iml" filepath="$PROJECT_DIR$/auth-center/auth-center.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloud-demo.iml" filepath="$PROJECT_DIR$/cloud-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/config-server/config-server.iml" filepath="$PROJECT_DIR$/config-server/config-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/eureka-client01/eureka-client01.iml" filepath="$PROJECT_DIR$/eureka-client01/eureka-client01.iml" />
       <module fileurl="file://$PROJECT_DIR$/eureka-client02/eureka-client02.iml" filepath="$PROJECT_DIR$/eureka-client02/eureka-client02.iml" />
       <module fileurl="file://$PROJECT_DIR$/eureka-server/eureka-server.iml" filepath="$PROJECT_DIR$/eureka-server/eureka-server.iml" />

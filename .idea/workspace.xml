@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0d275727-f548-43dd-a1f2-e899aea261bc" name="Default Changelist" comment="update">
-      <change afterPath="$PROJECT_DIR$/eureka-server/src/main/resources/application-server1.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eureka-server/src/main/resources/application-server2.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eureka-server/src/main/resources/application-server3.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-client01/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-client01/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feign-client/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/feign-client/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/src/main/java/com/example/gateway/routes/GatewayRoutes.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/main/java/com/example/gateway/routes/GatewayRoutes.java" afterDir="false" />
+    <list default="true" id="0d275727-f548-43dd-a1f2-e899aea261bc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/config-resources/config-client-dev.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config-server/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config-server/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config-server/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config-server/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config-server/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config-server/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config-server/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config-server/src/main/java/com/example/configserver/ConfigServerApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config-server/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config-server/src/test/java/com/example/configserver/ConfigServerApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,6 +62,11 @@
         <option name="localRepository" value="F:\apache-maven-3.3.3\repository" />
         <option name="userSettingsFile" value="D:\Program Files\apache-maven-3.6.0\conf\settings_qukan.xml" />
       </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
     </option>
   </component>
   <component name="ProjectId" id="1OzCo9UpzDm25m5oDqLTsfr0zLs" />
@@ -340,6 +352,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ConfigServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="config-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.configserver.ConfigServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="EurekaClient01Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="eureka-client01" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.client01.EurekaClient01Application" />
@@ -418,7 +437,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565925059514</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="update">
+      <created>1567576838732</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1567576838732</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -456,7 +482,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="spring cloud Demo" />
-    <option name="LAST_COMMIT_MESSAGE" value="spring cloud Demo" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
