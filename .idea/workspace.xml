@@ -2,11 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d275727-f548-43dd-a1f2-e899aea261bc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config-resources/eureka-server/application-server1.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-resources/eureka-server/application-server2.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-resources/eureka-server/application-server3.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config-resources/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config-resources/auth-center/auth-center-dev.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-center/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-center/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-center/src/main/java/com/example/authcenter/AuthCenterApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-center/src/main/java/com/example/authcenter/AuthCenterApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-center/src/main/java/com/example/authcenter/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-center/src/main/java/com/example/authcenter/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-center/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-center/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-resources/eureka-server/application-server1.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-resources/eureka-server/application-server2.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-resources/eureka-server/application-server3.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-server/src/main/java/com/example/configserver/ConfigServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/src/main/java/com/example/configserver/ConfigServerApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -308,7 +317,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ConfigServerApplication">
+  <component name="RunManager" selected="Spring Boot.AuthCenterApplication">
     <configuration name="scratch#1 (1)" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/scratch.http">
       <method v="2" />
     </configuration>
@@ -444,7 +453,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567578609768</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="spring-cloud-config">
+      <created>1567582691464</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1567582691464</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">

@@ -8,7 +8,7 @@ spring:
         git:
           uri: https://github.com/425868130/spring-cloud-demo.git
           # 配置文件存放路径(文件夹)，如果配置文件在项目根目录，则不需要配置该值
-          search-paths: config-resources*
+          search-paths: config-resources/**
           # git账号  当git项目创建为public时，不需要username和password
           #username:
           # git密码
@@ -17,3 +17,8 @@ spring:
       label: master # git配置文件所在分支
 server:
   port: 8401
+eureka:
+  client:
+    service-url:
+      #将配置中心注册到eureka
+      defaultZone: http://server01:8101/eureka/,http://server02:8102/eureka/,http://server03:8103/eureka/

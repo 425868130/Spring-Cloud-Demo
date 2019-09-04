@@ -1,0 +1,19 @@
+server:
+  port: 8301
+spring:
+  application:
+    name: auth-center
+  cloud:
+    config:
+      label: master
+      profile: dev
+      #通过注册中心获取配置消息
+      discovery:
+        enabled: true
+        #配置服务应用名
+        service-id: config-server
+eureka:
+  client:
+    service-url:
+      default-Zone: http://server01:8101/eureka/,http://server02:8102/eureka/,http://server03:8103/eureka/
+
