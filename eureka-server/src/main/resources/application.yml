@@ -5,4 +5,4 @@ spring:
     #通过多配置实现单机集群模拟
 #      active: server1
 #      active: server2
-#      active: server3
+      active: server3

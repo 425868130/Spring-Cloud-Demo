@@ -16,7 +16,7 @@ spring:
           clone-on-start: true
       label: master # git配置文件所在分支
 server:
-  port: 8401
+  port: 8301
 eureka:
   client:
     service-url:

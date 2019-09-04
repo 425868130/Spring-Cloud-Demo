@@ -1,5 +1,5 @@
 server:
-  port: 8301
+  port: 8401
 spring:
   application:
     name: auth-center
@@ -15,5 +15,5 @@ spring:
 eureka:
   client:
     service-url:
-      default-Zone: http://server01:8101/eureka/,http://server02:8102/eureka/,http://server03:8103/eureka/
+      defaultZone: http://server01:8101/eureka/,http://server02:8102/eureka/,http://server03:8103/eureka/
 

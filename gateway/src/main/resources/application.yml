@@ -1,12 +1,12 @@
 server:
-  port: 8109
+  port: 8201
 #配置注册中心地址
 eureka:
   #  instance:
   #    prefer-ip-address: true #启用此配置后eureka中会显示当前服务的ip地址而不是主机名
   client:
     service-url:
-      defaultZone: http://localhost:8100/eureka/
+      defaultZone: http://server01:8101/eureka/,http://server02:8102/eureka/,http://server03:8103/eureka/
 spring:
   application:
     name: gateway

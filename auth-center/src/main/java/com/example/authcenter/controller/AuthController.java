@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class AuthController {
 
-    @Value("${info}")
-    private String info;
+    @Value("${msg}")
+    private String msg;
 
-    @RequestMapping("info")
+    @RequestMapping("msg")
     public Result auth() {
-        return Result.success(info);
+        return Result.success(msg);
     }
 }
