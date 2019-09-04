@@ -1,5 +1,3 @@
-server:
-  port: 8301
 spring:
   application:
     name: config-server
@@ -7,9 +5,15 @@ spring:
     config:
       server:
         # 配置文件存放git地址,基于哪个git平台或自己搭建
-        git: https://github.com/425868130/spring-cloud-demo.git
-        # 配置文件存放路径(文件夹)，如果配置文件在项目根目录，则不需要配置该值
-        search-paths: config-resources
-        username:   # git账号  当git项目创建为public时，不需要username和password
-        password:  # git密码
+        git:
+          uri: https://github.com/425868130/spring-cloud-demo.git
+          # 配置文件存放路径(文件夹)，如果配置文件在项目根目录，则不需要配置该值
+          search-paths: config-resources*
+          # git账号  当git项目创建为public时，不需要username和password
+          #username:
+          # git密码
+          #password:
+          clone-on-start: true
       label: master # git配置文件所在分支
+server:
+  port: 8401

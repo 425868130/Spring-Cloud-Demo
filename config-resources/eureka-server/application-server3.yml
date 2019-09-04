@@ -1,0 +1,14 @@
+#多环境配置模拟Eureka集群节点
+server:
+  port: 8103
+eureka:
+  instance:
+    hostname: server03
+  client:
+    serviceUrl:
+      #必须配置否则会报错,在集群模式下填写其他eureka节点地址,单机模式下填自身地址
+      defaultZone: http://server01:8101/eureka/,http://server02:8102/eureka/
+    ###是否注册到eureka,集群模式下为ture,单机模式下false
+    register-with-eureka: true
+    ###集群模式下一定要设置为true或者不写，否则会出现unavailable-replicas,单机模式下false
+    fetch-registry: true
