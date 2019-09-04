@@ -16,6 +16,13 @@ public class DiscoveryController {
     private DiscoveryClient discoveryClient;
     @Value("${server.port}")
     private String ip;
+    @Value("${msg}")
+    private String msg;
+
+    @RequestMapping("/msg")
+    public String msg() {
+        return msg;
+    }
 
     @GetMapping("/client")
     public String client() {

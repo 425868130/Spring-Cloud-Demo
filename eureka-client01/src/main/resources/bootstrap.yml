@@ -1,6 +1,6 @@
 spring:
   application:
-    name: auth-center
+    name: eureka-client01
   profiles:
     active: dev
   cloud:
@@ -15,4 +15,4 @@ eureka:
     service-url:
       defaultZone: http://server01:8101/eureka/,http://server02:8102/eureka/,http://server03:8103/eureka/
 server:
-  port: 8501
+  port: 8502

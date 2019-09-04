@@ -1,0 +1,3 @@
+server:
+  port: 8401
+msg: hello spring cloud prod

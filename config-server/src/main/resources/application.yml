@@ -14,7 +14,7 @@ spring:
           # git密码
           #password:
           clone-on-start: true
-      label: master # git配置文件所在分支
+      label: develop # git配置文件所在分支
 server:
   port: 8301
 eureka:
