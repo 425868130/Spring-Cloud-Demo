@@ -23,7 +23,7 @@ public class GatewayRoutes {
                 )
                 .route(
                         predicateSpec -> predicateSpec.path("/test/**")
-                        .uri("lb://eureka-client01")
+                                .uri("lb://eureka-client01")
                 )
                 .build();
     }
