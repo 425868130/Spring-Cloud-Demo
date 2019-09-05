@@ -1,0 +1,16 @@
+server:
+  port: 8201
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      routes:
+        - id: client
+          uri: lb://eureka-client01  #需要添加ribbon依赖
+          predicates:
+            - Path=/test/**
+      discovery:
+        locator:
+          enabled: true #默认会为所有服务都进行转发操作,免去对所有服务进行配置
+          lower-case-service-id: true #默认通过网关访问服务id试使用大写,通过该配置启用小写服务id

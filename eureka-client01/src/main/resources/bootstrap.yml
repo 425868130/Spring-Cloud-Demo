@@ -3,7 +3,6 @@ spring:
     name: eureka-client01
   cloud:
     config:
-#      label: develop
       #通过注册中心获取配置消息
       discovery:
         enabled: true
@@ -12,6 +11,8 @@ spring:
       profile: dev
       #指定配置名称,如果为空默认使用applicationName,此处可以配多可以同时加载多个配置,比如额外增加公共配置
       name: ${spring.application.name},base
+      #配置中心服务地址,如果不通过eureka获取配置中心则需显式配置该项
+#      uri: http://localhost:8301/
 eureka:
   client:
     service-url:

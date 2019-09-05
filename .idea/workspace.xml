@@ -2,14 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d275727-f548-43dd-a1f2-e899aea261bc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/config-resources/gateway/gateway-dev.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config-resources/gateway/gateway-prod.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway/src/main/resources/bootstrap.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-center/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-center/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-resources/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/config-resources/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-resources/base/base-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-resources/base/base-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-resources/base/base-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-resources/base/base-prod.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-client01/src/main/java/com/example/client01/controller/DiscoveryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-client01/src/main/java/com/example/client01/controller/DiscoveryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eureka-client01/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-client01/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/src/main/resources/application-server1.yml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/src/main/resources/application-server1.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/src/main/resources/application-server2.yml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/src/main/resources/application-server2.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/src/main/resources/application-server3.yml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/src/main/resources/application-server3.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/src/main/resources/application-server4.yml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/src/main/resources/application-server4.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/src/main/resources/application.yml" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -80,7 +85,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="HTTP Request" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/config-resources/base" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/config-resources/gateway" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Global Libraries" />
@@ -97,11 +102,11 @@
       <recent name="com.example.client02.controller" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\MyGit\cloud-demo\config-resources\gateway" />
       <recent name="D:\MyGit\cloud-demo\config-resources\base" />
       <recent name="D:\MyGit\cloud-demo\eureka-server\src\main\resources" />
       <recent name="D:\MyGit\cloud-demo\config-resources\eureka-client01" />
       <recent name="D:\MyGit\cloud-demo\config-resources\auth-center" />
-      <recent name="D:\MyGit\cloud-demo\eureka-client01\src\main\resources" />
     </key>
   </component>
   <component name="RestClientSettings">
@@ -493,7 +498,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567649465713</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="spring-cloud-config 使用多个配置">
+      <created>1567651126758</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1567651126758</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
