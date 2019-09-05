@@ -13,6 +13,7 @@ spring:
             - Path=/auth/**
           filters:
             - StripPrefix=1
+            #自定义过滤器
             - AuthFilter
       discovery:
         locator:

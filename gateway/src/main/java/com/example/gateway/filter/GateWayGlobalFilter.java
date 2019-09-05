@@ -9,7 +9,7 @@ import reactor.core.publisher.Mono;
 
 /**
  * @author xujw
- * 实现GlobalFilter作为全局过滤器,全部的请求都会进过该过滤器
+ * 实现GlobalFilter作为全局过滤器,全部的请求都会进过该过滤器,无需配置
  */
 @Component
 public class GateWayGlobalFilter implements GlobalFilter, Ordered {

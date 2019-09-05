@@ -4,7 +4,11 @@ import org.springframework.cloud.gateway.filter.GatewayFilter;
 import org.springframework.cloud.gateway.filter.factory.AbstractGatewayFilterFactory;
 import org.springframework.stereotype.Component;
 
-@Component("AuthFilter")
+/**
+ * 自定义过滤器,命名规则： 名称+GatewayFilterFactory
+ * 在gateway配置文件中使用名称部分即可
+ */
+@Component
 public class AuthFilterGatewayFilterFactory extends AbstractGatewayFilterFactory {
     @Override
     public GatewayFilter apply(Object config) {
