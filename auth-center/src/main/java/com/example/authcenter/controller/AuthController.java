@@ -25,7 +25,9 @@ public class AuthController {
     @RequestMapping(value = "/current", method = RequestMethod.GET)
     public Principal getUser(Principal principal) {
         logger.info(">>>>>>>>>>>>>>>>>>>>>>>>");
-        logger.info(principal.toString());
+        if (principal != null) {
+            logger.info(principal.toString());
+        }
         logger.info(">>>>>>>>>>>>>>>>>>>>>>>>");
         return principal;
     }
