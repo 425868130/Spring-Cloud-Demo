@@ -4,21 +4,21 @@ spring:
   cloud:
     config:
       server:
-        # ÅäÖÃÎÄ¼ş´æ·ÅgitµØÖ·,»ùÓÚÄÄ¸ögitÆ½Ì¨»ò×Ô¼º´î½¨
+        # é…ç½®æ–‡ä»¶å­˜æ”¾gitåœ°å€,åŸºäºå“ªä¸ªgitå¹³å°æˆ–è‡ªå·±æ­å»º
         git:
           uri: https://github.com/425868130/spring-cloud-demo.git
-          # ÅäÖÃÎÄ¼ş´æ·ÅÂ·¾¶(ÎÄ¼ş¼Ğ)£¬Èç¹ûÅäÖÃÎÄ¼şÔÚÏîÄ¿¸ùÄ¿Â¼£¬Ôò²»ĞèÒªÅäÖÃ¸ÃÖµ
+          # é…ç½®æ–‡ä»¶å­˜æ”¾è·¯å¾„(æ–‡ä»¶å¤¹)ï¼Œå¦‚æœé…ç½®æ–‡ä»¶åœ¨é¡¹ç›®æ ¹ç›®å½•ï¼Œåˆ™ä¸éœ€è¦é…ç½®è¯¥å€¼
           search-paths: config-resources/**
-          # gitÕËºÅ  µ±gitÏîÄ¿´´½¨ÎªpublicÊ±£¬²»ĞèÒªusernameºÍpassword
+          # gitè´¦å·  å½“gité¡¹ç›®åˆ›å»ºä¸ºpublicæ—¶ï¼Œä¸éœ€è¦usernameå’Œpassword
           #username:
-          # gitÃÜÂë
+          # gitå¯†ç 
           #password:
           clone-on-start: true
-      label: develop # gitÅäÖÃÎÄ¼şËùÔÚ·ÖÖ§
+      label: develop # gité…ç½®æ–‡ä»¶æ‰€åœ¨åˆ†æ”¯
 server:
   port: 8301
 eureka:
   client:
     service-url:
-      #½«ÅäÖÃÖĞĞÄ×¢²áµ½eureka
+      #å°†é…ç½®ä¸­å¿ƒæ³¨å†Œåˆ°eureka
       defaultZone: http://server01:8101/eureka/,http://server02:8102/eureka/,http://server03:8103/eureka/
