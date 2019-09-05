@@ -1,2 +1,7 @@
 # 基础公共配置文件
+env: dev
 base: base-config-dev
+eureka:
+  client:
+    service-url:
+      defaultZone: http://server01:8101/eureka/,http://server02:8102/eureka/,http://server03:8103/eureka/

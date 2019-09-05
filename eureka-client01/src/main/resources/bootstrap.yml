@@ -3,7 +3,7 @@ spring:
     name: eureka-client01
   cloud:
     config:
-      label: develop
+#      label: develop
       #通过注册中心获取配置消息
       discovery:
         enabled: true

@@ -18,6 +18,13 @@ public class DiscoveryController {
     private String ip;
     @Value("${msg}")
     private String msg;
+    @Value("${base}")
+    private String base;
+
+    @RequestMapping("base")
+    public String base() {
+        return base;
+    }
 
     @RequestMapping("/msg")
     public String msg() {
