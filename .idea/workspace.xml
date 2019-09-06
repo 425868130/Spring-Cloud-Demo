@@ -2,8 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d275727-f548-43dd-a1f2-e899aea261bc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/common/common.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config-resources/user-service/user-service-dev.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config-resources/zipkin/zipkin-dev.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config-resources/zipkin/zipkin-prod.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feign-client/feign-client.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feign-provider/feign-provider.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feign-provider/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feign-provider/src/main/java/com/feign/provider/userService/UserServiceFallBack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feign-provider/src/main/java/com/feign/provider/userService/UserServiceFeign.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/example/userservice/UserServiceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/example/userservice/bean/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/example/userservice/controller/InfoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/test/java/com/example/userservice/UserServiceApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/user-service.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-resources/gateway/gateway-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-resources/gateway/gateway-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-center/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-center/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-center/src/main/java/com/example/authcenter/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-center/src/main/java/com/example/authcenter/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feign-client/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -74,7 +100,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="HTTP Request" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/config-resources/gateway" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/feign-client" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Global Libraries" />
@@ -83,19 +109,19 @@
     <property name="settings.editor.selected.configurable" value="spring" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\MyGit\cloud-demo\gateway\src\test\http" />
-      <recent name="D:\MyProject\cloud-demo\feign-client\src\test\api" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.example.client02.controller" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\MyGit\cloud-demo\feign-client" />
       <recent name="D:\MyGit\cloud-demo\config-resources\gateway" />
       <recent name="D:\MyGit\cloud-demo\config-resources\base" />
       <recent name="D:\MyGit\cloud-demo\eureka-server\src\main\resources" />
       <recent name="D:\MyGit\cloud-demo\config-resources\eureka-client01" />
-      <recent name="D:\MyGit\cloud-demo\config-resources\auth-center" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.client02.controller" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\MyGit\cloud-demo\gateway\src\test\http" />
+      <recent name="D:\MyProject\cloud-demo\feign-client\src\test\api" />
     </key>
   </component>
   <component name="RestClientSettings">
@@ -388,6 +414,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UserServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="user-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.userservice.UserServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="HTTP Request.scratch#3" />
@@ -543,7 +576,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567734905558</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="spring-cloud-config 使用多个配置">
+      <created>1567735464818</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1567735464818</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -568,7 +608,13 @@
       <map>
         <entry key="Branch">
           <value>
-            <list />
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/master" />
+                </option>
+              </RecentGroup>
+            </list>
           </value>
         </entry>
         <entry key="User">
@@ -596,7 +642,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/auth-center/src/main/java/com/example/authcenter/controller/AuthController.java</url>
-          <line>26</line>
+          <line>31</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>

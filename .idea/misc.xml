@@ -7,12 +7,17 @@
         <option value="$PROJECT_DIR$/eureka-server/pom.xml" />
         <option value="$PROJECT_DIR$/eureka-client01/pom.xml" />
         <option value="$PROJECT_DIR$/eureka-client02/pom.xml" />
-        <option value="$PROJECT_DIR$/feign-client/pom.xml" />
         <option value="$PROJECT_DIR$/gateway/pom.xml" />
         <option value="$PROJECT_DIR$/auth-center/pom.xml" />
         <option value="$PROJECT_DIR$/common/pom.xml" />
         <option value="$PROJECT_DIR$/config-server/pom.xml" />
+        <option value="$PROJECT_DIR$/user-service/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/feign-client/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="NodePackageJsonFileManager">

@@ -1,8 +1,10 @@
 package com.example.authcenter.controller;
 
 import com.example.common.entity.Result;
+import com.feign.provider.userService.UserServiceFeign;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -12,6 +14,9 @@ import java.security.Principal;
 
 @RestController
 public class AuthController {
+    @Autowired
+    UserServiceFeign userServiceFeign;
+
     Logger logger = LoggerFactory.getLogger(AuthController.class);
 
     @Value("${msg}")
@@ -30,5 +35,10 @@ public class AuthController {
         }
         logger.info(">>>>>>>>>>>>>>>>>>>>>>>>");
         return principal;
+    }
+
+    @RequestMapping("user")
+    public Result userInfo() {
+        return userServiceFeign.getInfo();
     }
 }

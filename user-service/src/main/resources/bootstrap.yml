@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: user-service
+  cloud:
+    config:
+      #指定当前使用的配置所在git分支,如果配置中心没有配置default-label则此处必须配置
+      #      label: master
+      #通过注册中心获取配置消息
+      discovery:
+        enabled: true
+        #配置服务应用名
+        service-id: config-server
+      profile: dev
+      #指定配置名称,如果为空默认使用applicationName,此处可以配多可以同时加载多个配置,比如额外增加公共配置
+      name: ${spring.application.name},base
+eureka:
+  client:
+    service-url:
+      defaultZone: http://server01:8101/eureka/,http://server02:8102/eureka/,http://server03:8103/eureka/
