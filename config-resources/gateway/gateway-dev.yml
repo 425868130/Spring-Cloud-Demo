@@ -5,6 +5,11 @@ spring:
     name: gateway
   cloud:
     gateway:
+      default-filters:
+        - name: Hystrix
+          args:
+            name: fallbackcmd
+            fallbackUri: forward:/fallbackcontroller
       routes:
         - id: auth-center
           #使用lb前缀需要添加ribbon依赖实现负载均衡
