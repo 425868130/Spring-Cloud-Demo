@@ -5,11 +5,6 @@ spring:
     name: gateway
   cloud:
     gateway:
-      default-filters:
-        - Hystrix
-          args:
-            name: fallbackcmd
-            fallbackUri: forward:/fallbackcontroller
       routes:
         - id: auth-center
           #使用lb前缀需要添加ribbon依赖实现负载均衡
@@ -20,6 +15,16 @@ spring:
             - StripPrefix=1
             #自定义过滤器
             - AuthFilter
+        - id: hytstrix_route
+          uri: lb://eureak-client01
+          predicates:
+            - Path=/test/**
+          filters:
+            - StripPrefix=1
+            - name: Hystrix
+              args:
+                name: fallbackcmd
+                fallbackUri: forward:/fallbackcontroller
       discovery:
         locator:
           enabled: true #默认会为所有服务都进行转发操作,免去对所有服务进行配置
