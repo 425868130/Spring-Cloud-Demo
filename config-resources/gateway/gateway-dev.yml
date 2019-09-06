@@ -6,7 +6,7 @@ spring:
   cloud:
     gateway:
       default-filters:
-        - name: Hystrix
+        - Hystrix
           args:
             name: fallbackcmd
             fallbackUri: forward:/fallbackcontroller
