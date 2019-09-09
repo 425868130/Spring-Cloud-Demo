@@ -2,26 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d275727-f548-43dd-a1f2-e899aea261bc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/modules-pom/modules-pom.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules-pom/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-center/src/main/java/com/example/authcenter/AuthCenterApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-center/src/main/java/com/example/authcenter/AuthCenterApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloud-demo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/cloud-demo.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feign-client/feign-client.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/feign-client/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/feign-client/src/main/java/com/example/feign/FeignClientApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/feign-client/src/main/java/com/example/feign/controller/ConsumerController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/feign-client/src/main/java/com/example/feign/service/FeignService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/feign-client/src/main/java/com/example/feign/service/fallback/FeignFallBack.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/feign-client/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/feign-client/src/test/api/http-client.env.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/feign-client/src/test/api/test.http" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/feign-client/src/test/java/com/example/feign/FeignClientApplicationTests.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/feign-provider/feign-provider.iml" beforeDir="false" afterPath="$PROJECT_DIR$/feign-provider/feign-provider.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/example/userservice/controller/InfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/example/userservice/controller/InfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/resources/bootstrap.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/user-service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/user-service.iml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />

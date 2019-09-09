@@ -15,22 +15,19 @@
         <spring-boot.version>2.1.7.RELEASE</spring-boot.version>
         <spring-cloud.version>Greenwich.SR1</spring-cloud.version>
         <mybatis.version>2.1.0</mybatis.version>
-        <!--统一配置子模块版本号-->
-        <module.user-service>user-service</module.user-service>
-        <user-service.version>0.0.1-SNAPSHOT</user-service.version>
     </properties>
     <!--全部子模块-->
     <modules>
-        <!-- <module>auth-center</module>
-         <module>common</module>
-         <module>config-server</module>
-         <module>eureka-server</module>
-         <module>gateway</module>
-         <module>feign-provider</module>-->
+        <module>auth-center</module>
+        <module>common</module>
+        <module>config-server</module>
+        <module>eureka-server</module>
+        <module>gateway</module>
+        <module>feign-provider</module>
         <module>user-service</module>
+        <module>modules-pom</module>
     </modules>
-    <dependencies>
-    </dependencies>
+
     <dependencyManagement>
         <dependencies>
             <!--spring boot依赖-->
@@ -49,16 +46,13 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <!--项目模块依赖-->
+            <!--微服务项目模块依赖-->
             <dependency>
-                <groupId>com.example</groupId>
-                <artifactId>common</artifactId>
-                <version>${module.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.example</groupId>
-                <artifactId>feign-provider</artifactId>
-                <version>${module.version}</version>
+                <groupId>${groupId}</groupId>
+                <artifactId>modules-pom</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>

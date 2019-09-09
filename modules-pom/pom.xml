@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>modules-pom</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>modules-pom</name>
+    <packaging>pom</packaging>
+    <description>保存全部微服务项目的版本依赖信息</description>
+
+    <properties>
+        <!--统一配置子模块版本号-->
+        <user-service.version>0.0.1-SNAPSHOT</user-service.version>
+        <common.version>0.0.1-SNAPSHOT</common.version>
+        <auth-center.version>0.0.1-SNAPSHOT</auth-center.version>
+        <config-server.version>0.0.1-SNAPSHOT</config-server.version>
+        <eureaka-server.version>0.0.1-SNAPSHOT</eureaka-server.version>
+        <gateway.version>0.0.1-SNAPSHOT</gateway.version>
+        <feign-provider.version>0.0.1-SNAPSHOT</feign-provider.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!--微服务项目模块依赖-->
+            <dependency>
+                <groupId>${groupId}</groupId>
+                <artifactId>user-service</artifactId>
+                <version>${user-service.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${groupId}</groupId>
+                <artifactId>common</artifactId>
+                <version>${common.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${groupId}</groupId>
+                <artifactId>auth-center</artifactId>
+                <version>${auth-center.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${groupId}</groupId>
+                <artifactId>config-server</artifactId>
+                <version>${config-server.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${groupId}</groupId>
+                <artifactId>gateway</artifactId>
+                <version>${gateway.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${groupId}</groupId>
+                <artifactId>feign-provider</artifactId>
+                <version>${feign-provider.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>

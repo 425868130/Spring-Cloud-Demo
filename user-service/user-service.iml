@@ -140,7 +140,7 @@
     <orderEntry type="library" name="Maven: org.springframework.cloud:spring-cloud-config-client:2.1.1.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.9.9" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: mysql:mysql-connector-java:8.0.17" level="project" />
-    <orderEntry type="library" name="Maven: com.example:common:${module.version}" level="project" />
-    <orderEntry type="library" name="Maven: com.example:feign-provider:${module.version}" level="project" />
+    <orderEntry type="module" module-name="common" />
+    <orderEntry type="module" module-name="feign-provider" />
   </component>
 </module>
