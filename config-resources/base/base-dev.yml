@@ -2,6 +2,8 @@
 env: dev
 base: base-config-dev-reflash
 logging:
+  root:
+    level: WARN
   file: ../logs/${spring.application.name}.log
 spring:
   redis:

@@ -29,7 +29,7 @@ public class InfoController {
         user.setId(111111L);
         user.setAge(20);
         user.setName(base);
-        logger.error("接口访问");
+        logger.info("接口访问");
         return Result.success(user);
     }
 }
