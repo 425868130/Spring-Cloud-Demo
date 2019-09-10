@@ -2,8 +2,8 @@
 env: dev
 base: base-config-dev-reflash
 logging:
-  path: /logs/${spring.application.name}
-  file: ${spring.application.name}.log
+  path: /logs
+  file: myLog.log
 spring:
   redis:
     host: 127.0.0.1
