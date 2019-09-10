@@ -4,7 +4,11 @@
     <list default="true" id="0d275727-f548-43dd-a1f2-e899aea261bc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config-resources/base/base-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-resources/base/base-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/eureka-server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/eureka-server.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feign-provider/feign-provider.iml" beforeDir="false" afterPath="$PROJECT_DIR$/feign-provider/feign-provider.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parent-pom.iml" beforeDir="false" afterPath="$PROJECT_DIR$/parent-pom.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/user-service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/user-service.iml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -310,7 +314,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.UserServiceApplication">
+  <component name="RunManager" selected="HTTP Request.scratch#1 (1)">
     <configuration name="scratch#1 (1)" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/scratch.http">
       <method v="2" />
     </configuration>
@@ -398,10 +402,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.scratch#1 (1)" />
         <item itemvalue="HTTP Request.scratch#3" />
         <item itemvalue="HTTP Request.scratch#1 (2)" />
         <item itemvalue="HTTP Request.scratch#2" />
-        <item itemvalue="HTTP Request.scratch#1 (1)" />
         <item itemvalue="HTTP Request.test#1" />
       </list>
     </recent_temporary>
@@ -635,7 +639,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568096244377</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="update">
+      <created>1568096624496</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1568096624496</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
