@@ -6,7 +6,10 @@ import com.feign.provider.authCenter.AuthService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,7 +25,16 @@ public class InfoController {
     HttpServletRequest httpServletRequest;
     @Autowired
     AuthService authService;
-
+    @Value("${server.port}")
+    private String ip;
+    @Autowired
+    private DiscoveryClient discoveryClient;
+    @GetMapping("/client")
+    public Result client() {
+        String services = "Services: " + discoveryClient.getServices() + " ip :" + ip;
+        logger.info(services);
+        return Result.success(services);
+    }
     @RequestMapping("info")
     public Result getInfo() {
         User user = new User();
