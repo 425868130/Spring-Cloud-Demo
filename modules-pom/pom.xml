@@ -10,6 +10,7 @@
     <description>保存全部微服务项目的版本依赖信息</description>
     <!--全部子模块-->
     <modules>
+        <module>../../parent-pom</module>
         <module>../auth-center</module>
         <module>../common</module>
         <module>../config-server</module>
@@ -17,12 +18,10 @@
         <module>../gateway</module>
         <module>../feign-provider</module>
         <module>../user-service</module>
-        <module>../../cloud-demo</module>
-        <!--<module>modules-pom</module>-->
     </modules>
     <properties>
         <!--统一配置子模块版本号-->
-        <version.cloud-demo>0.0.1-SNAPSHOT</version.cloud-demo>
+        <version.parent-pom>0.0.1-SNAPSHOT</version.parent-pom>
         <version.user-service>0.0.1-SNAPSHOT</version.user-service>
         <version.common>0.0.1-SNAPSHOT</version.common>
         <version.auth-center>0.0.1-SNAPSHOT</version.auth-center>
@@ -31,7 +30,7 @@
         <version.gateway>0.0.1-SNAPSHOT</version.gateway>
         <version.feign-provider>0.0.1-SNAPSHOT</version.feign-provider>
         <!--统一子模块名称-->
-        <name.cloud-demo>cloud-demo</name.cloud-demo>
+        <name.parent-pom>parent-pom</name.parent-pom>
         <name.user-service>user-service</name.user-service>
         <name.common>common</name.common>
         <name.auth-center>auth-center</name.auth-center>

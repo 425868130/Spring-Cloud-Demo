@@ -3,19 +3,28 @@
   <component name="ChangeListManager">
     <list default="true" id="0d275727-f548-43dd-a1f2-e899aea261bc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth-center/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-center/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloud-demo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/cloud-demo.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloud-demo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/parent-pom.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-server/src/test/java/com/example/configserver/ConfigServerApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-client01/eureka-client01.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-client01/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-client01/src/main/java/com/example/client01/EurekaClient01Application.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-client01/src/main/java/com/example/client01/controller/DiscoveryController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-client01/src/main/resources/bootstrap.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-client01/src/test/java/com/example/client01/EurekaClient01ApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-client02/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-client02/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-client02/src/main/java/com/example/client02/EurekaClient02Application.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-client02/src/main/java/com/example/client02/controller/DiscoveryController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-client02/src/main/java/com/example/client02/controller/OrderController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-client02/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-client02/src/test/java/com/example/client02/EurekaClient02ApplicationTests.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/eureka-server/eureka-server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/eureka-server.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eureka-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/src/test/java/com/example/eureka/EurekaServerApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/feign-provider/feign-provider.iml" beforeDir="false" afterPath="$PROJECT_DIR$/feign-provider/feign-provider.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/feign-provider/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/feign-provider/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules-pom/modules-pom.iml" beforeDir="false" afterPath="$PROJECT_DIR$/modules-pom/modules-pom.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules-pom/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules-pom/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/pom.xml" afterDir="false" />
@@ -349,7 +358,7 @@
       </method>
     </configuration>
     <configuration name="CloudDemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="cloud-demo" />
+      <module name="parent-pom" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.cloud.CloudDemoApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -594,7 +603,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568023426163</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="优化Maven依赖">
+      <created>1568084434248</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1568084434248</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -641,7 +657,8 @@
     <MESSAGE value="update" />
     <MESSAGE value="spring-cloud-config" />
     <MESSAGE value="spring-cloud-config 使用多个配置" />
-    <option name="LAST_COMMIT_MESSAGE" value="spring-cloud-config 使用多个配置" />
+    <MESSAGE value="优化Maven依赖" />
+    <option name="LAST_COMMIT_MESSAGE" value="优化Maven依赖" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -3,16 +3,14 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/auth-center/auth-center.iml" filepath="$PROJECT_DIR$/auth-center/auth-center.iml" />
-      <module fileurl="file://$PROJECT_DIR$/cloud-demo.iml" filepath="$PROJECT_DIR$/cloud-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
       <module fileurl="file://$PROJECT_DIR$/config-server/config-server.iml" filepath="$PROJECT_DIR$/config-server/config-server.iml" />
-      <module fileurl="file://$PROJECT_DIR$/eureka-client01/eureka-client01.iml" filepath="$PROJECT_DIR$/eureka-client01/eureka-client01.iml" />
-      <module fileurl="file://$PROJECT_DIR$/eureka-client02/eureka-client02.iml" filepath="$PROJECT_DIR$/eureka-client02/eureka-client02.iml" />
       <module fileurl="file://$PROJECT_DIR$/eureka-server/eureka-server.iml" filepath="$PROJECT_DIR$/eureka-server/eureka-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/feign-client/feign-client.iml" filepath="$PROJECT_DIR$/feign-client/feign-client.iml" />
       <module fileurl="file://$PROJECT_DIR$/feign-provider/feign-provider.iml" filepath="$PROJECT_DIR$/feign-provider/feign-provider.iml" />
       <module fileurl="file://$PROJECT_DIR$/gateway/gateway.iml" filepath="$PROJECT_DIR$/gateway/gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/modules-pom/modules-pom.iml" filepath="$PROJECT_DIR$/modules-pom/modules-pom.iml" />
+      <module fileurl="file://$PROJECT_DIR$/parent-pom.iml" filepath="$PROJECT_DIR$/parent-pom.iml" />
       <module fileurl="file://$PROJECT_DIR$/user-service/user-service.iml" filepath="$PROJECT_DIR$/user-service/user-service.iml" />
     </modules>
   </component>

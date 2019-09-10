@@ -6,7 +6,7 @@
         <artifactId>modules-pom</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>cloud-demo</artifactId>
+    <artifactId>parent-pom</artifactId>
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
 
@@ -28,10 +28,6 @@
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>${name.common}</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>${name.feign-provider}</artifactId>
         </dependency>
     </dependencies>
 

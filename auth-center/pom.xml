@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.example</groupId>
-        <artifactId>cloud-demo</artifactId>
+        <artifactId>parent-pom</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <artifactId>auth-center</artifactId>
@@ -35,6 +35,10 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>${name.feign-provider}</artifactId>
         </dependency>
     </dependencies>
 </project>
