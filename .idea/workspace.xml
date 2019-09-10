@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d275727-f548-43dd-a1f2-e899aea261bc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/feign-provider/src/main/java/com/feign/provider/authCenter/AuthService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/feign-provider/src/main/java/com/feign/provider/authCenter/AuthServiceFallBack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config-resources/ribbon/ribbon-dev.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config-resources/ribbon/ribbon-prod.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-center/src/main/java/com/example/authcenter/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-center/src/main/java/com/example/authcenter/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-resources/auth-center/auth-center-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-resources/auth-center/auth-center-prod.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feign-provider/src/main/java/com/feign/provider/userService/UserServiceFallBack.java" beforeDir="false" afterPath="$PROJECT_DIR$/feign-provider/src/main/java/com/feign/provider/userService/UserServiceFallBack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/example/userservice/UserServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/example/userservice/UserServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/example/userservice/controller/InfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/example/userservice/controller/InfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/resources/bootstrap.yml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -82,7 +77,7 @@
     <property name="add_unversioned_files" value="$PROJECT_DIR$/logs/user-service.log&#10;D:/MyGit/parent-pom/user-service/logs/spring.log&#10;D:/MyGit/parent-pom/logs/user-service.log/spring.log" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="HTTP Request" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/modules-pom/pom.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/config-resources/ribbon" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Global Libraries" />
@@ -91,24 +86,43 @@
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\MyGit\cloud-demo\auth-center\src\main\java\com\example\authcenter" />
-      <recent name="D:\MyGit\cloud-demo\feign-client" />
-      <recent name="D:\MyGit\cloud-demo\config-resources\gateway" />
-      <recent name="D:\MyGit\cloud-demo\config-resources\base" />
-      <recent name="D:\MyGit\cloud-demo\eureka-server\src\main\resources" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\MyGit\cloud-demo\gateway\src\test\http" />
+      <recent name="D:\MyProject\cloud-demo\feign-client\src\test\api" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.example.client02.controller" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\MyGit\cloud-demo\gateway\src\test\http" />
-      <recent name="D:\MyProject\cloud-demo\feign-client\src\test\api" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\MyGit\parent-pom\config-resources\ribbon" />
+      <recent name="D:\MyGit\cloud-demo\auth-center\src\main\java\com\example\authcenter" />
+      <recent name="D:\MyGit\cloud-demo\feign-client" />
+      <recent name="D:\MyGit\cloud-demo\config-resources\gateway" />
+      <recent name="D:\MyGit\cloud-demo\config-resources\base" />
     </key>
   </component>
   <component name="RestClientSettings">
     <option name="REQUEST_HISTORY">
       <list>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8402/user/test" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="cache" />
+                <option name="value" value="false" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
         <RestClientRequest>
           <option name="httpMethod" value="GET" />
           <option name="urlBase" value="http://localhost:8402/user/test" />
@@ -436,8 +450,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="HTTP Request.scratch#3 (1)" />
-        <item itemvalue="HTTP Request.scratch#2 (1)" />
         <item itemvalue="HTTP Request.scratch#1 (1)" />
+        <item itemvalue="HTTP Request.scratch#2 (1)" />
         <item itemvalue="HTTP Request.scratch#3" />
         <item itemvalue="HTTP Request.scratch#1 (2)" />
       </list>
@@ -777,7 +791,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568102201312</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="update">
+      <created>1568105629896</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1568105629896</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
