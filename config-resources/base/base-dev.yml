@@ -1,6 +1,6 @@
 # 基础公共配置文件
 env: dev
-base: base-config-dev-reflash-2222
+base: base-config-dev-reflash
 spring:
   redis:
     host: 127.0.0.1
