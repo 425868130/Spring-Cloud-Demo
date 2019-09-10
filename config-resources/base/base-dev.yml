@@ -1,6 +1,6 @@
 # 基础公共配置文件
 env: dev
-base: base-config-dev
+base: base-config-dev-test
 #通过消息服务自动刷新配置
 management:
   endpoints:
