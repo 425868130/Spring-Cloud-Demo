@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d275727-f548-43dd-a1f2-e899aea261bc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/feign-provider/src/main/java/com/feign/provider/authCenter/AuthService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/feign-provider/src/main/java/com/feign/provider/authCenter/AuthServiceFallBack.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-resources/base/base-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-resources/base/base-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-center/src/main/java/com/example/authcenter/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-center/src/main/java/com/example/authcenter/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-resources/auth-center/auth-center-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-resources/auth-center/auth-center-prod.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feign-provider/src/main/java/com/feign/provider/userService/UserServiceFallBack.java" beforeDir="false" afterPath="$PROJECT_DIR$/feign-provider/src/main/java/com/feign/provider/userService/UserServiceFallBack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/example/userservice/UserServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/example/userservice/UserServiceApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/example/userservice/controller/InfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/example/userservice/controller/InfoController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -103,6 +109,21 @@
   <component name="RestClientSettings">
     <option name="REQUEST_HISTORY">
       <list>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8402/user/test" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
         <RestClientRequest>
           <option name="httpMethod" value="GET" />
           <option name="urlBase" value="http://alwaysonline-pc:8402/user/info" />
@@ -326,7 +347,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="HTTP Request.scratch#2 (1)">
+  <component name="RunManager" selected="HTTP Request.scratch#3 (1)">
     <configuration name="scratch#1 (1)" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/scratch.http">
       <method v="2" />
     </configuration>
@@ -336,7 +357,7 @@
     <configuration name="scratch#2 (1)" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/scratch.http" index="2">
       <method v="2" />
     </configuration>
-    <configuration name="scratch#2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/gateway/src/test/http/scratch.http" index="2">
+    <configuration name="scratch#3 (1)" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/scratch.http" index="3">
       <method v="2" />
     </configuration>
     <configuration name="scratch#3" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/gateway/src/test/http/scratch.http" index="3">
@@ -414,11 +435,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.scratch#3 (1)" />
         <item itemvalue="HTTP Request.scratch#2 (1)" />
         <item itemvalue="HTTP Request.scratch#1 (1)" />
         <item itemvalue="HTTP Request.scratch#3" />
         <item itemvalue="HTTP Request.scratch#1 (2)" />
-        <item itemvalue="HTTP Request.scratch#2" />
       </list>
     </recent_temporary>
   </component>
@@ -749,7 +770,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568101598204</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="update">
+      <created>1568102201312</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1568102201312</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TimeTrackingManager">

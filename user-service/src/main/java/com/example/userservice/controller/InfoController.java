@@ -2,6 +2,7 @@ package com.example.userservice.controller;
 
 import com.example.common.entity.Result;
 import com.example.userservice.bean.User;
+import com.feign.provider.authCenter.AuthService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,8 @@ public class InfoController {
     HttpServletRequest httpServletRequest;
     @Value("${base}")
     String base;
+    @Autowired
+    AuthService authService;
 
     @RequestMapping("info")
     public Result getInfo() {
@@ -31,5 +34,10 @@ public class InfoController {
         user.setName(base);
         logger.info("接口访问");
         return Result.success(user);
+    }
+
+    @RequestMapping("test")
+    public Result test() {
+        return authService.msg();
     }
 }

@@ -1,11 +1,11 @@
-package com.feign.provider.userService;
+package com.feign.provider.authCenter;
 
 import com.example.common.define.StatusCode;
 import com.example.common.entity.Result;
 
-public class UserServiceFallBack implements UserServiceFeign {
+public class AuthServiceFallBack implements AuthService {
     @Override
-    public Result getInfo() {
+    public Result msg() {
         return new Result(StatusCode.TIMEOUT);
     }
 }

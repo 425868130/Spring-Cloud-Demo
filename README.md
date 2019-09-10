@@ -15,3 +15,5 @@ server.port端口配置可以放云端
 ```
 @EnableFeignClients(basePackages = {"com.feign.provider"})
 ```
+Maven项目POM依赖关系:
+modules-pom：保存当前项目下的全部模块版本信息,聚合全部子模块

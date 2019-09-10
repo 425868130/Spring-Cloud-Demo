@@ -25,18 +25,18 @@ public class AuthController {
     private String msg;
 
     @RequestMapping("msg")
-    public Result auth() {
-        return Result.success(msg);
+    public Result msg() {
+        return Result.success(msg+"  节点2");
     }
 
     @RequestMapping(value = "/current", method = RequestMethod.GET)
-    public Principal getUser(Principal principal) {
+    public Result getUser(Principal principal) {
         logger.info(">>>>>>>>>>>>>>>>>>>>>>>>");
         if (principal != null) {
             logger.info(principal.toString());
         }
         logger.info(">>>>>>>>>>>>>>>>>>>>>>>>");
-        return principal;
+        return Result.success(principal);
     }
 
     @RequestMapping("user")
