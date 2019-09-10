@@ -10,10 +10,3 @@ spring:
 
 mybatis:
   mapper-locations: classpath:mapping/*Mapper.xml
-
-#showSql
-logging:
-  level:
-    com:
-      example:
-        mapper : debug
