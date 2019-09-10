@@ -2,7 +2,6 @@
 env: dev
 base: base-config-dev-reflash
 logging:
-  level: DEBUG
   path: /logs/${spring.application.name}
   file: ${spring.application.name}.log
 spring:
