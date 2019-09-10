@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0d275727-f548-43dd-a1f2-e899aea261bc" name="Default Changelist" comment="update">
+    <list default="true" id="0d275727-f548-43dd-a1f2-e899aea261bc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config-resources/base/base-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-resources/base/base-dev.yml" afterDir="false" />
     </list>
@@ -101,6 +101,21 @@
   <component name="RestClientSettings">
     <option name="REQUEST_HISTORY">
       <list>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://alwaysonline-pc:8402/user/info" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
         <RestClientRequest>
           <option name="httpMethod" value="GET" />
           <option name="urlBase" value="http://localhost:8109/test/client" />
@@ -309,20 +324,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="HTTP Request.scratch#1 (1)">
+  <component name="RunManager" selected="HTTP Request.scratch#2 (1)">
     <configuration name="scratch#1 (1)" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/scratch.http">
       <method v="2" />
     </configuration>
     <configuration name="scratch#1 (2)" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/gateway/src/test/http/scratch.http">
       <method v="2" />
     </configuration>
+    <configuration name="scratch#2 (1)" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/scratch.http" index="2">
+      <method v="2" />
+    </configuration>
     <configuration name="scratch#2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/gateway/src/test/http/scratch.http" index="2">
       <method v="2" />
     </configuration>
     <configuration name="scratch#3" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/gateway/src/test/http/scratch.http" index="3">
-      <method v="2" />
-    </configuration>
-    <configuration name="test#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/feign-client/src/test/api/test.http">
       <method v="2" />
     </configuration>
     <configuration name="AuthCenterApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
@@ -397,11 +412,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.scratch#2 (1)" />
         <item itemvalue="HTTP Request.scratch#1 (1)" />
         <item itemvalue="HTTP Request.scratch#3" />
         <item itemvalue="HTTP Request.scratch#1 (2)" />
         <item itemvalue="HTTP Request.scratch#2" />
-        <item itemvalue="HTTP Request.test#1" />
       </list>
     </recent_temporary>
   </component>
@@ -648,7 +663,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568096955439</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="update">
+      <created>1568097016895</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1568097016895</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
