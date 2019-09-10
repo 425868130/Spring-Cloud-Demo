@@ -1,1 +1,9 @@
 #统一配置feign客户端的负载均衡策略,可以为每个微服务指定具体的策略,如果不引入该配置或未配置的微服务则使用默认轮询策略
+
+#为auth-center指定随机策略,若要实现自定义策略则NFLoadBalancerRuleClassName填写自定义策略实现类,必须实现IRule接口
+auth-center:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+user-service:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.feign.provider.userService.UserServiceRule

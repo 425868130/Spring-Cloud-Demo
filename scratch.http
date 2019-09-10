@@ -1,0 +1,13 @@
+#配置刷新
+POST http://localhost:8301/actuator/bus-refresh
+
+###
+GET http://localhost:8402/user/info
+Accept: application/json
+
+###
+
+GET http://localhost:8402/user/test
+Accept: application/json
+cache: false
+###

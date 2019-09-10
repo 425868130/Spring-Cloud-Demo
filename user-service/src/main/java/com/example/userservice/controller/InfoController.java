@@ -6,7 +6,6 @@ import com.feign.provider.authCenter.AuthService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,8 +20,6 @@ public class InfoController {
     private final static Logger logger = LoggerFactory.getLogger(InfoController.class);
     @Autowired
     HttpServletRequest httpServletRequest;
-    @Value("${base}")
-    String base;
     @Autowired
     AuthService authService;
 
@@ -31,7 +28,7 @@ public class InfoController {
         User user = new User();
         user.setId(111111L);
         user.setAge(20);
-        user.setName(base);
+        user.setName("info");
         logger.info("接口访问");
         return Result.success(user);
     }

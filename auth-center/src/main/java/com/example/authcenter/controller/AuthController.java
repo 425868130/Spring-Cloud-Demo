@@ -6,12 +6,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.security.Principal;
 
 @RefreshScope
 @RestController
@@ -23,20 +22,21 @@ public class AuthController {
 
     @Value("${msg}")
     private String msg;
+    @Autowired
+    private DiscoveryClient discoveryClient;
+    @Value("${server.port}")
+    private String ip;
+
+    @GetMapping("/client")
+    public Result client() {
+        String services = "Services: " + discoveryClient.getServices() + " ip :" + ip;
+        logger.info(services);
+        return Result.success(services);
+    }
 
     @RequestMapping("msg")
     public Result msg() {
-        return Result.success(msg+"  节点2");
-    }
-
-    @RequestMapping(value = "/current", method = RequestMethod.GET)
-    public Result getUser(Principal principal) {
-        logger.info(">>>>>>>>>>>>>>>>>>>>>>>>");
-        if (principal != null) {
-            logger.info(principal.toString());
-        }
-        logger.info(">>>>>>>>>>>>>>>>>>>>>>>>");
-        return Result.success(principal);
+        return Result.success(msg);
     }
 
     @RequestMapping("user")
