@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d275727-f548-43dd-a1f2-e899aea261bc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config-resources/user-service/user-service-prod.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/feign-provider/src/main/java/com/feign/provider/userService/UserServiceRule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scratch.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-center/src/main/java/com/example/authcenter/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-center/src/main/java/com/example/authcenter/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-resources/auth-center/auth-center-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-resources/auth-center/auth-center-prod.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-resources/base/base-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-resources/base/base-prod.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-resources/ribbon/ribbon-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-resources/ribbon/ribbon-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-resources/ribbon/ribbon-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-resources/ribbon/ribbon-prod.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-resources/user-service/user-service-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-resources/user-service/user-service-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feign-provider/feign-provider.iml" beforeDir="false" afterPath="$PROJECT_DIR$/feign-provider/feign-provider.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feign-provider/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/feign-provider/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/example/userservice/controller/InfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/example/userservice/controller/InfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/user-service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/user-service.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feign-provider/src/main/java/com/feign/provider/userService/UserServiceRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/feign-provider/src/main/java/com/feign/provider/userService/UserServiceRule.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -391,102 +379,6 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="HTTP Request.scratch#3 (2)">
-    <configuration name="scratch#1 (1)" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/scratch.http">
-      <method v="2" />
-    </configuration>
-    <configuration name="scratch#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/scratch.http">
-      <method v="2" />
-    </configuration>
-    <configuration name="scratch#2 (1)" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/scratch.http" index="2">
-      <method v="2" />
-    </configuration>
-    <configuration name="scratch#3 (1)" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/scratch.http" index="3">
-      <method v="2" />
-    </configuration>
-    <configuration name="scratch#3 (2)" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/scratch.http" index="3">
-      <method v="2" />
-    </configuration>
-    <configuration name="AuthCenterApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="auth-center" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.authcenter.AuthCenterApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CloudDemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="parent-pom" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.cloud.CloudDemoApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CommonApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="common" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.common.CommonApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ConfigServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="config-server" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.configserver.ConfigServerApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EurekaClient01Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="eureka-client01" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.client01.EurekaClient01Application" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EurekaClient02Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="eureka-client02" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.client02.EurekaClient02Application" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EurekaServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="eureka-server" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.eureka.EurekaServerApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FeignClientApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="feign-client" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.feign.FeignClientApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="gateway" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.gateway.GatewayApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="user-service" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.userservice.UserServiceApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="HTTP Request.scratch#3 (2)" />
-        <item itemvalue="HTTP Request.scratch#1" />
-        <item itemvalue="HTTP Request.scratch#3 (1)" />
-        <item itemvalue="HTTP Request.scratch#1 (1)" />
-        <item itemvalue="HTTP Request.scratch#2 (1)" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="SvnConfiguration">
     <configuration>C:\Users\Administrator\AppData\Roaming\Subversion</configuration>
   </component>
@@ -835,7 +727,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568106931234</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="update">
+      <created>1568109276130</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1568109276130</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -892,6 +791,11 @@
           <url>file://$PROJECT_DIR$/eureka-client02/src/main/java/com/example/client02/controller/OrderController.java</url>
           <line>29</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/feign-provider/src/main/java/com/feign/provider/userService/UserServiceRule.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
