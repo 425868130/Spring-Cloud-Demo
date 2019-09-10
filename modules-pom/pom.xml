@@ -6,53 +6,73 @@
     <groupId>com.example</groupId>
     <artifactId>modules-pom</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>modules-pom</name>
     <packaging>pom</packaging>
     <description>保存全部微服务项目的版本依赖信息</description>
-
+    <!--全部子模块-->
+    <modules>
+        <module>../auth-center</module>
+        <module>../common</module>
+        <module>../config-server</module>
+        <module>../eureka-server</module>
+        <module>../gateway</module>
+        <module>../feign-provider</module>
+        <module>../user-service</module>
+        <module>../../cloud-demo</module>
+        <!--<module>modules-pom</module>-->
+    </modules>
     <properties>
         <!--统一配置子模块版本号-->
-        <user-service.version>0.0.1-SNAPSHOT</user-service.version>
-        <common.version>0.0.1-SNAPSHOT</common.version>
-        <auth-center.version>0.0.1-SNAPSHOT</auth-center.version>
-        <config-server.version>0.0.1-SNAPSHOT</config-server.version>
-        <eureaka-server.version>0.0.1-SNAPSHOT</eureaka-server.version>
-        <gateway.version>0.0.1-SNAPSHOT</gateway.version>
-        <feign-provider.version>0.0.1-SNAPSHOT</feign-provider.version>
+        <version.cloud-demo>0.0.1-SNAPSHOT</version.cloud-demo>
+        <version.user-service>0.0.1-SNAPSHOT</version.user-service>
+        <version.common>0.0.1-SNAPSHOT</version.common>
+        <version.auth-center>0.0.1-SNAPSHOT</version.auth-center>
+        <version.config-server>0.0.1-SNAPSHOT</version.config-server>
+        <version.eureka-server>0.0.1-SNAPSHOT</version.eureka-server>
+        <version.gateway>0.0.1-SNAPSHOT</version.gateway>
+        <version.feign-provider>0.0.1-SNAPSHOT</version.feign-provider>
+        <!--统一子模块名称-->
+        <name.cloud-demo>cloud-demo</name.cloud-demo>
+        <name.user-service>user-service</name.user-service>
+        <name.common>common</name.common>
+        <name.auth-center>auth-center</name.auth-center>
+        <name.config-server>config-server</name.config-server>
+        <name.eureka-server>eureka-server</name.eureka-server>
+        <name.gateway>gateway</name.gateway>
+        <name.feign-provider>feign-provider</name.feign-provider>
     </properties>
 
     <dependencyManagement>
         <dependencies>
             <!--微服务项目模块依赖-->
             <dependency>
-                <groupId>${groupId}</groupId>
-                <artifactId>user-service</artifactId>
-                <version>${user-service.version}</version>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>${name.user-service}</artifactId>
+                <version>${version.user-service}</version>
             </dependency>
             <dependency>
-                <groupId>${groupId}</groupId>
-                <artifactId>common</artifactId>
-                <version>${common.version}</version>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>${name.common}</artifactId>
+                <version>${version.common}</version>
             </dependency>
             <dependency>
-                <groupId>${groupId}</groupId>
-                <artifactId>auth-center</artifactId>
-                <version>${auth-center.version}</version>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>${name.auth-center}</artifactId>
+                <version>${version.auth-center}</version>
             </dependency>
             <dependency>
-                <groupId>${groupId}</groupId>
-                <artifactId>config-server</artifactId>
-                <version>${config-server.version}</version>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>${name.config-server}</artifactId>
+                <version>${version.config-server}</version>
             </dependency>
             <dependency>
-                <groupId>${groupId}</groupId>
-                <artifactId>gateway</artifactId>
-                <version>${gateway.version}</version>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>${name.gateway}</artifactId>
+                <version>${version.gateway}</version>
             </dependency>
             <dependency>
-                <groupId>${groupId}</groupId>
-                <artifactId>feign-provider</artifactId>
-                <version>${feign-provider.version}</version>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>${name.feign-provider}</artifactId>
+                <version>${version.feign-provider}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

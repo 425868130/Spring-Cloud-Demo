@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>com.example</groupId>
+        <artifactId>modules-pom</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <artifactId>cloud-demo</artifactId>
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
-    <groupId>com.example</groupId>
-    <artifactId>cloud-demo</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>cloud-demo</name>
-    <description>Demo project for Spring Cloud</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -16,17 +17,23 @@
         <spring-cloud.version>Greenwich.SR1</spring-cloud.version>
         <mybatis.version>2.1.0</mybatis.version>
     </properties>
-    <!--全部子模块-->
-    <modules>
-        <module>auth-center</module>
-        <module>common</module>
-        <module>config-server</module>
-        <module>eureka-server</module>
-        <module>gateway</module>
-        <module>feign-provider</module>
-        <module>user-service</module>
-        <module>modules-pom</module>
-    </modules>
+
+    <dependencies>
+        <!--公共依赖-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>${name.common}</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>${name.feign-provider}</artifactId>
+        </dependency>
+    </dependencies>
 
     <dependencyManagement>
         <dependencies>
@@ -46,14 +53,6 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <!--微服务项目模块依赖-->
-            <dependency>
-                <groupId>${groupId}</groupId>
-                <artifactId>modules-pom</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -62,6 +61,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot.version}</version>
             </plugin>
         </plugins>
     </build>
