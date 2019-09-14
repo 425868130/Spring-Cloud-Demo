@@ -8,7 +8,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <description>保存全部微服务项目的版本依赖信息</description>
-    <!--全部子模块,本地第一次执行maven打包时请先注释全部modules然后install本模块,再放开注释-->
+    <!--全部子模块,本地第一次执行maven打包时请先注释全部modules然后install本模块,再install dependencies-pom模块之后再放开注释执行install-->
     <modules>
         <module>dependencies-pom</module>
         <module>auth-center</module>
