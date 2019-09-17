@@ -6,6 +6,7 @@
         <groupId>com.example</groupId>
         <artifactId>dependencies-pom</artifactId>
         <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../dependencies-pom/pom.xml</relativePath>
     </parent>
     <artifactId>config-server</artifactId>
     <description>微服务配置中心</description>

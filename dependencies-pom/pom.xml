@@ -5,7 +5,7 @@
         <groupId>com.example</groupId>
         <artifactId>parent-pom</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath/>
+        <relativePath>../pom.xml</relativePath>
     </parent>
     <artifactId>dependencies-pom</artifactId>
     <modelVersion>4.0.0</modelVersion>
@@ -57,20 +57,4 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>${spring-boot.version}</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
 </project>

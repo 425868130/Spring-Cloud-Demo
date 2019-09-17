@@ -6,7 +6,7 @@
         <groupId>com.example</groupId>
         <artifactId>dependencies-pom</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath/>
+        <relativePath>../dependencies-pom/pom.xml</relativePath>
     </parent>
     <artifactId>user-service</artifactId>
     <description>用户微服务</description>
@@ -41,6 +41,10 @@
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>${name.feign-provider}</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>${name.common}</artifactId>
         </dependency>
     </dependencies>
 </project>
