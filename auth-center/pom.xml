@@ -6,6 +6,7 @@
         <groupId>com.example</groupId>
         <artifactId>dependencies-pom</artifactId>
         <version>0.0.1-SNAPSHOT</version>
+        <relativePath/>
     </parent>
     <artifactId>auth-center</artifactId>
     <description>用户认证中心</description>
@@ -41,19 +42,4 @@
             <artifactId>${name.feign-provider}</artifactId>
         </dependency>
     </dependencies>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
 </project>
