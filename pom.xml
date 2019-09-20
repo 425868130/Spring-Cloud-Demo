@@ -1,101 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>com.example</groupId>
+    <parent>
+        <groupId>com.example</groupId>
+        <artifactId>project-pom</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>project-pom/pom.xml</relativePath>
+    </parent>
     <artifactId>parent-pom</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
-    <description>保存全部微服务项目的版本依赖信息</description>
-    <!--全部子模块,本地第一次执行maven打包时请先注释全部modules然后install本模块,再install dependencies-pom模块之后再放开注释执行install-->
-    <modules>
-        <module>dependencies-pom</module>
-        <module>auth-center</module>
-        <module>common</module>
-        <module>config-server</module>
-        <module>eureka-server</module>
-        <module>gateway</module>
-        <module>feign-provider</module>
-        <module>user-service</module>
-    </modules>
-    <properties>
-        <java.version>1.8</java.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring-boot.version>2.1.7.RELEASE</spring-boot.version>
-        <spring-cloud.version>Greenwich.SR1</spring-cloud.version>
-        <mybatis.version>2.1.0</mybatis.version>
-        <spring-boot>org.springframework.boot</spring-boot>
-        <spring-cloud>org.springframework.cloud</spring-cloud>
-        <!--统一配置子模块版本号-->
-        <version.dependencies-pom>0.0.1-SNAPSHOT</version.dependencies-pom>
-        <version.user-service>0.0.1-SNAPSHOT</version.user-service>
-        <version.common>0.0.1-SNAPSHOT</version.common>
-        <version.auth-center>0.0.1-SNAPSHOT</version.auth-center>
-        <version.config-server>0.0.1-SNAPSHOT</version.config-server>
-        <version.eureka-server>0.0.1-SNAPSHOT</version.eureka-server>
-        <version.gateway>0.0.1-SNAPSHOT</version.gateway>
-        <version.feign-provider>0.0.1-SNAPSHOT</version.feign-provider>
-        <!--统一子模块名称-->
-        <name.dependencies-pom>dependencies-pom</name.dependencies-pom>
-        <name.user-service>user-service</name.user-service>
-        <name.common>common</name.common>
-        <name.auth-center>auth-center</name.auth-center>
-        <name.config-server>config-server</name.config-server>
-        <name.eureka-server>eureka-server</name.eureka-server>
-        <name.gateway>gateway</name.gateway>
-        <name.feign-provider>feign-provider</name.feign-provider>
-    </properties>
+    <description>本pom用于集中管理当前项目的公共第三方依赖包版本</description>
+
+    <dependencies>
+        <!--公共依赖-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bus-amqp</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-logging</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
     <dependencyManagement>
         <dependencies>
-            <!--微服务项目模块依赖-->
+            <!--spring boot依赖-->
             <dependency>
-                <groupId>${project.groupId}</groupId>
-                <artifactId>${name.user-service}</artifactId>
-                <version>${version.user-service}</version>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!--spring cloud依赖-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
             <dependency>
-                <groupId>${project.groupId}</groupId>
-                <artifactId>${name.common}</artifactId>
-                <version>${version.common}</version>
-            </dependency>
-            <dependency>
-                <groupId>${project.groupId}</groupId>
-                <artifactId>${name.auth-center}</artifactId>
-                <version>${version.auth-center}</version>
-            </dependency>
-            <dependency>
-                <groupId>${project.groupId}</groupId>
-                <artifactId>${name.config-server}</artifactId>
-                <version>${version.config-server}</version>
-            </dependency>
-            <dependency>
-                <groupId>${project.groupId}</groupId>
-                <artifactId>${name.gateway}</artifactId>
-                <version>${version.gateway}</version>
-            </dependency>
-            <dependency>
-                <groupId>${project.groupId}</groupId>
-                <artifactId>${name.feign-provider}</artifactId>
-                <version>${version.feign-provider}</version>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>${spring-boot.version}</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
 </project>
