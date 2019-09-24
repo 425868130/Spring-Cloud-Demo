@@ -21,9 +21,6 @@
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring-boot.version>2.1.7.RELEASE</spring-boot.version>
-        <spring-cloud.version>Greenwich.SR1</spring-cloud.version>
-        <mybatis.version>2.1.0</mybatis.version>
         <spring-boot>org.springframework.boot</spring-boot>
         <spring-cloud>org.springframework.cloud</spring-cloud>
         <!--统一配置子模块版本号-->
@@ -81,20 +78,4 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>${spring-boot.version}</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
 </project>

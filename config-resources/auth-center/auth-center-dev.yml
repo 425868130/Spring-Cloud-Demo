@@ -1,3 +1,9 @@
 server:
   port: 8401
 msg: hello spring cloud dev
+spring:
+  user-service:
+    username: xujw
+    password: xujw1320074071
+    url: jdbc:mysql://gz-cdb-8z6d9u0o.sql.tencentcdb.com:62542/${spring.application.name}?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver

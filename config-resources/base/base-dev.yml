@@ -6,6 +6,8 @@ logging:
     level: WARN
   file: ../logs/${spring.application.name}.log
 spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
   redis:
     host: 127.0.0.1
     port: 6379
