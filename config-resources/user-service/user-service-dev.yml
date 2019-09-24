@@ -6,8 +6,7 @@ spring:
     user-service:
       username: xujw
       password: xujw1320074071
-      url: jdbc:mysql://cdb-77xksizt.gz.tencentcdb.com:10042/${spring.application.name}?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+      jdbc-url: jdbc:mysql://cdb-77xksizt.gz.tencentcdb.com:10042/${spring.application.name}?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
       driver-class-name: com.mysql.cj.jdbc.Driver
-
 mybatis:
   mapper-locations: classpath:mapping/*Mapper.xml

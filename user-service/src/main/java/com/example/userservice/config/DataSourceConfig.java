@@ -17,7 +17,7 @@ import javax.sql.DataSource;
  * mybatis数据源配置,所有当前数据源的Bean都需要命名以进行区分
  */
 @Configuration
-@MapperScan("com.example.userservice.dao")
+@MapperScan(basePackages = "com.example.userservice.dao", sqlSessionTemplateRef = "st-user-service")
 public class DataSourceConfig {
     /**
      * 配置数据源
