@@ -33,7 +33,7 @@
         <version.gateway>0.0.1-SNAPSHOT</version.gateway>
         <version.feign-provider>0.0.1-SNAPSHOT</version.feign-provider>
         <!--统一子模块名称-->
-        <name.dependencies-pom>dependencies-pom</name.dependencies-pom>
+        <name.parent-pom>parent-pom</name.parent-pom>
         <name.user-service>user-service</name.user-service>
         <name.common>common</name.common>
         <name.auth-center>auth-center</name.auth-center>
