@@ -1,4 +1,5 @@
 package com.example.common.util;
+
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
@@ -89,13 +90,12 @@ public class JwtUitl {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        String token2 = createJWT(userInfo, "1111111");
-        String fakeToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYmYiOjE1MzkwOTEyOTIsInBzd2QiOiIxMzIwMDc0MDcxIiwiaXNzIjoieGp3Y29kZS5jb20iLCJleHAiOjE1MzkwOTEzMDIsImlhdCI6MTUzOTA5MTI5MiwiYWNjb3VudCI6IjQyNTg2ODEzMCIsImp0aSI6IjY5NzczYjU5LWM5N2EtNGY5Ny1iYzk2LWMzYWIwZjQzMGEwMCJ9.7r_L7c3qRFqYje3U-f15rkuavtLPy7roS6R6Fq5unbU";
-        System.out.println(token2);
-       /* Claims tokenObj = parseJWT(token);
+        Claims tokenObj = parseJWT(token);
+        System.out.println();
 
+        assert tokenObj != null;
         tokenObj.setExpiration(new Date(System.currentTimeMillis() + 10000)).setNotBefore(new Date());
         String newToken = Jwts.builder().setClaims(tokenObj).compact();
-        System.out.println(newToken);*/
+        System.out.println(newToken);
     }
 }

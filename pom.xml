@@ -16,7 +16,6 @@
         <spring-boot.version>2.1.7.RELEASE</spring-boot.version>
         <spring-cloud.version>Greenwich.SR1</spring-cloud.version>
         <mybatis.version>2.1.0</mybatis.version>
-        <quartz.version>2.3.0</quartz.version>
         <jjwt.version>0.9.1</jjwt.version>
     </properties>
 
@@ -39,11 +38,16 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <artifactId>objenesis</artifactId>
+                    <groupId>org.objenesis</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <optional>true</optional>
         </dependency>
     </dependencies>
 
@@ -74,11 +78,6 @@
                 <groupId>io.jsonwebtoken</groupId>
                 <artifactId>jjwt</artifactId>
                 <version>${jjwt.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.quartz-scheduler</groupId>
-                <artifactId>quartz</artifactId>
-                <version>${quartz.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
