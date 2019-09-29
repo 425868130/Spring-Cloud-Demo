@@ -1,4 +1,4 @@
-package com.example.common.util;
+package com.example.common.util.jwt;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtBuilder;
@@ -16,7 +16,7 @@ import java.util.UUID;
 /**
  * @author: xujw 2018/10/9 21:14
  **/
-public class JwtUitl {
+public class JwtHS256Util {
     //秘钥
     private static String base64Secret = "ZTEzZWMyMGVhNmQ5MWY5YjcwOTE1NWQ2ZmIzYWUzMDA=";
     //token失效时间
