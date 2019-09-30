@@ -11,3 +11,8 @@ GET http://localhost:8402/user/test
 Accept: application/json
 cache: false
 ###
+
+GET http://localhost:8401/key
+Accept: application/json
+
+###

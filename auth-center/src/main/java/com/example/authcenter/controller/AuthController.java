@@ -1,5 +1,6 @@
 package com.example.authcenter.controller;
 
+import com.example.common.entity.JsonWebTokenKey;
 import com.example.common.entity.Result;
 import com.feign.provider.userService.UserServiceFeign;
 import org.slf4j.Logger;
@@ -26,8 +27,8 @@ public class AuthController {
     private DiscoveryClient discoveryClient;
     @Value("${server.port}")
     private String ip;
-    @Value("${jwt.key}")
-    private String key;
+    @Autowired
+    private JsonWebTokenKey jsonWebTokenKey;
 
     @GetMapping("/client")
     public Result client() {
@@ -48,6 +49,7 @@ public class AuthController {
 
     @RequestMapping("key")
     public Result getKey() {
-        return Result.success(key);
+
+        return Result.success(jsonWebTokenKey.getPrivateKey());
     }
 }
