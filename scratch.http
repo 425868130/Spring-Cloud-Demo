@@ -16,3 +16,9 @@ GET http://localhost:8401/key
 Accept: application/json
 cache: false
 ###
+
+GET http://localhost:8401/getProperty
+Accept: application/json
+cache: false
+
+###
