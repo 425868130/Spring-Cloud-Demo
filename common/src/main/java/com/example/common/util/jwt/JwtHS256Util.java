@@ -14,34 +14,18 @@ import java.util.Map;
 import java.util.UUID;
 
 /**
+ * 基于HS256加密的token工具类
+ *
  * @author: xujw 2018/10/9 21:14
  **/
 public class JwtHS256Util {
-    //秘钥
+    //秘钥,放到配置文件中
     private static String base64Secret = "ZTEzZWMyMGVhNmQ5MWY5YjcwOTE1NWQ2ZmIzYWUzMDA=";
     //token失效时间
 
     private static int expiresMs = 10000;
 
     private static String iss = "xjwcode.com";
-
-    /**
-     * 解析jwt
-     *
-     * @param jsonWebToken
-     * @return
-     */
-    public static Claims parseJWT(String jsonWebToken) {
-        try {
-            Claims claims = Jwts.parser()
-                    .setSigningKey(DatatypeConverter.parseBase64Binary(base64Secret))
-                    .parseClaimsJws(jsonWebToken).getBody();
-            return claims;
-        } catch (Exception ex) {
-            //未找到对应jwt信息
-            return null;
-        }
-    }
 
     /**
      * 创建jwt
@@ -78,6 +62,25 @@ public class JwtHS256Util {
         //生成JWT
         return builder.compact();
     }
+
+    /**
+     * 解析jwt
+     *
+     * @param jsonWebToken
+     * @return
+     */
+    public static Claims parseJWT(String jsonWebToken) {
+        try {
+            Claims claims = Jwts.parser()
+                    .setSigningKey(DatatypeConverter.parseBase64Binary(base64Secret))
+                    .parseClaimsJws(jsonWebToken).getBody();
+            return claims;
+        } catch (Exception ex) {
+            //未找到对应jwt信息
+            return null;
+        }
+    }
+
 
     public static void main(String[] args) {
         Map<String, Object> userInfo = new HashMap<>();

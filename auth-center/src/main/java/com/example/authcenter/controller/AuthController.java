@@ -26,6 +26,8 @@ public class AuthController {
     private DiscoveryClient discoveryClient;
     @Value("${server.port}")
     private String ip;
+    @Value("${jwt.key}")
+    private String key;
 
     @GetMapping("/client")
     public Result client() {
@@ -42,5 +44,10 @@ public class AuthController {
     @RequestMapping("user")
     public Result userInfo() {
         return userServiceFeign.getInfo();
+    }
+
+    @RequestMapping("key")
+    public Result getKey() {
+        return Result.success(key);
     }
 }
