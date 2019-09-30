@@ -14,5 +14,5 @@ cache: false
 
 GET http://localhost:8401/key
 Accept: application/json
-
+cache: false
 ###
