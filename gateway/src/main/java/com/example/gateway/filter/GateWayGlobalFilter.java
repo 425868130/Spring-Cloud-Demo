@@ -28,7 +28,7 @@ public class GateWayGlobalFilter implements GlobalFilter, Ordered {
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
         String url = exchange.getRequest().getURI().getPath();
         System.out.println("请求地址:" + url);
-        /*模拟请求从授权中心获取token*/
+//        /*模拟请求从授权中心获取token*/
         Result result = authService.UserAuth(new UserAuthDTO("xujw", "1320074071"));
         log.info("token: " + JSON.stringify(result.getData()));
         return chain.filter(exchange);

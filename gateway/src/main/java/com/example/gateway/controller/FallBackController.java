@@ -10,7 +10,7 @@ import java.util.Map;
 public class FallBackController {
     @RequestMapping(value = "/fallBack")
     public Map<String, String> fallBackController() {
-        Map<String, String> res = new HashMap();
+        Map<String, String> res = new HashMap<>();
         res.put("code", "-100");
         res.put("data", "service not available");
         return res;

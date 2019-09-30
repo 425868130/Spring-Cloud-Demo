@@ -1,6 +1,20 @@
 # 基础公共配置文件
 env: dev
 base: base-config-dev-reflash
+#hystrix的超时时间,feign默认整合hystrix和ribbon,默认超时时间1s,调试时容易超时失败
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: true
+        isolation:
+          thread:
+            timeoutInMilliseconds: 30000
+#ribbon的超时时间
+ribbon:
+  ReadTimeout: 30000
+  ConnectTimeout: 30000
 logging:
   root:
     level: WARN

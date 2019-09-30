@@ -16,8 +16,34 @@ GET http://localhost:8401/key
 Accept: application/json
 cache: false
 ###
+POST http://localhost:8401/userAuth
+cache-control: no-cache
+Content-Type: application/json
 
-GET http://localhost:8401/getProperty
+{
+"account":"xujw",
+"password":"1320074071"
+}
+###
+
+POST http://localhost:8201/auth/userAuth
+Accept: application/json
+cache: false
+
+###
+
+###
+POST http://localhost:8201/auth-center/userAuth
+cache-control: no-cache
+Accept: application/json
+Content-Type: application/json
+
+{
+  "account":"xujw",
+  "password":"1320074071"
+}
+###
+POST http://localhost:8201/auth-center/msg
 Accept: application/json
 cache: false
 

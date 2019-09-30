@@ -24,7 +24,7 @@ public class TokenServiceImpl implements TokenService {
         Map<String, Object> map = new HashMap();
         map.put("user", "xujw");
         try {
-            String token = JwtRs256Util.createJWT(tokenId, authPrivateKey, map, 10000);
+            String token = JwtRs256Util.createJWT(tokenId, authPrivateKey, map, 10000L);
             System.out.println("token: " + token);
             return token;
         } catch (Exception e) {

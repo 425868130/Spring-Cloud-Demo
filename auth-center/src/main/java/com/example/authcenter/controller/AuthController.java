@@ -11,10 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RefreshScope
 @RestController
@@ -55,8 +52,8 @@ public class AuthController {
         return Result.success(tokenService.generateToken());
     }
 
-    @PostMapping("userAuth")
-    public Result UserAuth(UserAuthDTO userAuthDTO) {
+    @RequestMapping("userAuth")
+    public Result UserAuth(@RequestBody UserAuthDTO userAuthDTO) {
         /*模拟用户身份校验*/
         if ("xujw".equals(userAuthDTO.getAccount()) && "1320074071".equals(userAuthDTO.getPassword())) {
             return Result.success(tokenService.generateToken());
