@@ -1,7 +1,5 @@
 package com.example.authcenter.service.tokenService;
 
-import com.example.common.util.JSON;
-import com.example.common.util.RSAUtil;
 import com.example.common.util.jwt.JwtRs256Util;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -26,13 +24,12 @@ public class TokenServiceImpl implements TokenService {
         Map<String, Object> map = new HashMap();
         map.put("user", "xujw");
         try {
-            String token = JwtRs256Util.createJWT(map, RSAUtil.getPrivateKey(authPrivateKey), tokenId);
+            String token = JwtRs256Util.createJWT(tokenId, authPrivateKey, map, 10000);
             System.out.println("token: " + token);
-            System.out.println("token内容：" + JSON.stringify(JwtRs256Util.parseJWT(token, RSAUtil.getPublicKey(authPrivateKey))));
+            return token;
         } catch (Exception e) {
             e.printStackTrace();
         }
-        log.info(authPrivateKey);
         return "";
     }
 }

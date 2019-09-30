@@ -1,7 +1,9 @@
 package com.example.authcenter.controller;
 
 import com.example.authcenter.service.tokenService.TokenService;
+import com.example.common.define.StatusCode;
 import com.example.common.entity.Result;
+import com.feign.provider.dto.UserAuthDTO;
 import com.feign.provider.userService.UserServiceFeign;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,6 +12,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -31,7 +34,6 @@ public class AuthController {
     private TokenService tokenService;
 
     @GetMapping("/client")
-
     public Result client() {
         String services = "Services: " + discoveryClient.getServices() + " ip :" + ip;
         logger.info(services);
@@ -51,5 +53,14 @@ public class AuthController {
     @RequestMapping("key")
     public Result getKey() {
         return Result.success(tokenService.generateToken());
+    }
+
+    @PostMapping("userAuth")
+    public Result UserAuth(UserAuthDTO userAuthDTO) {
+        /*模拟用户身份校验*/
+        if ("xujw".equals(userAuthDTO.getAccount()) && "1320074071".equals(userAuthDTO.getPassword())) {
+            return Result.success(tokenService.generateToken());
+        }
+        return Result.error(StatusCode.PERMISSION_NO_ACCESS);
     }
 }

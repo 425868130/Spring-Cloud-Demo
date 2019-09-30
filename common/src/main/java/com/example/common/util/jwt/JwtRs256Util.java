@@ -5,9 +5,8 @@ import com.example.common.util.RSAUtil;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import lombok.extern.slf4j.Slf4j;
 
-import java.security.PrivateKey;
-import java.security.PublicKey;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -16,33 +15,50 @@ import java.util.UUID;
 /**
  * 基于rs256加密方式的jwt工具类
  */
+@Slf4j
 public class JwtRs256Util {
-    //token失效时间
+    //token失效时间 有效时长
     private static int expiresMs = 10000;
 
     private static String iss = "xjwcode.com";
 
-    public static final SignatureAlgorithm SIGNATURE_ALGORITHM = SignatureAlgorithm.RS256;
-
-    public static String createJWT(Map<String, Object> params, PrivateKey privateKey, String tokenId) throws Exception {
+    /**
+     * 根据给定条件创建token
+     *
+     * @param tokenId       tokenId,为null时内部随机生成
+     * @param privateKeyStr 用于签名的私钥字符串
+     * @param claims        荷载内容对象,Map<String,Object>对象
+     * @param duration      有效持续时间,单位毫秒
+     * @return
+     */
+    public static String createJWT(String tokenId, String privateKeyStr, Map<String, Object> claims, long duration) {
+        String token = null;
         Date now = new Date();
-        long expMillis = now.getTime() + expiresMs;
-        return Jwts.builder().setId(tokenId)
-                .setIssuer(iss)
-                .setHeaderParam("typ", "JWT")
-                .setHeaderParam("alg", SIGNATURE_ALGORITHM.getValue())
-                .setIssuedAt(now)
-                .setClaims(params)
-                .setNotBefore(now)
-                .setExpiration(new Date(expMillis))
-                .signWith(SignatureAlgorithm.RS256, privateKey)
-                .compact();
+        long expMillis = now.getTime() + duration;
+        try {
+            if (tokenId == null) {
+                tokenId = UUID.randomUUID().toString();
+            }
+            token = Jwts.builder().setId(tokenId)
+                    .setIssuer(iss)
+                    .setHeaderParam("typ", "JWT")
+                    .setHeaderParam("alg", SignatureAlgorithm.RS256.getValue())
+                    .setClaims(claims)
+                    .setIssuedAt(now)
+                    .setNotBefore(now)
+                    .setExpiration(new Date(expMillis))
+                    .signWith(SignatureAlgorithm.RS256, RSAUtil.getPrivateKey(privateKeyStr))
+                    .compact();
+        } catch (Exception e) {
+            log.error("token生成失败:" + e.getMessage());
+        }
+        return token;
     }
 
-    public static Claims parseJWT(String jsonWebToken, PublicKey publicKey) {
+    public static Claims parseJWT(String jsonWebToken, String publicKeyStr) {
         try {
             Claims claims = Jwts.parser()
-                    .setSigningKey(publicKey)
+                    .setSigningKey(RSAUtil.getPublicKey(publicKeyStr))
                     .parseClaimsJws(jsonWebToken).getBody();
             return claims;
         } catch (Exception ex) {
@@ -86,9 +102,9 @@ public class JwtRs256Util {
         Map<String, Object> map = new HashMap();
         map.put("user", "xujw");
         try {
-            String token = createJWT(map, RSAUtil.getPrivateKey(privateKey), tokenId);
+            String token = createJWT(tokenId, privateKey, map, 10000);
             System.out.println("token: " + token);
-            System.out.println("token内容：" + JSON.stringify(parseJWT(token, RSAUtil.getPublicKey(publicKey))));
+            System.out.println("token内容：" + JSON.stringify(parseJWT(token, publicKey)));
         } catch (Exception e) {
             e.printStackTrace();
         }

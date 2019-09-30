@@ -24,7 +24,7 @@ spring:
             - name: Hystrix
               args:
                 name: fallbackcmd
-                fallbackUri: forward:/fallbackcontroller
+                fallbackUri: forward:/fallBack
       discovery:
         locator:
           enabled: true #默认会为所有服务都进行转发操作,免去对所有服务进行配置
