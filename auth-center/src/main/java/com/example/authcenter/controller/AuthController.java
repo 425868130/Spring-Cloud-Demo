@@ -27,8 +27,7 @@ public class AuthController {
     private DiscoveryClient discoveryClient;
     @Value("${server.port}")
     private String ip;
-    @Autowired
-    private JsonWebTokenKey jsonWebTokenKey;
+
 
     @GetMapping("/client")
     public Result client() {
@@ -47,9 +46,9 @@ public class AuthController {
         return userServiceFeign.getInfo();
     }
 
-    @RequestMapping("key")
-    public Result getKey() {
-
-        return Result.success(jsonWebTokenKey.getPrivateKey());
-    }
+//    @RequestMapping("key")
+//    public Result getKey() {
+//
+//        return Result.success(jsonWebTokenKey.getPrivateKey());
+//    }
 }
