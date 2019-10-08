@@ -2,7 +2,7 @@ package com.example.gateway.filter;
 
 import com.example.common.entity.Result;
 import com.example.common.util.JSON;
-import com.example.gateway.service.AuthWhitelistService;
+import com.example.gateway.config.WhitelistConfig;
 import com.feign.provider.authCenter.AuthService;
 import com.feign.provider.dto.UserAuthDTO;
 import lombok.extern.slf4j.Slf4j;
@@ -25,13 +25,13 @@ public class GateWayGlobalFilter implements GlobalFilter, Ordered {
     @Autowired
     private AuthService authService;
     @Autowired
-    private AuthWhitelistService authWhitelistService;
+    private WhitelistConfig whitelistConfig;
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
         String url = exchange.getRequest().getURI().getPath();
         System.out.println("请求地址:" + url);
-        if (authWhitelistService.inWhitelist(exchange.getRequest().getURI())) {
+        if (whitelistConfig.inTokenWhitelist(exchange.getRequest().getURI())) {
             return chain.filter(exchange);
         }
         /*模拟请求从授权中心获取token*/
