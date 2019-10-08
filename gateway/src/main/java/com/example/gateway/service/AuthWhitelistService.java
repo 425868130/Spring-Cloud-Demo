@@ -8,7 +8,7 @@ import org.springframework.util.PathMatcher;
 import org.springframework.util.StringUtils;
 
 import java.net.URI;
-import java.util.List;
+import java.util.Arrays;
 
 /**
  * 认证白名单判断
@@ -19,9 +19,9 @@ import java.util.List;
 @RefreshScope
 public class AuthWhitelistService {
     private final static PathMatcher pathMatcher = new AntPathMatcher();
-    
+
     @Value("${authWhitelist}")
-    private List<String> authWhitelist;
+    private String[] authWhitelist;
 
     /**
      * 判断指定url是否在白名单中
@@ -34,6 +34,6 @@ public class AuthWhitelistService {
             return false;
         }
         String path = uri.getPath();
-        return authWhitelist.stream().anyMatch(item -> pathMatcher.match(item, path));
+        return Arrays.asList(authWhitelist).stream().anyMatch(item -> pathMatcher.match(item, path));
     }
 }
