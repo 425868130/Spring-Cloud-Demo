@@ -32,6 +32,9 @@ cache: false
 
 ###
 
+POST http://localhost:8201/auth/login
+Accept: application/json
+cache: false
 ###
 POST http://localhost:8201/auth-center/userAuth
 cache-control: no-cache
