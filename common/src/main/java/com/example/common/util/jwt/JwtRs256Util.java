@@ -56,6 +56,9 @@ public class JwtRs256Util {
     }
 
     public static Claims parseJWT(String jsonWebToken, String publicKeyStr) {
+        if (jsonWebToken == null || "".equals(jsonWebToken)) {
+            return null;
+        }
         try {
             Claims claims = Jwts.parser()
                     .setSigningKey(RSAUtil.getPublicKey(publicKeyStr))
