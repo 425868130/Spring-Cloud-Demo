@@ -32,7 +32,7 @@ cache: false
 
 ###
 
-POST http://localhost:8201/auth/login
+POST http://localhost:8201/open/login/aaaa
 Accept: application/json
 cache: false
 ###

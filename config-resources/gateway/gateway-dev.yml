@@ -30,4 +30,4 @@ spring:
           enabled: true #默认会为所有服务都进行转发操作,免去对所有服务进行配置
           lower-case-service-id: true #默认通过网关访问服务id使用大写,通过该配置启用小写服务id
 # 验证白名单,匹配该列表的url不需要向授权中心申请token即可访问服务
-authWhitelist: /open/**,/auth/login,/auth/logout
+authWhitelist: /*/open/**,/auth/login,/auth/logout
