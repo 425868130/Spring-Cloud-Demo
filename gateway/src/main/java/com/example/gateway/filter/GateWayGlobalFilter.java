@@ -2,6 +2,7 @@ package com.example.gateway.filter;
 
 import com.example.common.entity.Result;
 import com.example.common.util.JSON;
+import com.example.gateway.service.AuthWhitelistService;
 import com.feign.provider.authCenter.AuthService;
 import com.feign.provider.dto.UserAuthDTO;
 import lombok.extern.slf4j.Slf4j;
@@ -15,7 +16,7 @@ import reactor.core.publisher.Mono;
 
 /**
  * @author xujw
- * 实现GlobalFilter作为全局过滤器,全部的请求都会进过该过滤器,无需配置
+ * 实现GlobalFilter作为全局过滤器,全部的请求都会经过该过滤器,无需配置
  */
 @Slf4j
 @Component
@@ -23,12 +24,17 @@ public class GateWayGlobalFilter implements GlobalFilter, Ordered {
 
     @Autowired
     private AuthService authService;
+    @Autowired
+    private AuthWhitelistService authWhitelistService;
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
         String url = exchange.getRequest().getURI().getPath();
         System.out.println("请求地址:" + url);
-//        /*模拟请求从授权中心获取token*/
+        if (authWhitelistService.inWhitelist(exchange.getRequest().getURI())) {
+            return chain.filter(exchange);
+        }
+        /*模拟请求从授权中心获取token*/
         Result result = authService.UserAuth(new UserAuthDTO("xujw", "1320074071"));
         log.info("token: " + JSON.stringify(result.getData()));
         return chain.filter(exchange);

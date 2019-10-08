@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * 自定义过滤器,命名规则： 名称+GatewayFilterFactory
- * 在gateway配置文件中使用名称部分即可
+ * 在gateway配置文件中使用名称部分即可,请求会先走全局过滤器再走自定义过滤器
  */
 @Component
 public class AuthFilterGatewayFilterFactory extends AbstractGatewayFilterFactory {
