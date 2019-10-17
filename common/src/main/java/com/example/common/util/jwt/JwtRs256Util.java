@@ -1,5 +1,6 @@
 package com.example.common.util.jwt;
 
+import com.example.common.define.ConstVal;
 import com.example.common.util.JSON;
 import com.example.common.util.RSAUtil;
 import io.jsonwebtoken.Claims;
@@ -17,8 +18,6 @@ import java.util.UUID;
  */
 @Slf4j
 public class JwtRs256Util {
-    //token失效时间 有效时长
-    private static int expiresMs = 10000;
 
     private static String iss = "xjwcode.com";
 
@@ -34,7 +33,7 @@ public class JwtRs256Util {
     public static String createJWT(String tokenId, String privateKeyStr, Map<String, Object> claims, long duration) {
         String token = null;
         Date now = new Date();
-        long expMillis = now.getTime() + duration;
+        long expMillis = duration <= 0 ? ConstVal.TOKEN_EXPIRES : now.getTime() + duration;
         try {
             if (tokenId == null) {
                 tokenId = UUID.randomUUID().toString();
@@ -45,7 +44,6 @@ public class JwtRs256Util {
                     .setHeaderParam("alg", SignatureAlgorithm.RS256.getValue())
                     .setClaims(claims)
                     .setIssuedAt(now)
-                    .setNotBefore(now)
                     .setExpiration(new Date(expMillis))
                     .signWith(SignatureAlgorithm.RS256, RSAUtil.getPrivateKey(privateKeyStr))
                     .compact();
@@ -104,6 +102,9 @@ public class JwtRs256Util {
 
         Map<String, Object> map = new HashMap();
         map.put("user", "xujw");
+        Map<String, Object> test = new HashMap<>();
+        test.put("id", 12321L);
+        map.put("pyload", test);
         try {
             String token = createJWT(tokenId, privateKey, map, 10000);
             System.out.println("token: " + token);

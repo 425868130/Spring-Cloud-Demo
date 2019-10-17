@@ -10,7 +10,7 @@ spring:
           #使用lb前缀需要添加ribbon依赖实现负载均衡
           uri: lb://auth-center
           predicates:
-            - Path=/auth/**
+            - Path=/auth-center/**
           filters:
             - StripPrefix=1
             #自定义过滤器
@@ -33,5 +33,5 @@ spring:
 whitelist:
   token:
     - /*/open/**
-    - /auth/login
-    - /auth/logout
+    - /auth-center/login
+    - /auth-center/logout

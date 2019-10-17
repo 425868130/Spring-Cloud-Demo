@@ -52,7 +52,7 @@ public class AuthController {
         return Result.success(tokenService.generateToken());
     }
 
-    @RequestMapping("userAuth")
+    @PostMapping("login")
     public Result UserAuth(@RequestBody UserAuthDTO userAuthDTO) {
         /*模拟用户身份校验*/
         if ("xujw".equals(userAuthDTO.getAccount()) && "1320074071".equals(userAuthDTO.getPassword())) {

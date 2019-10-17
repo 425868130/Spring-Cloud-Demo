@@ -20,6 +20,7 @@ public class Result<T> implements Serializable {
 
     public Result(StatusCode code) {
         status = code.getCode();
+        msg = code.getDesc();
     }
 
     public Result(StatusCode code, T data) {

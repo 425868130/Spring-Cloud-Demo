@@ -10,7 +10,7 @@ spring:
       driver-class-name: com.mysql.cj.jdbc.Driver
 key-pair:
   auth-center:
-  # 每行末尾要添加反斜杠符号 \ 表示保留换行符,否则在获取秘钥是会提示格式错误
+  # 每行末尾要添加反斜杠符号 \ 表示保留换行符,否则在获取秘钥时会提示格式错误
     private: "MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCaxckIeXuBIaRJvubsx2yya8Xz\
               a+XLuG2TEfbIEpnIf4g3HL19v70tLTjMO58WzDed+N9K7WXb56Xvpgv8829EwjznKGq1UCrvVJ3M\
               IgDejUnlXZaYxkR0sGF7cCm8MqTlVJLUayVxC5oCaKKQ9df8m6Yh6bGN7xdbBe0T15qWkZmCT7Gc\

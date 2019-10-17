@@ -49,11 +49,8 @@ public class GateWayGlobalFilter implements GlobalFilter, Ordered {
         String token = headers.getFirst(HttpHeaderNames.AUTHORIZATION);
         Claims claims = JwtRs256Util.parseJWT(token, publicKey);
         if (claims == null) {
-            return ResponseUtil.result(exchange.getResponse(), Result.error(StatusCode.PERMISSION_NO_ACCESS), null);
+            return ResponseUtil.result(exchange.getResponse(), new Result(StatusCode.TOKEN_INVALID), null);
         }
-        /*模拟请求从授权中心获取token*/
-        Result result = authService.UserAuth(new UserAuthDTO("xujw", "1320074071"));
-        log.info("token: " + JSON.stringify(result.getData()));
         return chain.filter(exchange);
     }
 

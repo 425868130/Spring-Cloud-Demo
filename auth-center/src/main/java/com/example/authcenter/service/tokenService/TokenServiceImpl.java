@@ -1,5 +1,6 @@
 package com.example.authcenter.service.tokenService;
 
+import com.example.common.define.ConstVal;
 import com.example.common.util.jwt.JwtRs256Util;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -24,7 +25,7 @@ public class TokenServiceImpl implements TokenService {
         Map<String, Object> map = new HashMap();
         map.put("user", "xujw");
         try {
-            String token = JwtRs256Util.createJWT(tokenId, authPrivateKey, map, 10000L);
+            String token = JwtRs256Util.createJWT(tokenId, authPrivateKey, map, ConstVal.TOKEN_EXPIRES);
             System.out.println("token: " + token);
             return token;
         } catch (Exception e) {

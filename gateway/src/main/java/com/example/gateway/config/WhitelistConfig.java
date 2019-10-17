@@ -24,7 +24,7 @@ public class WhitelistConfig {
     private List<String> token;
 
     /**
-     * 判断指定url是否在token白名单中
+     * 判断指定url是否在token白名单中,在该token白名单的请求可以不携带验证token即可访问
      *
      * @param uri 请求地址的uri对象
      * @return

@@ -47,7 +47,8 @@ public enum StatusCode {
     INTERFACE_EXCEED_LOAD(60006, "接口负载过高"),
 
     /* 权限错误：70001-79999 */
-    PERMISSION_NO_ACCESS(70001, "无访问权限");
+    TOKEN_INVALID(70001, "token不存在或已失效"),
+    PERMISSION_NO_ACCESS(70002, "无访问权限");
 
 
     private int code;

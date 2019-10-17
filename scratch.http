@@ -1,53 +1,19 @@
-#配置刷新
-POST http://localhost:8301/actuator/bus-refresh
+### 配置刷新
+POST {{host-config}}/actuator/bus-refresh
 
-###
-GET http://localhost:8402/user/info
-Accept: application/json
-
-###
-
-GET http://localhost:8402/user/test
-Accept: application/json
-cache: false
-###
-
-GET http://localhost:8401/key
-Accept: application/json
-cache: false
-###
-POST http://localhost:8401/userAuth
+### 用户登录,获取token
+POST {{host-auth}}/login
 cache-control: no-cache
 Content-Type: application/json
 
 {
-"account":"xujw",
-"password":"1320074071"
+  "account": "xujw",
+  "password": "1320074071"
 }
-###
 
-POST http://localhost:8201/auth/userAuth
+### 带token调用测试
+
+POST {{host-auth}}/client
 Accept: application/json
 cache: false
-
-###
-
-POST http://localhost:8201/auth/open/login/aaaa
-Accept: application/json
-cache: false
-###
-POST http://localhost:8201/auth-center/userAuth
-cache-control: no-cache
-Accept: application/json
-Content-Type: application/json
-
-{
-  "account":"xujw",
-  "password":"1320074071"
-}
-###
-POST http://localhost:8201/auth-center/msg
-Accept: application/json
-cache: false
-
-###
+Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJuYmYiOjE1NzA1ODU3ODIsImV4cCI6MTU3MDU4NTc5MiwidXNlciI6Inh1anciLCJpYXQiOjE1NzA1ODU3ODJ9.Ct5P7Nzfz1Yo7tGQDD3niu8ti8CG2LZwicdChMyQ9XNNWBGHFQ14cbeKjIeGHG56fzUhhUaQ0682VycYJ4OAMkDo2K3HXGGoFZwdZL4lGJ1Qwz5WNYt__wHZNc-lyHzh80IQzzlkbF1GZ2UUNpwnWac07f2T8uN7BZQ7gFQy5FAGkihIR73boKfXGeoEVvqxJ3r-jThnsIfdhx6tl2BiKG9VzhSlB7hYC6jTViF5iULZi3wvQfK190bkII6AmJ2QVU85u7kcTJSCtcneO_JjWXBH6zLbryvIcFUFqGUxWxg0GoD8w5EgKupb9nfiSsQ2W68uhZ36TwWAiqA8eXwyRQ
