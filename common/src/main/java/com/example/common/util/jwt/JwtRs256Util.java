@@ -6,11 +6,11 @@ import com.example.common.util.RSAUtil;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.impl.DefaultClaims;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.util.StringUtils;
 
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.UUID;
 
 /**
@@ -24,22 +24,23 @@ public class JwtRs256Util {
     /**
      * 根据给定条件创建token
      *
-     * @param tokenId       tokenId,为null时内部随机生成
      * @param privateKeyStr 用于签名的私钥字符串
-     * @param claims        荷载内容对象,Map<String,Object>对象
+     * @param claims        荷载内容对象,Claims对象
      * @param duration      有效持续时间,单位毫秒
      * @return
      */
-    public static String createJWT(String tokenId, String privateKeyStr, Map<String, Object> claims, long duration) {
+    public static String createJWT(String privateKeyStr, Claims claims, long duration) {
         String token = null;
         Date now = new Date();
         long expMillis = duration <= 0 ? ConstVal.TOKEN_EXPIRES : now.getTime() + duration;
         try {
-            if (tokenId == null) {
-                tokenId = UUID.randomUUID().toString();
+            if (claims.getId() == null) {
+                claims.setId(UUID.randomUUID().toString());
             }
-            token = Jwts.builder().setId(tokenId)
-                    .setIssuer(iss)
+            if (StringUtils.isEmpty(claims.getIssuer())) {
+                claims.setIssuer(iss);
+            }
+            token = Jwts.builder()
                     .setHeaderParam("typ", "JWT")
                     .setHeaderParam("alg", SignatureAlgorithm.RS256.getValue())
                     .setClaims(claims)
@@ -58,10 +59,9 @@ public class JwtRs256Util {
             return null;
         }
         try {
-            Claims claims = Jwts.parser()
+            return Jwts.parser()
                     .setSigningKey(RSAUtil.getPublicKey(publicKeyStr))
                     .parseClaimsJws(jsonWebToken).getBody();
-            return claims;
         } catch (Exception ex) {
             //未找到对应jwt信息
             return null;
@@ -98,15 +98,11 @@ public class JwtRs256Util {
                 "jOzUTEuhz8YtCBA6Ii1iWG6h14LjBa3npw0p7ARel9o4yoHpvlEbDjnBZAP1Xio3z8kxPpjZVvPL\n" +
                 "6uZJbxAVaCVi15YVL8syYqUvypMubJdXO+9yXSwSRWXf9xx/T/7YQvZJd9JOiPst48Z88W00QrVn\n" +
                 "ukdMGQIDAQAB";
-        String tokenId = UUID.randomUUID().toString();
 
-        Map<String, Object> map = new HashMap();
-        map.put("user", "xujw");
-        Map<String, Object> test = new HashMap<>();
-        test.put("id", 12321L);
-        map.put("pyload", test);
+        Claims claims = new DefaultClaims();
+        claims.put("user", "xujw");
         try {
-            String token = createJWT(tokenId, privateKey, map, 10000);
+            String token = createJWT(privateKey, claims, ConstVal.TOKEN_EXPIRES);
             System.out.println("token: " + token);
             System.out.println("token内容：" + JSON.stringify(parseJWT(token, publicKey)));
         } catch (Exception e) {

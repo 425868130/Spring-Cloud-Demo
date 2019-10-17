@@ -4,10 +4,14 @@ package com.example.common.define;
  * @author xujw
  * 业务公共常量定义
  */
-public final class ConstVal {
+public interface ConstVal {
     //标准日期格式
-    public final static String STANDARD_FORMAT = "yyyy-MM-dd HH:mm:ss";
+    String STANDARD_FORMAT = "yyyy-MM-dd HH:mm:ss";
     //token默认失效时间30分钟，单位毫秒
-    public final static int TOKEN_EXPIRES = 1800000;
+    int TOKEN_EXPIRES = 1800000;
+
+    interface RedisKey {
+        String BLACKLIST = "TOKEN_BLACKLIST";
+    }
 
 }
