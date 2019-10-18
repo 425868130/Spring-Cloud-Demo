@@ -37,9 +37,10 @@ public class TokenServiceImpl implements TokenService {
         return "";
     }
 
+    @Override
     public void invalidToken(String tokenId, String tokenStr) {
         redisTemplate.opsForValue().set(tokenId, tokenStr);
-        redisTemplate.expire(tokenId,1000, TimeUnit.MILLISECONDS);
+        redisTemplate.expire(tokenId, 1000, TimeUnit.MILLISECONDS);
 
     }
 }
