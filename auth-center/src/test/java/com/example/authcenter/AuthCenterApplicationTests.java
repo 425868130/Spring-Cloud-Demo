@@ -22,7 +22,7 @@ public class AuthCenterApplicationTests {
     public void contextLoads() {
         String tokenStr = tokenService.generateToken();
         Claims claims = JwtRs256Util.parseJWT(tokenStr, publicKey);
-        tokenService.invalidToken(claims.getId(), tokenStr);
+//        tokenService.invalidToken(claims.getId(), tokenStr);
     }
 
 }
