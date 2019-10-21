@@ -5,6 +5,8 @@ import com.example.common.define.StatusCode;
 import com.example.common.entity.Result;
 import com.feign.provider.dto.UserAuthDTO;
 import com.feign.provider.userService.UserServiceFeign;
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.impl.DefaultClaims;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,16 +54,13 @@ public class AuthController {
         return userServiceFeign.getInfo();
     }
 
-    @RequestMapping("key")
-    public Result getKey() {
-        return Result.success(tokenService.generateToken());
-    }
-
     @PostMapping("login")
     public Result UserAuth(@RequestBody UserAuthDTO userAuthDTO) {
         /*模拟用户身份校验*/
         if ("xujw".equals(userAuthDTO.getAccount()) && "1320074071".equals(userAuthDTO.getPassword())) {
-            return Result.success(tokenService.generateToken());
+            Claims claims = new DefaultClaims();
+            claims.put("user", "xujw");
+            return Result.success(tokenService.generateToken(claims));
         }
         return Result.error(StatusCode.PERMISSION_NO_ACCESS);
     }

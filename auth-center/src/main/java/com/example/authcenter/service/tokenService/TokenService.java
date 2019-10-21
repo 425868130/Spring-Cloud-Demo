@@ -4,7 +4,7 @@ import io.jsonwebtoken.Claims;
 
 public interface TokenService {
 
-    String generateToken();
+    String generateToken(Claims claims);
 
-    void invalidToken(String tokenStr, Claims claims);
+    void inspectToken(String tokenStr, Claims claims);
 }

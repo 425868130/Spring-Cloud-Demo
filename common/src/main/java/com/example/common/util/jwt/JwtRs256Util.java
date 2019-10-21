@@ -11,6 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.util.StringUtils;
 
 import java.util.Date;
+import java.util.Optional;
 import java.util.UUID;
 
 /**
@@ -29,10 +30,10 @@ public class JwtRs256Util {
      * @param duration      有效持续时间,单位毫秒
      * @return
      */
-    public static String createJWT(String privateKeyStr, Claims claims, long duration) {
+    public static Optional<String> createJWT(String privateKeyStr, Claims claims, long duration) {
         String token = null;
         Date now = new Date();
-        long expMillis = duration <= 0 ? ConstVal.TOKEN_EXPIRES : now.getTime() + duration;
+        long expMillis = duration <= 0 ? ConstVal.Token.EXPIRES : now.getTime() + duration;
         try {
             if (claims.getId() == null) {
                 claims.setId(UUID.randomUUID().toString());
@@ -51,20 +52,20 @@ public class JwtRs256Util {
         } catch (Exception e) {
             log.error("token生成失败:" + e.getMessage());
         }
-        return token;
+        return Optional.ofNullable(token);
     }
 
-    public static Claims parseJWT(String jsonWebToken, String publicKeyStr) {
-        if (jsonWebToken == null || "".equals(jsonWebToken)) {
-            return null;
+    public static Optional<Claims> parseJWT(String jsonWebToken, String publicKeyStr) {
+        if (jsonWebToken == null || publicKeyStr == null || "".equals(jsonWebToken)) {
+            return Optional.empty();
         }
         try {
-            return Jwts.parser()
+            return Optional.of(Jwts.parser()
                     .setSigningKey(RSAUtil.getPublicKey(publicKeyStr))
-                    .parseClaimsJws(jsonWebToken).getBody();
+                    .parseClaimsJws(jsonWebToken).getBody());
         } catch (Exception ex) {
             //未找到对应jwt信息
-            return null;
+            return Optional.empty();
         }
     }
 
@@ -101,12 +102,11 @@ public class JwtRs256Util {
 
         Claims claims = new DefaultClaims();
         claims.put("user", "xujw");
-        try {
-            String token = createJWT(privateKey, claims, ConstVal.TOKEN_EXPIRES);
-            System.out.println("token: " + token);
-            System.out.println("token内容：" + JSON.stringify(parseJWT(token, publicKey)));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+
+        createJWT(privateKey, claims, ConstVal.Token.EXPIRES).ifPresent(item -> {
+            System.out.println("token: " + item);
+            System.out.println("token内容：" + JSON.stringify(parseJWT(item, publicKey)));
+        });
+
     }
 }

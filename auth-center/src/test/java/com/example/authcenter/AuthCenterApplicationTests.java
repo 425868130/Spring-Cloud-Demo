@@ -3,6 +3,7 @@ package com.example.authcenter;
 import com.example.authcenter.service.tokenService.TokenService;
 import com.example.common.util.jwt.JwtRs256Util;
 import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.impl.DefaultClaims;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,9 +21,11 @@ public class AuthCenterApplicationTests {
 
     @Test
     public void contextLoads() {
-        String tokenStr = tokenService.generateToken();
-        Claims claims = JwtRs256Util.parseJWT(tokenStr, publicKey);
-//        tokenService.invalidToken(claims.getId(), tokenStr);
+        Claims claims = new DefaultClaims();
+        claims.put("user", "xujw");
+        String tokenStr = tokenService.generateToken(claims);
+        Claims result = JwtRs256Util.parseJWT(tokenStr, publicKey).orElse(null);
+        tokenService.inspectToken(tokenStr, result);
     }
 
 }

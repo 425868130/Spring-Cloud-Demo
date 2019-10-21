@@ -7,10 +7,13 @@ package com.example.common.define;
 public interface ConstVal {
     //标准日期格式
     String STANDARD_FORMAT = "yyyy-MM-dd HH:mm:ss";
-    //token默认失效时间30分钟，单位毫秒
-    int TOKEN_EXPIRES = 1800000;
 
-    interface RedisKey {
+    interface Token {
+        //token默认失效时间30分钟，单位毫秒
+        int EXPIRES = 1800000;
+    }
+
+    interface RedisPrefix {
         String BLACKLIST = "TOKEN_BLACKLIST";
     }
 

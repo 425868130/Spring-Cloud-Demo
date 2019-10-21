@@ -39,7 +39,7 @@ public class RSAUtil {
     /**
      * 将 公钥/私钥 编码后以 Base64 的格式保存到指定文件
      */
-    public static void saveKeyForEncodedBase64(Key key, File keyFile) throws IOException {
+    private static void saveKeyForEncodedBase64(Key key, File keyFile) throws IOException {
         // 获取密钥编码后的格式
         byte[] encBytes = key.getEncoded();
         // 转换为 Base64 文本
