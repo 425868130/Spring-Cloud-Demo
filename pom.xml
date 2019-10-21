@@ -17,6 +17,7 @@
         <spring-cloud.version>Greenwich.SR1</spring-cloud.version>
         <mybatis.version>2.1.0</mybatis.version>
         <jjwt.version>0.9.1</jjwt.version>
+        <shiro-version>1.4.0</shiro-version>
     </properties>
 
     <dependencies>
@@ -78,6 +79,11 @@
                 <groupId>io.jsonwebtoken</groupId>
                 <artifactId>jjwt</artifactId>
                 <version>${jjwt.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.shiro</groupId>
+                <artifactId>shiro-spring</artifactId>
+                <version>${shiro-version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
