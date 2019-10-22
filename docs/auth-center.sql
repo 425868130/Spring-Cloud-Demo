@@ -28,3 +28,45 @@ CREATE TABLE `user`
     PRIMARY KEY (`id`)
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
+
+DROP TABLE IF EXISTS `role_permission`;
+CREATE TABLE `role_permission`
+(
+    `role`       bigint(20) unsigned NOT NULL,
+    `permission` bigint(20) unsigned NOT NULL,
+    UNIQUE KEY `role` (`role`, `permission`)
+) ENGINE = InnoDB
+  DEFAULT CHARSET = utf8;
+
+###
+
+INSERT INTO `sys_permission`
+VALUES (1, 'Retrieve');
+INSERT INTO `sys_permission`
+VALUES (2, 'Create');
+INSERT INTO `sys_permission`
+VALUES (3, 'Update');
+INSERT INTO `sys_permission`
+VALUES (4, 'Delete');
+INSERT INTO `sys_role`
+VALUES (1, 'guest');
+INSERT INTO `sys_role`
+VALUES (2, 'user');
+INSERT INTO `sys_role`
+VALUES (3, 'admin');
+INSERT INTO `role_permission`
+VALUES (1, 1);
+INSERT INTO `role_permission`
+VALUES (1, 2);
+INSERT INTO `role_permission`
+VALUES (2, 2);
+INSERT INTO `role_permission`
+VALUES (3, 2);
+INSERT INTO `role_permission`
+VALUES (1, 3);
+INSERT INTO `role_permission`
+VALUES (2, 3);
+INSERT INTO `role_permission`
+VALUES (3, 3);
+INSERT INTO `role_permission`
+VALUES (4, 3);

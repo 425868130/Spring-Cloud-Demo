@@ -1,7 +1,7 @@
 package com.example.authcenter.config;
 
+import com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean;
 import org.apache.ibatis.session.SqlSessionFactory;
-import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -17,8 +17,8 @@ import javax.sql.DataSource;
  * mybatis数据源配置,所有当前数据源的Bean都需要命名以进行区分
  * todo 整合数据源配置，动态生成
  */
-//@Configuration
-//@MapperScan(value = "com.example.authcenter.dao", sqlSessionTemplateRef = "st-auth-center")
+@Configuration
+@MapperScan(value = "com.example.authcenter.dao", sqlSessionTemplateRef = "st-auth-center")
 public class DataSourceConfig {
     /**
      * 配置数据源
@@ -34,9 +34,11 @@ public class DataSourceConfig {
      */
     @Bean("sf-auth-center")
     public SqlSessionFactory sqlSessionFactory(@Qualifier("ds-auth-center") DataSource dataSource) throws Exception {
-        SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
-        bean.setDataSource(dataSource);
-        return bean.getObject();
+        /*使用了mybatis plus插件后 SqlSessionFactory必须使用MybatisSqlSessionFactoryBean,
+        不能使用SqlSessionFactoryBean,否则出现 Invalid bound statement (not found) */
+        MybatisSqlSessionFactoryBean factoryBean = new MybatisSqlSessionFactoryBean();
+        factoryBean.setDataSource(dataSource);
+        return factoryBean.getObject();
     }
 
     /**
