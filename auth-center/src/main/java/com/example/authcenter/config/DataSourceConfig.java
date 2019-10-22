@@ -17,8 +17,8 @@ import javax.sql.DataSource;
  * mybatis数据源配置,所有当前数据源的Bean都需要命名以进行区分
  * todo 整合数据源配置，动态生成
  */
-@Configuration
-@MapperScan(basePackages = "com.example.authcenter.dao.*", sqlSessionTemplateRef = "st-auth-center")
+//@Configuration
+//@MapperScan(value = "com.example.authcenter.dao", sqlSessionTemplateRef = "st-auth-center")
 public class DataSourceConfig {
     /**
      * 配置数据源
