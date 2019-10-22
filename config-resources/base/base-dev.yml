@@ -22,15 +22,6 @@ logging:
 spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-  jpa:
-    database: mysql
-    showSql: true
-      hibernate:
-        ddlAuto: update
-      properties:
-        hibernate:
-          dialect: org.hibernate.dialect.MySQL5Dialect
-          format_sql: true
   redis:
     host: 127.0.0.1
     port: 6379
@@ -52,6 +43,10 @@ spring:
     port: 5672
     username: guest
     password: guest
+
+mybatis:
+  mapper-locations: classpath:mapping/*Mapper.xml
+
 key-pair:
   auth-center:
     # 每行末尾要添加反斜杠符号 \ 表示保留换行符,否则在获取秘钥是会提示格式错误

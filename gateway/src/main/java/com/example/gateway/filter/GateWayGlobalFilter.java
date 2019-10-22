@@ -6,8 +6,6 @@ import com.example.common.entity.Result;
 import com.example.common.util.ResponseUtil;
 import com.example.common.util.jwt.JwtRs256Util;
 import com.example.gateway.config.WhitelistConfig;
-import com.feign.provider.authCenter.AuthService;
-import io.jsonwebtoken.Claims;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -28,8 +26,6 @@ import reactor.core.publisher.Mono;
 public class GateWayGlobalFilter implements GlobalFilter, Ordered {
 
     @Autowired
-    private AuthService authService;
-    @Autowired
     private WhitelistConfig whitelistConfig;
 
     @Value("${key-pair.auth-center.public}")
@@ -43,8 +39,7 @@ public class GateWayGlobalFilter implements GlobalFilter, Ordered {
         /*不在白名单中则进行Token校验*/
         HttpHeaders headers = exchange.getRequest().getHeaders();
         String token = headers.getFirst(HttpHeaderNames.AUTHORIZATION);
-        Claims claims = JwtRs256Util.parseJWT(token, publicKey);
-        if (claims == null) {
+        if (!JwtRs256Util.parseJWT(token, publicKey).isPresent()) {
             return ResponseUtil.result(exchange.getResponse(), new Result(StatusCode.TOKEN_INVALID), null);
         }
         return chain.filter(exchange);
