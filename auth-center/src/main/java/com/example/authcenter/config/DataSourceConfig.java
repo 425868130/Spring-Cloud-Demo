@@ -18,7 +18,7 @@ import javax.sql.DataSource;
  * todo 整合数据源配置，动态生成
  */
 @Configuration
-@MapperScan(basePackages = "com.example.authcenter.dao", sqlSessionTemplateRef = "st-auth-center")
+@MapperScan(basePackages = "com.example.authcenter.dao.*", sqlSessionTemplateRef = "st-auth-center")
 public class DataSourceConfig {
     /**
      * 配置数据源

@@ -8,15 +8,6 @@ spring:
       password: 1320074071
       jdbc-url: jdbc:mysql://localhost:3306/${spring.application.name}?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
       driver-class-name: com.mysql.cj.jdbc.Driver
-  jpa:
-    database: mysql
-    showSql: true
-      hibernate:
-        ddlAuto: update
-      properties:
-        hibernate:
-          dialect: org.hibernate.dialect.MySQL5Dialect
-          format_sql: true
 key-pair:
   auth-center:
   # 每行末尾要添加反斜杠符号 \ 表示保留换行符,否则在获取秘钥时会提示格式错误
