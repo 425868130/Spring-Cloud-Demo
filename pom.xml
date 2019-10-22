@@ -18,10 +18,11 @@
         <mybatis.version>2.1.0</mybatis.version>
         <jjwt.version>0.9.1</jjwt.version>
         <shiro-version>1.4.0</shiro-version>
+        <mybatis-plus-version>3.2.0</mybatis-plus-version>
     </properties>
 
+    <!--公共依赖，此处的依赖会继承到全部子模块中-->
     <dependencies>
-        <!--公共依赖-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
@@ -52,6 +53,7 @@
         </dependency>
     </dependencies>
 
+    <!--全局依赖版本管理-->
     <dependencyManagement>
         <dependencies>
             <!--spring boot依赖-->
@@ -70,11 +72,11 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <dependency>
+            <!--<dependency>
                 <groupId>org.mybatis.spring.boot</groupId>
                 <artifactId>mybatis-spring-boot-starter</artifactId>
                 <version>${mybatis.version}</version>
-            </dependency>
+            </dependency>-->
             <dependency>
                 <groupId>io.jsonwebtoken</groupId>
                 <artifactId>jjwt</artifactId>
@@ -85,8 +87,14 @@
                 <artifactId>shiro-spring</artifactId>
                 <version>${shiro-version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus-version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
+
     <build>
         <plugins>
             <plugin>
