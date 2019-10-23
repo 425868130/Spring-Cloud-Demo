@@ -19,6 +19,8 @@
         <jjwt.version>0.9.1</jjwt.version>
         <shiro-version>1.4.0</shiro-version>
         <mybatis-plus-version>3.2.0</mybatis-plus-version>
+        <!--打包时跳过自动单元测试-->
+        <skipTests>true</skipTests>
     </properties>
 
     <!--公共依赖，此处的依赖会继承到全部子模块中-->
