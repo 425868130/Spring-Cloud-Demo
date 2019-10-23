@@ -11,6 +11,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
+import java.util.HashMap;
+import java.util.Map;
+
 @Slf4j
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -29,8 +32,16 @@ public class DaoTest {
 
     @Test
     public void getById() {
-        User user = userMapper.selectById(1L);
-        Assert.assertNotNull("用户信息为空",user);
+        User user = userMapper.selectById(1186854428227661825L);
+        Assert.assertNotNull("用户信息为空", user);
+        log.info(JSON.stringify(user));
+    }
+
+    @Test
+    public void getByName() {
+        Map<String, Object> condition = new HashMap<>();
+        User user = userMapper.getByName("xujw");
+        Assert.assertNotNull("用户信息为空", user);
         log.info(JSON.stringify(user));
     }
 }

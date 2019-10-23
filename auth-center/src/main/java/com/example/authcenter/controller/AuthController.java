@@ -1,3 +1,4 @@
+/*
 package com.example.authcenter.controller;
 
 import com.example.authcenter.service.tokenService.TokenService;
@@ -46,7 +47,9 @@ public class AuthController {
 
     @PostMapping("login")
     public Result UserAuth(@RequestBody UserAuthDTO userAuthDTO) {
-        /*模拟用户身份校验*/
+        */
+/*模拟用户身份校验*//*
+
         if ("xujw".equals(userAuthDTO.getAccount()) && "1320074071".equals(userAuthDTO.getPassword())) {
             Claims claims = new DefaultClaims();
             claims.put("user", "xujw");
@@ -61,3 +64,4 @@ public class AuthController {
         return Result.success();
     }
 }
+*/
