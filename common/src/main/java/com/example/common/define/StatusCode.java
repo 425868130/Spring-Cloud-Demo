@@ -15,8 +15,8 @@ public enum StatusCode {
     SYSTEM_ERROR(7000, "系统异常"),
     /* 成功状态码 */
     /* 参数错误：10001-19999 */
-    PARAM_IS_INVALID(10001, "参数无效"),
-    PARAM_IS_BLANK(10002, "参数为空"),
+    PARAM_INVALID(10001, "参数无效"),
+    PARAM_BLANK(10002, "参数为空"),
     PARAM_TYPE_BIND_ERROR(10003, "参数类型错误"),
     PARAM_NOT_COMPLETE(10004, "参数缺失"),
 

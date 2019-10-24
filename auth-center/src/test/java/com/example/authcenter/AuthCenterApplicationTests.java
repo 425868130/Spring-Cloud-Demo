@@ -23,7 +23,7 @@ public class AuthCenterApplicationTests {
     public void contextLoads() {
         Claims claims = new DefaultClaims();
         claims.put("user", "xujw");
-        String tokenStr = tokenService.generateToken(claims);
+        String tokenStr = tokenService.generateToken(claims).orElse("");
         Claims result = JwtRs256Util.parseJWT(tokenStr, publicKey).orElse(null);
         tokenService.inspectToken(tokenStr, result);
     }

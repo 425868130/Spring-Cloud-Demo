@@ -2,12 +2,14 @@ package com.example.authcenter.dao.user;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.example.common.define.ServiceException;
+import com.example.common.define.StatusCode;
 import com.example.common.util.JSON;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 import org.apache.ibatis.type.StringTypeHandler;
-import org.springframework.beans.BeanUtils;
+import org.springframework.util.Assert;
 
 import java.io.Serializable;
 import java.util.List;
@@ -36,7 +38,12 @@ public class User implements Serializable {
     }
 
     public User(User user) {
-        BeanUtils.copyProperties(user, this);
+        Assert.notNull(user, ServiceException.withCode(StatusCode.PARAM_BLANK));
+        this.id = user.id;
+        this.username = user.username;
+        this.password = user.password;
+        this.salt = user.salt;
+        this.roleIds = user.roleIds;
     }
 
     /**

@@ -10,6 +10,7 @@ spring:
       driver-class-name: com.mysql.cj.jdbc.Driver
 mybatis-plus:
   configuration:
+    # 开启下划线转驼峰
     mapUnderscoreToCamelCase: true
 key-pair:
   auth-center:

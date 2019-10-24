@@ -7,7 +7,7 @@ spring:
         enabled: true
         service-id: config-server
       profile: dev
-      name: ${spring.application.name},base
+      name: base,${spring.application.name}
 #配置注册中心地址
 eureka:
   client:

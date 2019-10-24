@@ -12,7 +12,7 @@ spring:
         service-id: config-server
       profile: dev
       #指定配置名称,如果为空默认使用applicationName,此处可以配多可以同时加载多个配置,比如额外增加公共配置
-      name: ${spring.application.name},base,ribbon
+      name: base,${spring.application.name}
 eureka:
   client:
     service-url:

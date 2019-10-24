@@ -13,6 +13,7 @@ import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
 import java.util.Date;
+import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 
 @Slf4j
@@ -21,13 +22,19 @@ import java.util.concurrent.TimeUnit;
 public class TokenServiceImpl implements TokenService {
     @Value("${key-pair.auth-center.private}")
     private String authPrivateKey;
-
+    @Value("${key-pair.auth-center.public}")
+    private String authPublicKey;
     @Resource
     private RedisTemplate<String, Object> redisTemplate;
 
     @Override
-    public String generateToken(Claims claims) {
-        return JwtRs256Util.createJWT(authPrivateKey, claims, ConstVal.Token.EXPIRES).orElse("");
+    public Optional<String> generateToken(Claims claims) {
+        return JwtRs256Util.createJWT(authPrivateKey, claims, ConstVal.Token.EXPIRES);
+    }
+
+    @Override
+    public Optional<Claims> parseJWT(String tokenStr) {
+        return JwtRs256Util.parseJWT(tokenStr, authPublicKey);
     }
 
     @Override
