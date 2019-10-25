@@ -2,6 +2,7 @@ package com.example.authcenter.realm;
 
 import com.example.authcenter.service.tokenService.TokenService;
 import com.example.authcenter.service.userService.UserService;
+import com.example.common.entity.jwt.UserPayloadKey;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
@@ -37,6 +38,7 @@ public class JsonWebTokenRealm extends AuthorizingRealm {
         SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
         tokenService.parseJWT(principals.toString()).ifPresent(claims -> {
             /*获取用户信息并授权*/
+            Long userId = claims.get(UserPayloadKey.UserId.getKey(), Long.TYPE);
         });
         return authorizationInfo;
     }
