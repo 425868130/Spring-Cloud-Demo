@@ -2,7 +2,7 @@ package com.example.authcenter.realm;
 
 import com.example.authcenter.service.tokenService.TokenService;
 import com.example.authcenter.service.userService.UserService;
-import com.example.common.entity.jwt.UserPayloadKey;
+import com.example.common.entity.ShiroJWTAuthenticationToken;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
@@ -30,7 +30,7 @@ public class JsonWebTokenRealm extends AuthorizingRealm {
 
     @Override
     public boolean supports(AuthenticationToken token) {
-        return true;
+        return token instanceof ShiroJWTAuthenticationToken;
     }
 
     @Override

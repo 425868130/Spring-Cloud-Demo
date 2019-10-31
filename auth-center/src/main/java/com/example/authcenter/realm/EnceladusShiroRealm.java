@@ -16,6 +16,9 @@ import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Autowired;
 
+/**
+ * 基于账号密码的校验
+ */
 public class EnceladusShiroRealm extends AuthorizingRealm {
     @Autowired
     private UserService userService;
