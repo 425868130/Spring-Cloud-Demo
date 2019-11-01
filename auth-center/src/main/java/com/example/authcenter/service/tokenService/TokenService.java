@@ -1,14 +1,14 @@
 package com.example.authcenter.service.tokenService;
 
-import io.jsonwebtoken.Claims;
+import com.example.common.entity.jwt.JwtPayload;
 
 import java.util.Optional;
 
 public interface TokenService {
 
-    Optional<String> generateToken(Claims claims);
+    Optional<String> generateToken(JwtPayload jwtPayload);
 
-    Optional<Claims> parseJWT(String tokenStr);
+    Optional<JwtPayload> parseJWT(String tokenStr);
 
-    void inspectToken(String tokenStr, Claims claims);
+    void inspectToken(String tokenStr, JwtPayload jwtPayload);
 }

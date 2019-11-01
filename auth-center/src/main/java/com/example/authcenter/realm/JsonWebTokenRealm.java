@@ -1,8 +1,10 @@
 package com.example.authcenter.realm;
 
+import com.example.authcenter.dao.user.User;
 import com.example.authcenter.service.tokenService.TokenService;
 import com.example.authcenter.service.userService.UserService;
 import com.example.common.entity.ShiroJWTAuthenticationToken;
+import com.example.common.entity.jwt.UserPayload;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
@@ -28,6 +30,12 @@ public class JsonWebTokenRealm extends AuthorizingRealm {
         this.userService = userService;
     }
 
+    /**
+     * 用于shiro判断token是否适用于当前realm
+     *
+     * @param token 要校验的token
+     * @return
+     */
     @Override
     public boolean supports(AuthenticationToken token) {
         return token instanceof ShiroJWTAuthenticationToken;
@@ -36,16 +44,17 @@ public class JsonWebTokenRealm extends AuthorizingRealm {
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
         SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
-        tokenService.parseJWT(principals.toString()).ifPresent(claims -> {
+        tokenService.parseJWT(principals.toString()).ifPresent(jwtPayload -> {
             /*获取用户信息并授权*/
-            Long userId = claims.get(UserPayloadKey.UserId.getKey(), Long.TYPE);
+            UserPayload payload = new UserPayload(jwtPayload);
+            User user = userService.getById(payload.getId());
         });
         return authorizationInfo;
     }
 
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
-        String jwt = (String) token.getPrincipal();
+        String jwt = token.getPrincipal().toString();
 
         return null;
     }

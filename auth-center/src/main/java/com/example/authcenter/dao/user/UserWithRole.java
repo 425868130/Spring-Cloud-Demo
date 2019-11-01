@@ -7,6 +7,10 @@ import lombok.experimental.Accessors;
 
 import java.util.List;
 
+/**
+ * @author xujw 2019-11-1 09:49:07
+ * 带角色权限的用户类
+ */
 @Data
 @Accessors(chain = true)
 @NoArgsConstructor

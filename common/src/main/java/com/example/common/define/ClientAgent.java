@@ -15,13 +15,13 @@ public enum ClientAgent {
     MICRO_APP_ANDROID(9),   //安卓小程序端
     ;
 
-    private int agentCode;
+    private int code;
 
-    ClientAgent(int agentCode) {
-        this.agentCode = agentCode;
+    ClientAgent(int code) {
+        this.code = code;
     }
 
-    public int getAgentCode() {
-        return agentCode;
+    public int getCode() {
+        return code;
     }
 }

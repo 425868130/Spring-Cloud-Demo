@@ -1,6 +1,7 @@
 package com.example.authcenter.service.tokenService;
 
 import com.example.common.define.ConstVal;
+import com.example.common.entity.jwt.JwtPayload;
 import com.example.common.util.jwt.JwtRs256Util;
 import io.jsonwebtoken.Claims;
 import lombok.extern.slf4j.Slf4j;
@@ -28,22 +29,22 @@ public class TokenServiceImpl implements TokenService {
     private RedisTemplate<String, Object> redisTemplate;
 
     @Override
-    public Optional<String> generateToken(Claims claims) {
-        return JwtRs256Util.createJWT(authPrivateKey, claims, ConstVal.Token.EXPIRES);
+    public Optional<String> generateToken(JwtPayload jwtPayload) {
+        return JwtRs256Util.createJWT(authPrivateKey, jwtPayload, ConstVal.Token.EXPIRES);
     }
 
     @Override
-    public Optional<Claims> parseJWT(String tokenStr) {
+    public Optional<JwtPayload> parseJWT(String tokenStr) {
         return JwtRs256Util.parseJWT(tokenStr, authPublicKey);
     }
 
     @Override
-    public void inspectToken(String tokenStr, Claims claims) {
-        if (StringUtils.isEmpty(tokenStr) || claims == null) {
+    public void inspectToken(String tokenStr, JwtPayload jwtPayload) {
+        if (StringUtils.isEmpty(tokenStr) || jwtPayload == null) {
             return;
         }
         /*计算token剩余有效时间作为redis存储的有效时间*/
-        Date exp = claims.getExpiration();
+        Date exp = jwtPayload.getExpiration();
         long expTime = exp.getTime();
         long now = System.currentTimeMillis();
         if (now >= expTime) {
@@ -51,14 +52,14 @@ public class TokenServiceImpl implements TokenService {
             return;
         }
         ValueOperations<String, Object> valueOps = redisTemplate.opsForValue();
-        Object blackToken = valueOps.get(claims.getId());
+        Object blackToken = valueOps.get(jwtPayload.getId());
         /*如果已经存在黑名单中则不重复添加*/
         if (blackToken != null) {
             return;
         }
         long timeOut = expTime - now + 30000; //计算剩余时间毫秒数，额外增加30s延时
-        valueOps.set(claims.getId(), tokenStr);
-        redisTemplate.expire(claims.getId(), timeOut, TimeUnit.MILLISECONDS);
+        valueOps.set(jwtPayload.getId(), tokenStr);
+        redisTemplate.expire(jwtPayload.getId(), timeOut, TimeUnit.MILLISECONDS);
 
     }
 }

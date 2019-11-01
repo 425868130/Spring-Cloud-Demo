@@ -1,6 +1,10 @@
 # Spring-Cloud-Demo
 spring cloud学习
 
+idea推荐插件：  
+MapStruct Support
+lombok
+
 端口划分:  
 注册中心eureka-server集群: 810x  
 api网关gateway: 820x  

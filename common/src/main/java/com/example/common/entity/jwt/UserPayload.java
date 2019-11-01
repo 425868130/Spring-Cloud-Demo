@@ -15,9 +15,6 @@ public class UserPayload extends DefaultJwtPayload {
 
     public interface Key {
         String USER_ID = "userId";
-        String USER_NAME = "userName";
-        String REQUEST_IP = "userName";
-        String CLIENT_AGENT = "clientAgent";
     }
 
     public UserPayload(JwtPayload payload) {
@@ -30,15 +27,6 @@ public class UserPayload extends DefaultJwtPayload {
 
     public UserPayload setUserId(long userId) {
         put(Key.USER_ID, userId);
-        return this;
-    }
-
-    public Optional<String> getUserName() {
-        return Optional.ofNullable(get(Key.USER_NAME, String.class));
-    }
-
-    public UserPayload setUserName(String userName) {
-        put(Key.USER_NAME, userName);
         return this;
     }
 }
