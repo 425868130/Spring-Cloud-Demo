@@ -1,7 +1,7 @@
 package com.example.authcenter.dao;
 
-import com.example.authcenter.dao.user.User;
 import com.example.authcenter.dao.user.UserMapper;
+import com.example.authcenter.dao.user.User;
 import com.example.common.util.JSON;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
@@ -46,10 +46,12 @@ public class DaoTest {
 
     @Test
     public void update() {
-        List<Long> list = new ArrayList<>();
-        list.add(2L);
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
         User user = userMapper.selectById(1186854428227661825L);
-//        user.setRoleIds(list);
+        user.setRoleIds(list);
         userMapper.updateById(user);
     }
 }

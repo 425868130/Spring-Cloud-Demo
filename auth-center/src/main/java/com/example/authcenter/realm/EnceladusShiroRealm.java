@@ -40,7 +40,7 @@ public class EnceladusShiroRealm extends AuthorizingRealm {
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
         String username = (String) token.getPrincipal();
-        User user = userService.findUserByName(username);
+        User user = userService.findByName(username);
 
         if (user == null) {
             return null;

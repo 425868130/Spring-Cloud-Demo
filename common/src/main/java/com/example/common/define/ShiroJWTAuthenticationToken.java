@@ -1,4 +1,4 @@
-package com.example.common.entity;
+package com.example.common.define;
 
 import org.apache.shiro.authc.AuthenticationToken;
 

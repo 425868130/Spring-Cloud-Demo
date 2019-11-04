@@ -1,7 +1,4 @@
-package com.example.common.entity.jwt;
-
-import lombok.Data;
-import lombok.NoArgsConstructor;
+package com.example.common.define.jwt;
 
 import java.util.Optional;
 
@@ -9,12 +6,14 @@ import java.util.Optional;
  * @author xujw 2019-10-31 16:11:02
  * 自定义用户账户信息jwt荷载
  */
-@Data
-@NoArgsConstructor
 public class UserPayload extends DefaultJwtPayload {
-
+    /*当前payload自定义扩充的属性，需要同时提供针对该属性的get set方法*/
     public interface Key {
         String USER_ID = "userId";
+    }
+
+    public UserPayload(long userId) {
+        setUserId(userId);
     }
 
     public UserPayload(JwtPayload payload) {

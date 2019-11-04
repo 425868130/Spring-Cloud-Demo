@@ -2,7 +2,6 @@ package com.example.authcenter.dao.user;
 
 import com.example.authcenter.dao.sysRole.RoleWithPermission;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 import java.util.List;
@@ -13,18 +12,16 @@ import java.util.List;
  */
 @Data
 @Accessors(chain = true)
-@NoArgsConstructor
-public class UserWithRole extends User {
-    private static final long serialVersionUID = -6102731252097125802L;
+public class UserWithRole {
 
+    private Long id;
+    private String username;
+    private String salt;
+    private List<Integer> roleIds;
+    // 角色权限列表
     private List<RoleWithPermission> roles;
 
-    public UserWithRole(User user) {
-        super(user);
-    }
-
-    public UserWithRole(User user, List<RoleWithPermission> roles) {
-        super(user);
-        this.roles = roles;
+    public static UserWithRole fromUser(User user) {
+        return UserMapStruct.INSTANCE.mapUserWithRole(user);
     }
 }

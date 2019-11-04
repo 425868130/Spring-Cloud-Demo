@@ -1,8 +1,8 @@
 package com.example.common.util.jwt;
 
 import com.example.common.define.ConstVal;
-import com.example.common.entity.jwt.DefaultJwtPayload;
-import com.example.common.entity.jwt.JwtPayload;
+import com.example.common.define.jwt.DefaultJwtPayload;
+import com.example.common.define.jwt.JwtPayload;
 import com.example.common.util.RSAUtil;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

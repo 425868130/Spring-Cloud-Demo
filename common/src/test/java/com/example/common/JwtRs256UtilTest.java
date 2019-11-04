@@ -1,8 +1,8 @@
 package com.example.common;
 
 import com.example.common.define.ConstVal;
-import com.example.common.entity.jwt.DefaultJwtPayload;
-import com.example.common.entity.jwt.JwtPayload;
+import com.example.common.define.jwt.DefaultJwtPayload;
+import com.example.common.define.jwt.JwtPayload;
 import com.example.common.util.JSON;
 import com.example.common.util.jwt.JwtRs256Util;
 import org.junit.Test;

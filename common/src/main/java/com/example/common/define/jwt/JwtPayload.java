@@ -1,11 +1,11 @@
-package com.example.common.entity.jwt;
+package com.example.common.define.jwt;
 
 import com.example.common.define.ClientAgent;
 import io.jsonwebtoken.Claims;
 
 /**
  * @author xujw 2019-10-31 15:57:46
- * 封装一层业务层的jwt荷载接口,用于统一业务层jwt数据操作方式
+ * 封装一层业务层的jwt荷载接口,用于统一业务层jwt数据操作方式，以及自定义payload扩展
  */
 public interface JwtPayload extends Claims {
     //请求token的ip地址

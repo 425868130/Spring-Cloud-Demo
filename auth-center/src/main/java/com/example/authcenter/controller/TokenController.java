@@ -1,6 +1,6 @@
 package com.example.authcenter.controller;
 
-import com.example.common.entity.Result;
+import com.example.common.define.Result;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

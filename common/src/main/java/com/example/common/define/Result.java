@@ -1,15 +1,10 @@
-package com.example.common.entity;
-
-import com.example.common.define.StatusCode;
-
-import java.io.Serializable;
+package com.example.common.define;
 
 /**
  * @author xujw 2019-8-5 17:04:25
  * 统一前端返回数据对象
  */
-public class Result<T> implements Serializable {
-    private static final long serialVersionUID = -1322250161019986137L;
+public class Result<T> {
     private int status;
     private String msg;
     private T data;

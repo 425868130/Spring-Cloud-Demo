@@ -1,6 +1,7 @@
 package com.example.authcenter.controller;
 
 import com.example.authcenter.dao.user.User;
+import com.example.authcenter.dao.user.UserWithRole;
 import com.example.authcenter.service.userService.UserService;
 import com.example.authcenter.util.PasswordHelper;
 import org.apache.shiro.SecurityUtils;
@@ -44,7 +45,7 @@ public class HomeController {
             return "username error!";
         }
 
-        User user = userService.findUserByName(username);
+        UserWithRole user = userService.findUserByName(username);
         subject.getSession().setAttribute("user", user);
         return "SUCCESS";
     }

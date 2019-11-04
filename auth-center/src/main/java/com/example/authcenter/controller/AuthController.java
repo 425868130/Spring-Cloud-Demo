@@ -3,7 +3,7 @@ package com.example.authcenter.controller;
 
 import com.example.authcenter.service.tokenService.TokenService;
 import com.example.common.define.StatusCode;
-import com.example.common.entity.Result;
+import com.example.common.define.Result;
 import com.feign.provider.dto.UserAuthDTO;
 import com.feign.provider.userService.UserServiceFeign;
 import io.jsonwebtoken.Claims;

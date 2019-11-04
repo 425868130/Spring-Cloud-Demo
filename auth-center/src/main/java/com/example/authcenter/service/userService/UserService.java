@@ -6,4 +6,5 @@ import com.example.authcenter.dao.user.UserWithRole;
 
 public interface UserService extends IService<User> {
     UserWithRole findUserByName(String name);
+    User findByName(String name);
 }

@@ -1,6 +1,6 @@
 package com.feign.provider.userService;
 
-import com.example.common.entity.Result;
+import com.example.common.define.Result;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 

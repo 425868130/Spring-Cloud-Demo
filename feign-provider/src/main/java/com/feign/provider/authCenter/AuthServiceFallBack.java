@@ -1,7 +1,7 @@
 package com.feign.provider.authCenter;
 
 import com.example.common.define.StatusCode;
-import com.example.common.entity.Result;
+import com.example.common.define.Result;
 import com.feign.provider.dto.UserAuthDTO;
 
 public class AuthServiceFallBack implements AuthService {

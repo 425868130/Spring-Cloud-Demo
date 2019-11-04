@@ -16,7 +16,7 @@ public class MapStructTest {
                 .setSalt("aaaaa")
                 .setUsername("xujw")
                 .setPassword("passwd")
-                .setRoleIdList(Arrays.asList(1L,2L,3L,4L));
+                .setRoleIds(Arrays.asList(1,2,3,4));
 
         UserDTO userDTO = UserMapStruct.INSTANCE.toUserDTO(user);
         userDTO.setEmail("54564564@qq.com");

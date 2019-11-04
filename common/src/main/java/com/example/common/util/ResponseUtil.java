@@ -1,6 +1,6 @@
 package com.example.common.util;
 
-import com.example.common.entity.Result;
+import com.example.common.define.Result;
 import org.springframework.core.io.buffer.DataBuffer;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;

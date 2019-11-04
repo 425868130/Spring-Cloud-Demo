@@ -1,9 +1,8 @@
 package com.example.authcenter.service.tokenService;
 
 import com.example.common.define.ConstVal;
-import com.example.common.entity.jwt.JwtPayload;
+import com.example.common.define.jwt.JwtPayload;
 import com.example.common.util.jwt.JwtRs256Util;
-import io.jsonwebtoken.Claims;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;

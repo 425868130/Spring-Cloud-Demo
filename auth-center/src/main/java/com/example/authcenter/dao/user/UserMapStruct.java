@@ -7,5 +7,7 @@ import org.mapstruct.factory.Mappers;
 public interface UserMapStruct {
     UserMapStruct INSTANCE = Mappers.getMapper(UserMapStruct.class);
 
+    UserWithRole mapUserWithRole(User user);
+
     UserDTO toUserDTO(User user);
 }

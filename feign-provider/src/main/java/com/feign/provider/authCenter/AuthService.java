@@ -1,6 +1,6 @@
 package com.feign.provider.authCenter;
 
-import com.example.common.entity.Result;
+import com.example.common.define.Result;
 import com.feign.provider.dto.UserAuthDTO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;

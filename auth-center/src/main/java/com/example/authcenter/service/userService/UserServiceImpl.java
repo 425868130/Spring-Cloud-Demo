@@ -31,7 +31,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     public UserWithRole findUserByName(String name) {
         User user = userMapper.getByName(name);
         Assert.notNull(user, ServiceException.withCode(StatusCode.USER_NOT_EXIST));
-        UserWithRole userWithRole = new UserWithRole(user);
+        UserWithRole userWithRole = UserWithRole.fromUser(user);
         List<SysRole> roleList = null;
         if (!CollectionUtils.isEmpty(user.getRoleIds())) {
             roleList = sysRoleMapper.selectBatchIds(user.getRoleIds());
@@ -43,5 +43,10 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
                 .filter(role -> !CollectionUtils.isEmpty(role.getPermissionIds()))
                 .map(item -> new RoleWithPermission(item, sysPermissionMapper.selectBatchIds(item.getPermissionIds())))
                 .collect(Collectors.toList()));
+    }
+
+    @Override
+    public User findByName(String name) {
+        return null;
     }
 }

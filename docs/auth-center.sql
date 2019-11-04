@@ -10,13 +10,14 @@ CREATE TABLE `sys_permission`
   DEFAULT CHARSET = utf8;
 
 DROP TABLE IF EXISTS `sys_role`;
-CREATE TABLE `sys_role`
+-- auto-generated definition
+create table sys_role
 (
-    `id`   bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-    `role` varchar(255)        NOT NULL,
-    PRIMARY KEY (`id`)
-) ENGINE = InnoDB
-  DEFAULT CHARSET = utf8;
+    id             int(20) unsigned auto_increment
+        primary key,
+    role           varchar(255)            not null,
+    permission_ids varchar(255) default '' not null comment '角色权限id列表'
+);
 
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user`

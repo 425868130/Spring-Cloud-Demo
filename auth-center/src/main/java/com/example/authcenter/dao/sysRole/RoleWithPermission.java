@@ -1,5 +1,6 @@
 package com.example.authcenter.dao.sysRole;
 
+
 import com.example.authcenter.dao.sysPermission.SysPermission;
 import lombok.Data;
 import lombok.NoArgsConstructor;

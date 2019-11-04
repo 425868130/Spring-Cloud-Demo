@@ -2,7 +2,7 @@ package com.example.gateway.filter;
 
 import com.example.common.define.HttpHeaderNames;
 import com.example.common.define.StatusCode;
-import com.example.common.entity.Result;
+import com.example.common.define.Result;
 import com.example.common.util.ResponseUtil;
 import com.example.common.util.jwt.JwtRs256Util;
 import com.example.gateway.config.WhitelistConfig;

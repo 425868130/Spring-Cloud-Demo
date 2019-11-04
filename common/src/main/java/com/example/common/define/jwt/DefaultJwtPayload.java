@@ -1,4 +1,4 @@
-package com.example.common.entity.jwt;
+package com.example.common.define.jwt;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.impl.DefaultClaims;

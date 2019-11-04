@@ -10,7 +10,6 @@ public class UserDTO {
     private String username;
     private String password;
     private String salt;
-    private List<Long> roleIds;
+    private List<Long> roleIdList;
     private String email;
-
 }

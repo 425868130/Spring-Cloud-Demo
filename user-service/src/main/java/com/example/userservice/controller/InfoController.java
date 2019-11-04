@@ -1,6 +1,6 @@
 package com.example.userservice.controller;
 
-import com.example.common.entity.Result;
+import com.example.common.define.Result;
 import com.example.userservice.bean.User;
 import com.feign.provider.authCenter.AuthService;
 import org.slf4j.Logger;

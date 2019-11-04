@@ -1,6 +1,6 @@
 package com.example.authcenter.service.tokenService;
 
-import com.example.common.entity.jwt.JwtPayload;
+import com.example.common.define.jwt.JwtPayload;
 
 import java.util.Optional;
 

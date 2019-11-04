@@ -1,4 +1,4 @@
-package com.example.common.entity;
+package com.example.common.define;
 
 import java.io.Serializable;
 
@@ -9,6 +9,7 @@ import java.io.Serializable;
  * @author xujw 2019-9-30 17:58:45
  */
 public class GatewayRequest implements Serializable {
+    private static final long serialVersionUID = 523568961574943876L;
     private String gatewayToken;
 
     public String getGatewayToken() {
