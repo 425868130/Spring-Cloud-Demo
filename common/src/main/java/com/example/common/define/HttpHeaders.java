@@ -4,7 +4,7 @@ package com.example.common.define;
  * http请求头属性名称列表,整合了{@link org.apache.http.HttpHeaders,org.springframework.http.HttpHeaders}中的定义常量,
  * 用于自定义扩展
  */
-public final class HttpHeaderNames {
+public final class HttpHeaders {
     public static final String ACCEPT = "Accept";
     public static final String ACCEPT_CHARSET = "Accept-Charset";
     public static final String ACCEPT_ENCODING = "Accept-Encoding";
@@ -75,6 +75,6 @@ public final class HttpHeaderNames {
     public static final String SET_COOKIE = "Set-Cookie";
     public static final String SET_COOKIE2 = "Set-Cookie2";
 
-    private HttpHeaderNames() {
+    private HttpHeaders() {
     }
 }

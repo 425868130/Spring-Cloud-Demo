@@ -1,0 +1,28 @@
+# For a quick start check out our HTTP Requests collection (Tools|HTTP Client|Open HTTP Requests Collection) or
+# paste cURL into the file and request will be converted to HTTP Request format.
+#
+# Following HTTP Request Live Templates are available:
+# * 'gtrp' and 'gtr' create a GET request with or without query parameters;
+# * 'ptr' and 'ptrp' create a POST request with a simple or parameter-like body;
+# * 'mptr' and 'fptr' create a POST request to submit a form with a text or file field (multipart/form-data);
+### 登录
+GET http://localhost:8401/doLogin?username=xujw&password=1320
+Accept: application/json
+
+### 带token
+GET http://localhost:8401/authc/admin
+Accept: application/json
+cache: false
+Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1c2VySWQiOjExODY4NTQ0MjgyMjc2NjE4MjUsImp0aSI6ImRkNjViZDRkLTVkZDYtNDQyZC05MGNmLTU5YjlkNWViYmRkMSIsImlzcyI6Inhqd2NvZGUuY29tIiwiaWF0IjoxNTczMDA2MzI4LCJleHAiOjE1NzMwMDgxMjh9.kg-iZJaajHNrQBTf7MzHOnCL_5s6cTA-6idRkFsfcB9NJ6Z_7Lo-8HrWYwQQ9LUbeqjsO0N8MmS3ZT9aWJaWlAxb2a9LInX2E0qttHK_CLSoz93HpWXxlyThjesc3O_vL88582AmOLA6OkT1NUZaB_TCYCbz7g6LykFFSah-kUY7sv-t1hH1A3VelnXCrZxiXYoy7ZP9HYJIIIzmzllCddOjWgxRrRdQUqeesqUoANaWk6jOR8fu354nl8yv7OvuzPm-MT9TJ2-mX7kjtJQJnCDKD9q_rLveeiW0FkX4hExWpg3LOe76xauJQXIOBoKJ1xkh2NSykM2aGHSKnpug7A
+
+### 不带token
+GET http://localhost:8401/authc/admin
+Accept: application/json
+cache: false
+
+### 开放路径
+GET http://localhost:8401/unauthc
+Accept: application/json
+cache: false
+
+###

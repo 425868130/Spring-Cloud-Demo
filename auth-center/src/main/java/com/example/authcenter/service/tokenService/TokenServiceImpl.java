@@ -37,6 +37,12 @@ public class TokenServiceImpl implements TokenService {
         return JwtRs256Util.parseJWT(tokenStr, authPublicKey);
     }
 
+    /**
+     * 将token添加到黑名单中
+     *
+     * @param tokenStr
+     * @param jwtPayload
+     */
     @Override
     public void inspectToken(String tokenStr, JwtPayload jwtPayload) {
         if (StringUtils.isEmpty(tokenStr) || jwtPayload == null) {
@@ -59,6 +65,31 @@ public class TokenServiceImpl implements TokenService {
         long timeOut = expTime - now + 30000; //计算剩余时间毫秒数，额外增加30s延时
         valueOps.set(jwtPayload.getId(), tokenStr);
         redisTemplate.expire(jwtPayload.getId(), timeOut, TimeUnit.MILLISECONDS);
+    }
 
+    /**
+     * 判断指定token是否在黑名单中
+     *
+     * @param tokenStr
+     * @return
+     */
+    @Override
+    public boolean inBlackList(String tokenStr) {
+        Optional<JwtPayload> payload = JwtRs256Util.parseJWT(tokenStr, authPublicKey);
+        return inBlackList(payload.orElse(null));
+    }
+
+    /**
+     * 判断指定token是否在黑名单中
+     *
+     * @param payload
+     * @return
+     */
+    @Override
+    public boolean inBlackList(JwtPayload payload) {
+        if (payload == null) {
+            return false;
+        }
+        return redisTemplate.opsForValue().get(payload.getId()) != null;
     }
 }

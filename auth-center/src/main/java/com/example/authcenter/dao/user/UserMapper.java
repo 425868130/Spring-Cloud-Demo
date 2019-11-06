@@ -5,6 +5,16 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
 public interface UserMapper extends BaseMapper<User> {
-    @Select("select * from user where username = #{name}")
+    /*定义不含用户密码的字段*/
+    String WithoutPassword = "id,username,salt,role_ids";
+
+    @Select({"select",
+            WithoutPassword,
+            "from user where username = #{name}"})
     User getByName(@Param("name") String name);
+
+    @Select({"select",
+            WithoutPassword,
+            "from user where username = #{userName} and password = #{password}"})
+    User userPasswordCheck(@Param("userName") String userName,@Param("password") String password);
 }

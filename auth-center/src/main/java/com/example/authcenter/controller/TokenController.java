@@ -11,6 +11,6 @@ public class TokenController {
 
     @PostMapping("refresh")
     public Result refreshToken() {
-        return Result.success();
+        return Result.success("refresh token");
     }
 }

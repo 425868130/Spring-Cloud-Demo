@@ -47,8 +47,8 @@ public class Result<T> {
         return status;
     }
 
-    public Result<T> setStatus(int status) {
-        this.status = status;
+    public Result<T> setStatus(StatusCode status) {
+        this.status = status.getCode();
         return this;
     }
 

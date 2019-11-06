@@ -1,88 +1,82 @@
 package com.example.authcenter.config;
 
-import com.example.authcenter.realm.EnceladusShiroRealm;
+import com.example.authcenter.entity.StatelessDefaultSubjectFactory;
+import com.example.authcenter.realm.JsonWebTokenRealm;
 import com.example.authcenter.util.PasswordHelper;
-import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.shiro.mgt.DefaultSessionStorageEvaluator;
+import org.apache.shiro.mgt.DefaultSubjectDAO;
 import org.apache.shiro.mgt.SecurityManager;
-import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
+import org.apache.shiro.session.mgt.DefaultSessionManager;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
-import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import javax.servlet.Filter;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
+@Slf4j
 @Configuration
 public class ShiroConfig {
-    /**
-     * 配置shiro过滤器
-     *
-     * @param securityManager
-     * @return
-     */
     @Bean
-    public ShiroFilterFactoryBean shirFilter(SecurityManager securityManager) {
+    public ShiroFilterFactoryBean shirFilter(SecurityManager securityManager, JWTFilter jwtFilter) {
         ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
+        // 必须设置 SecurityManager
         shiroFilterFactoryBean.setSecurityManager(securityManager);
 
-        Map<String, String> filterChainDefinitionMap = new HashMap<>();
+        // 自定义过滤器
+        Map<String, Filter> filterMap = new HashMap<>();
+        filterMap.put("jwtFilter", jwtFilter);
+        shiroFilterFactoryBean.setFilters(filterMap);
+
         shiroFilterFactoryBean.setLoginUrl("/login");
         shiroFilterFactoryBean.setUnauthorizedUrl("/unauthc");
-        shiroFilterFactoryBean.setSuccessUrl("/home/index");
 
-        filterChainDefinitionMap.put("/*", "anon");
-        filterChainDefinitionMap.put("/authc/index", "authc");
-        filterChainDefinitionMap.put("/authc/admin", "roles[admin]");
-        filterChainDefinitionMap.put("/authc/renewable", "perms[Create,Update]");
-        filterChainDefinitionMap.put("/authc/removable", "perms[Delete]");
+        // 设置拦截器
+        Map<String, String> filterChainDefinitionMap = new LinkedHashMap<>();
+
+        // 开放登录、未登录等映射
+        filterChainDefinitionMap.put("/doLogin", "anon");
+
+        // 拦截接口
+        filterChainDefinitionMap.put("/authc/**", "roles[admin]");
+
+        /*其余的默认全部使用jwtFilter,过滤链有顺序要求,这条规则必须在最后配置,否则前面的开放路径配置都会被覆盖*/
+        filterChainDefinitionMap.put("/token/**", "jwtFilter");
+
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
+
+        log.info("Shiro >> Shiro拦截器工厂类注入成功");
         return shiroFilterFactoryBean;
     }
 
-    @Bean
-    public HashedCredentialsMatcher hashedCredentialsMatcher() {
-        HashedCredentialsMatcher hashedCredentialsMatcher = new HashedCredentialsMatcher();
-        hashedCredentialsMatcher.setHashAlgorithmName(PasswordHelper.ALGORITHM_NAME); // 散列算法
-        hashedCredentialsMatcher.setHashIterations(PasswordHelper.HASH_ITERATIONS); // 散列次数
-        return hashedCredentialsMatcher;
-    }
-
-    @Bean
-    public EnceladusShiroRealm shiroRealm() {
-        EnceladusShiroRealm shiroRealm = new EnceladusShiroRealm();
-        shiroRealm.setCredentialsMatcher(hashedCredentialsMatcher()); // 原来在这里
-        return shiroRealm;
-    }
-
     /**
-     * 开启Shiro注解(如@RequiresRoles,@RequiresPermissions),
-     * 需借助SpringAOP扫描使用Shiro注解的类,并在必要时进行安全逻辑验证
-     * 配置以下两个bean(DefaultAdvisorAutoProxyCreator和AuthorizationAttributeSourceAdvisor)
+     * 注入 securityManager
      */
-/*    @Bean
-    public DefaultAdvisorAutoProxyCreator advisorAutoProxyCreator() {
-        DefaultAdvisorAutoProxyCreator advisorAutoProxyCreator = new DefaultAdvisorAutoProxyCreator();
-        advisorAutoProxyCreator.setProxyTargetClass(true);
-        return advisorAutoProxyCreator;
-    }*/
-
-    /**
-     * 开启aop注解支持
-     */
-/*    @Bean
-    public AuthorizationAttributeSourceAdvisor authorizationAttributeSourceAdvisor(SecurityManager securityManager) {
-        AuthorizationAttributeSourceAdvisor authorizationAttributeSourceAdvisor = new AuthorizationAttributeSourceAdvisor();
-        authorizationAttributeSourceAdvisor.setSecurityManager(securityManager);
-        return authorizationAttributeSourceAdvisor;
-    }*/
-
-
-    @Bean
-    public SecurityManager securityManager() {
+    @Bean()
+    public SecurityManager securityManager(JsonWebTokenRealm jsonWebTokenRealm, StatelessDefaultSubjectFactory subjectFactory) {
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
-        securityManager.setRealm(shiroRealm());
+        // 设置 realm.
+        securityManager.setRealm(jsonWebTokenRealm);
+
+        // 关闭 shiro 自带的session
+        DefaultSubjectDAO subjectDAO = new DefaultSubjectDAO();
+        DefaultSessionStorageEvaluator defaultSessionStorageEvaluator = new DefaultSessionStorageEvaluator();
+        //禁用session存储
+        defaultSessionStorageEvaluator.setSessionStorageEnabled(false);
+        subjectDAO.setSessionStorageEvaluator(defaultSessionStorageEvaluator);
+
+        securityManager.setSubjectDAO(subjectDAO);
+
+        DefaultSessionManager sessionManager = new DefaultSessionManager();
+        //禁用定时过期会话
+        sessionManager.setSessionValidationSchedulerEnabled(false);
+
+        securityManager.setSubjectFactory(subjectFactory);
+        securityManager.setSessionManager(sessionManager);
         return securityManager;
     }
 

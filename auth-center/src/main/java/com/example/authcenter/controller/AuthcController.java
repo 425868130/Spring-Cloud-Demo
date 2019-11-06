@@ -1,8 +1,5 @@
 package com.example.authcenter.controller;
 
-import com.example.authcenter.dao.user.User;
-import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.subject.Subject;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,9 +10,7 @@ public class AuthcController {
 
     @GetMapping("index")
     public Object index() {
-        Subject subject = SecurityUtils.getSubject();
-        User user = (User) subject.getSession().getAttribute("user");
-        return user.toString();
+        return "index";
     }
 
     @GetMapping("admin")

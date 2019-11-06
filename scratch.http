@@ -22,5 +22,3 @@ Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJleHAiOjE1NzEzMDA5NzMsInVz
 POST {{host-auth}}/client
 Content-Type: application/json
 cache: false
-
-###

@@ -11,4 +11,8 @@ public interface TokenService {
     Optional<JwtPayload> parseJWT(String tokenStr);
 
     void inspectToken(String tokenStr, JwtPayload jwtPayload);
+
+    boolean inBlackList(String tokenStr);
+
+    boolean inBlackList(JwtPayload payload);
 }

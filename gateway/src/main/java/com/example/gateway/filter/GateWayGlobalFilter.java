@@ -1,6 +1,6 @@
 package com.example.gateway.filter;
 
-import com.example.common.define.HttpHeaderNames;
+import com.example.common.define.HttpHeaders;
 import com.example.common.define.StatusCode;
 import com.example.common.define.Result;
 import com.example.common.util.ResponseUtil;
@@ -12,7 +12,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.core.Ordered;
-import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
@@ -37,8 +36,8 @@ public class GateWayGlobalFilter implements GlobalFilter, Ordered {
             return chain.filter(exchange);
         }
         /*不在白名单中则进行Token校验*/
-        HttpHeaders headers = exchange.getRequest().getHeaders();
-        String token = headers.getFirst(HttpHeaderNames.AUTHORIZATION);
+        org.springframework.http.HttpHeaders headers = exchange.getRequest().getHeaders();
+        String token = headers.getFirst(HttpHeaders.AUTHORIZATION);
         if (!JwtRs256Util.parseJWT(token, publicKey).isPresent()) {
             return ResponseUtil.result(exchange.getResponse(), new Result(StatusCode.TOKEN_INVALID), null);
         }
