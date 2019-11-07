@@ -4,14 +4,19 @@ import com.example.authcenter.entity.StatelessDefaultSubjectFactory;
 import com.example.authcenter.realm.JsonWebTokenRealm;
 import com.example.authcenter.util.PasswordHelper;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.mgt.DefaultSessionStorageEvaluator;
 import org.apache.shiro.mgt.DefaultSubjectDAO;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.session.mgt.DefaultSessionManager;
+import org.apache.shiro.spring.LifecycleBeanPostProcessor;
+import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
+import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.DependsOn;
 
 import javax.servlet.Filter;
 import java.util.HashMap;
@@ -26,7 +31,8 @@ public class ShiroConfig {
         ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
         // 必须设置 SecurityManager
         shiroFilterFactoryBean.setSecurityManager(securityManager);
-
+        // 将securityManager交由SecurityUtils管理
+        SecurityUtils.setSecurityManager(securityManager);
         // 自定义过滤器
         Map<String, Filter> filterMap = new HashMap<>();
         filterMap.put("jwtFilter", jwtFilter);
@@ -42,13 +48,13 @@ public class ShiroConfig {
         filterChainDefinitionMap.put("/doLogin", "anon");
 
         // 拦截接口
-        filterChainDefinitionMap.put("/authc/**", "roles[admin]");
+//        filterChainDefinitionMap.put("/authc/**", "roles[admin]");
 
         /*其余的默认全部使用jwtFilter,过滤链有顺序要求,这条规则必须在最后配置,否则前面的开放路径配置都会被覆盖*/
         filterChainDefinitionMap.put("/token/**", "jwtFilter");
+        filterChainDefinitionMap.put("/authc/**", "jwtFilter[admin]");
 
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
-
         log.info("Shiro >> Shiro拦截器工厂类注入成功");
         return shiroFilterFactoryBean;
     }
@@ -56,7 +62,7 @@ public class ShiroConfig {
     /**
      * 注入 securityManager
      */
-    @Bean()
+    @Bean
     public SecurityManager securityManager(JsonWebTokenRealm jsonWebTokenRealm, StatelessDefaultSubjectFactory subjectFactory) {
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
         // 设置 realm.

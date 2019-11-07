@@ -2,7 +2,6 @@ package com.example.authcenter.realm;
 
 import com.example.authcenter.dao.sysPermission.SysPermission;
 import com.example.authcenter.dao.sysRole.RoleWithPermission;
-import com.example.authcenter.dao.user.User;
 import com.example.authcenter.dao.user.UserWithRole;
 import com.example.authcenter.service.tokenService.TokenService;
 import com.example.authcenter.service.userService.UserService;
