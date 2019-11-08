@@ -40,6 +40,21 @@ public class JWTFilter extends BasicHttpAuthenticationFilter {
     }
 
     /**
+     * 这里重写onPreHandle方法,只根据isAccessAllowed方法判断校验结果,防止由于调用onAccessDenied多次执行认证操作
+     * 如果有授权拒绝的后续操作则不重写该方法而重写onAccessDenied方法即可
+     *
+     * @param request
+     * @param response
+     * @param mappedValue
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public boolean onPreHandle(ServletRequest request, ServletResponse response, Object mappedValue) throws Exception {
+        return isAccessAllowed(request, response, mappedValue);
+    }
+
+    /**
      * 这里控制通过与否
      */
     @Override
@@ -53,22 +68,15 @@ public class JWTFilter extends BasicHttpAuthenticationFilter {
         if (!isLoginAttempt(request, response)) {
             throw new AuthenticationException("token is empty");
         }
-        try {
-            executeLogin(request, response);
-        } catch (Exception e) {
-            log.error("token校验失败", e);
-//            ResponseUtil.result(response, Result.error(StatusCode.TOKEN_INVALID), null);
-            return false;
-        }
+        executeLogin(request, response);
+        // 通过isPermitted 才能调用doGetAuthorizationInfo方法获取权限信息
+        getSubject(request, response).isPermitted("admin");
         return true;
     }
 
 //    @Override
 //    protected boolean onAccessDenied(ServletRequest servletRequest, ServletResponse servletResponse) {
-//        //获取请求头token
-//        AuthenticationToken token = this.createToken(servletRequest, servletResponse);
-//
-//        return false;
+//        return true;
 //    }
 
     /**

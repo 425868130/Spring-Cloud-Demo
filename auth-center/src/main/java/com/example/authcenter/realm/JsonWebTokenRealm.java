@@ -2,6 +2,7 @@ package com.example.authcenter.realm;
 
 import com.example.authcenter.dao.sysPermission.SysPermission;
 import com.example.authcenter.dao.sysRole.RoleWithPermission;
+import com.example.authcenter.dao.user.User;
 import com.example.authcenter.dao.user.UserWithRole;
 import com.example.authcenter.service.tokenService.TokenService;
 import com.example.authcenter.service.userService.UserService;
@@ -20,6 +21,7 @@ import org.apache.shiro.subject.PrincipalCollection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Optional;
 
 /**
@@ -33,6 +35,8 @@ public class JsonWebTokenRealm extends AuthorizingRealm {
     private TokenService tokenService;
     @Autowired
     private UserService userService;
+    @Autowired
+    private HttpServletRequest httpServletRequest;
 
     /**
      * 用于shiro判断token是否适用于当前realm
@@ -55,6 +59,9 @@ public class JsonWebTokenRealm extends AuthorizingRealm {
         if (!jwtPayload.isPresent() || tokenService.inBlackList(jwtPayload.orElse(null))) {
             throw new AuthenticationException("token invalid");
         }
+        long userId = (long) jwtPayload.get().get(UserPayload.Key.USER_ID);
+        /*验证通过后将用户信息放到请求中方便续Controller直接使用避免重复解析token*/
+        httpServletRequest.setAttribute("userId", userService.findUserWithRoleById(userId));
         return new SimpleAuthenticationInfo(tokenStr, tokenStr, getName());
     }
 

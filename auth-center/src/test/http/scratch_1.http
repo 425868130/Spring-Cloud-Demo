@@ -5,15 +5,15 @@
 # * 'gtrp' and 'gtr' create a GET request with or without query parameters;
 # * 'ptr' and 'ptrp' create a POST request with a simple or parameter-like body;
 # * 'mptr' and 'fptr' create a POST request to submit a form with a text or file field (multipart/form-data);
-### 登录
+###登录
 GET http://localhost:8401/doLogin?username=xujw&password=1320
 Accept: application/json
 
-### 带token
+###带token
 GET http://localhost:8401/authc/admin
 Accept: application/json
 cache: false
-Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1c2VySWQiOjExODY4NTQ0MjgyMjc2NjE4MjUsImp0aSI6ImViZDEzYzI3LWIzMTQtNDUxNy05YjY5LTNmOWExY2VkNWUyNCIsImlzcyI6Inhqd2NvZGUuY29tIiwiaWF0IjoxNTczMTA4Njg2LCJleHAiOjE1NzMxMTA0ODZ9.i44RhN-d4NospUZSVddecSs3Zlm-QvL2sIsUIUixOB4bUB0A0wi90InE0hYfkHVF3gYZHlO2MDJiT6WxuL32Awx72E5zr--obxC3Sl4z7_jfYtxnRlyflsSYOb9uO4cFYeu3iVhJvIY4ERED7uNCosxLnz5DPPUvdCwuSWEK2_-ZIu8mbj5pKy0g-cNo-QWwd4RoLFDfeYCRx5njwCIekRJ-cjFQev84PI2lXzMp6LEZDLOSvG01Rkw9nA3sf4dzWF1IQ2VElURZI0wziq4lvvNF2-DWXb0W83C8IvhBLKbSGvQZZdR8paiLtSEZOHdE9WtfO4MS6bUQUJSwqJ6zfA
+Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1c2VySWQiOjExODY4NTQ0MjgyMjc2NjE4MjUsImp0aSI6IjA5NzQzN2ZjLTYwZDItNDk1Ny1iNWJjLTIzN2IwZTFhY2RlOCIsImlzcyI6Inhqd2NvZGUuY29tIiwiaWF0IjoxNTczMjA1ODk4LCJleHAiOjE1NzMyMDc2OTh9.OfZp-Y13bVMIgUmvacZEPu3sINQP1DzRos0LR_k7zeASURGACamh5xrLT_osg7SyEMEcNHGRpi7S5mRPWNm-zwvhtn1tlcD_vJdptaifyZIpFZpKvywKXCSA7NrL6dBJkxHsSQobHP5mddNZmkNuT4CSDmA0EvKcrRGLq3AUZIKlY0mLey2H3XwE_xPwG3Dlw1olG3q7Jnyuif3Rk39FGptil1PQncfq3IxPxCxESVuP03asioUwQjO8SRcyibUeANsBeer5_flQmGX2sveq70gq5Po2AxOKhkRkKQob18ILetMql0ASwfNHBY4hycPT2fuYiFEi5EJ3ob3iflLzKQ
 
 ### 不带token
 GET http://localhost:8401/authc/admin
@@ -25,4 +25,9 @@ GET http://localhost:8401/unauthc
 Accept: application/json
 cache: false
 
+###
+GET http://localhost:8401/authc/v1/getAllUrl
+Accept: application/json
+cache: false
+Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1c2VySWQiOjExODY4NTQ0MjgyMjc2NjE4MjUsImp0aSI6ImI0ZThhNTFiLTcwNWQtNDkyOC1iYTFiLTczNGFlMWM4Y2U5NSIsImlzcyI6Inhqd2NvZGUuY29tIiwiaWF0IjoxNTczMjAyNjIwLCJleHAiOjE1NzMyMDQ0MjB9.TG0hkRI8i_RYJleP36sToBEtcYb7a6nCI8mAdZKPjrDyBFZS7GsPGX0Fsj4CbGoR--ebieM4AKoi4a1nHCZreEsB-hWGCRS3cO29ht2sYvvUNkLJ1LiEgPiyOAMlClXyrG3Vc8BIvi0Z6sX33dTU3AWiszfniMXsANPxd96OJyD-RhUry7dFMfYC4AOjB_8WdQKADzMXb9-XOdtjC0FXDYgx6EnZkB0sWJtWuAWyvwsnCZ84ALgt2n5eHcOTEODl42Z9Kntb_5RMW6pMjSQnXt3BmD4byhpjrih7MkHmOX-csJ_5t3fO-jyGTptZxShWV8Q6XQ-OQURppIhX0r6SCg
 ###
