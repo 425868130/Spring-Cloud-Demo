@@ -1,14 +1,12 @@
 package com.example.common.util;
 
-import sun.misc.BASE64Decoder;
-import sun.misc.BASE64Encoder;
-
 import javax.crypto.Cipher;
 import java.io.File;
 import java.io.IOException;
 import java.security.*;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
+import java.util.Base64;
 
 /**
  * Rsa 非对称加密解密工具类
@@ -43,7 +41,7 @@ public class RSAUtil {
         // 获取密钥编码后的格式
         byte[] encBytes = key.getEncoded();
         // 转换为 Base64 文本
-        String encBase64 = new BASE64Encoder().encode(encBytes);
+        String encBase64 = Base64.getEncoder().encodeToString(encBytes);
         // 保存到文件
         IOUtils.writeFile(encBase64, keyFile);
     }
@@ -53,7 +51,7 @@ public class RSAUtil {
      */
     public static PublicKey getPublicKey(String pubKeyBase64) throws Exception {
         // 把 公钥的Base64文本 转换为已编码的 公钥bytes
-        byte[] encPubKey = new BASE64Decoder().decodeBuffer(pubKeyBase64);
+        byte[] encPubKey = Base64.getDecoder().decode(pubKeyBase64);
         // 创建 已编码的公钥规格
         X509EncodedKeySpec encPubKeySpec = new X509EncodedKeySpec(encPubKey);
         // 获取指定算法的密钥工厂, 根据 已编码的公钥规格, 生成公钥对象
@@ -65,7 +63,7 @@ public class RSAUtil {
      */
     public static PrivateKey getPrivateKey(String priKeyBase64) throws Exception {
         // 把 私钥的Base64文本 转换为已编码的 私钥bytes
-        byte[] encPriKey = new BASE64Decoder().decodeBuffer(priKeyBase64);
+        byte[] encPriKey = Base64.getDecoder().decode(priKeyBase64);
         // 创建 已编码的私钥规格
         PKCS8EncodedKeySpec encPriKeySpec = new PKCS8EncodedKeySpec(encPriKey);
         // 获取指定算法的密钥工厂, 根据 已编码的私钥规格, 生成私钥对象
