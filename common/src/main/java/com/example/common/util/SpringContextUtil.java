@@ -8,7 +8,6 @@ import org.springframework.util.ClassUtils;
 import java.beans.Introspector;
 
 /**
- *
  * 获取spring容器，以访问容器中定义的其他bean
  */
 public class SpringContextUtil implements ApplicationContextAware {
@@ -35,6 +34,7 @@ public class SpringContextUtil implements ApplicationContextAware {
     /**
      * 获取对象
      * 这里重写了bean方法，起主要作用
+     *
      * @param name
      * @return Object 一个以所给名字注册的bean的实例
      * @throws BeansException
@@ -46,11 +46,12 @@ public class SpringContextUtil implements ApplicationContextAware {
     /**
      * 通过类获取该类的bean对象,用于没有手动指定bean名称的场景，入直接使用@Component、@Bean注解的类
      * 内部使用spring默认的bean名称生成方式获取bean名称
+     *
      * @param clazz 要获取bean示例的对象
      * @return 一个对应于给定类的bean实例
      * @throws BeansException
      */
-    public static Object getBeanByClass(Class clazz)throws BeansException {
+    public static Object getBeanByClass(Class clazz) throws BeansException {
         String shortClassName = ClassUtils.getShortName(clazz);
         return applicationContext.getBean(Introspector.decapitalize(shortClassName));
     }

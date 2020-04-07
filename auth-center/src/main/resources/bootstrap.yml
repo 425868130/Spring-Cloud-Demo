@@ -4,7 +4,7 @@ spring:
   cloud:
     config:
       #指定当前使用的配置所在git分支,如果配置中心没有配置default-label则此处必须配置
-#      label: master
+      #      label: master
       #通过注册中心获取配置消息
       discovery:
         enabled: true

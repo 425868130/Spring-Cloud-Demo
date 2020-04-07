@@ -16,5 +16,5 @@ public interface UserMapper extends BaseMapper<User> {
     @Select({"select",
             WithoutPassword,
             "from user where username = #{userName} and password = #{password}"})
-    User userPasswordCheck(@Param("userName") String userName,@Param("password") String password);
+    User userPasswordCheck(@Param("userName") String userName, @Param("password") String password);
 }

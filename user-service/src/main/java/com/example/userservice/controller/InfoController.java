@@ -29,12 +29,14 @@ public class InfoController {
     private String ip;
     @Autowired
     private DiscoveryClient discoveryClient;
+
     @GetMapping("/client")
     public Result client() {
         String services = "Services: " + discoveryClient.getServices() + " ip :" + ip;
         logger.info(services);
         return Result.success(services);
     }
+
     @RequestMapping("info")
     public Result getInfo() {
         User user = new User();
