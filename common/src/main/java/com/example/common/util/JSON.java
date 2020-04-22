@@ -1,6 +1,5 @@
 package com.example.common.util;
 
-import com.example.common.define.ConstVal;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -30,7 +29,7 @@ public class JSON {
         //忽略空Bean转json的错误
         objectMapper.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false);
         //所有的日期格式都统一为以下的样式，即yyyy-MM-dd HH:mm:ss
-        objectMapper.setDateFormat(new SimpleDateFormat(ConstVal.STANDARD_FORMAT));
+        objectMapper.setDateFormat(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"));
         //忽略 在json字符串中存在，但是在java对象中不存在对应属性的情况。防止错误
         objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
     }
@@ -48,7 +47,7 @@ public class JSON {
         try {
             return obj instanceof String ? (String) obj : objectMapper.writeValueAsString(obj);
         } catch (JsonProcessingException e) {
-            log.warn("Parse Object to String error : {}", e.getMessage());
+            log.error("Parse Object to String error : ", e);
             return null;
         }
     }
@@ -66,7 +65,7 @@ public class JSON {
         try {
             return obj instanceof String ? (String) obj : objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(obj);
         } catch (JsonProcessingException e) {
-            log.warn("Parse Object to String error : {}", e.getMessage());
+            log.error("Parse Object to String error : ", e);
             return null;
         }
     }
@@ -85,10 +84,11 @@ public class JSON {
         try {
             return clazz.equals(String.class) ? (T) str : objectMapper.readValue(str, clazz);
         } catch (Exception e) {
-            log.warn("Parse String to Object error : {}", e.getMessage());
+            log.error("Parse String to Object error : ", e);
             return null;
         }
     }
+
 
     /**
      * 进行复杂类型反序列化工作 （自定义类型的集合类型）
@@ -97,17 +97,15 @@ public class JSON {
      *
      * @param str           源字符串
      * @param typeReference 包含elementType与CollectionType的typeReference
-     * @param <T>
-     * @return
      */
     public static <T> T parseCollection(String str, TypeReference<T> typeReference) {
         if (StringUtils.isEmpty(str) || typeReference == null) {
             return null;
         }
         try {
-            return (T) (typeReference.getType().equals(String.class) ? str : objectMapper.readValue(str, typeReference));
-        } catch (IOException e) {
-            log.warn("Parse String to Object error", e);
+            return objectMapper.readValue(str, typeReference);
+        } catch (Exception e) {
+            log.error("Parse String to Object error", e);
             return null;
         }
     }
@@ -128,7 +126,7 @@ public class JSON {
         try {
             return objectMapper.readValue(str, javaType);
         } catch (IOException e) {
-            log.warn("Parse String to Object error : {}" + e.getMessage());
+            log.error("Parse String to Object error : ", e);
             return null;
         }
     }
