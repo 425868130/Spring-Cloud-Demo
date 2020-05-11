@@ -1,15 +1,58 @@
 # 基础公共配置文件
 env: prod
+#hystrix的超时时间,feign默认整合hystrix和ribbon,默认超时时间1s,调试时容易超时失败
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: true
+        isolation:
+          thread:
+            timeoutInMilliseconds: 30000
+#ribbon的超时时间
+ribbon:
+  ReadTimeout: 30000
+  ConnectTimeout: 30000
 logging:
   root:
     level: WARN
   file: ../logs/${spring.application.name}.log
+#数据源的公共配置部分
 spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
   redis:
     host: 127.0.0.1
     port: 6379
+    password: 123456
+    database: 15
+    pool:
+      # 连接池最大连接数（使用负值表示没有限制）
+      max-active: 20
+      # 连接池最大阻塞等待时间（使用负值表示没有限制）
+      max-wait: -1
+      # 连接池中的最大空闲连接
+      max-idle: 8
+      # 连接池中的最小空闲连接
+      min-idle: 0
+      # 连接超时时间（毫秒）
+      timeout: 500
   rabbitmq:
     host: localhost
     port: 5672
     username: guest
     password: guest
+
+mybatis:
+  mapper-locations: classpath:mapping/*Mapper.xml
+
+key-pair:
+  auth-center:
+    # 每行末尾要添加反斜杠符号 \ 表示保留换行符,否则在获取秘钥是会提示格式错误
+    public: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmsXJCHl7gSGkSb7m7MdssmvF82vly7ht\
+             kxH2yBKZyH+INxy9fb+9LS04zDufFsw3nfjfSu1l2+el76YL/PNvRMI85yhqtVAq71SdzCIA3o1J\
+             5V2WmMZEdLBhe3ApvDKk5VSS1GslcQuaAmiikPXX/JumIemxje8XWwXtE9ealpGZgk+xnNpQKTO6\
+             jOzUTEuhz8YtCBA6Ii1iWG6h14LjBa3npw0p7ARel9o4yoHpvlEbDjnBZAP1Xio3z8kxPpjZVvPL\
+             6uZJbxAVaCVi15YVL8syYqUvypMubJdXO+9yXSwSRWXf9xx/T/7YQvZJd9JOiPst48Z88W00QrVn\
+             ukdMGQIDAQAB"

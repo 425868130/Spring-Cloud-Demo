@@ -59,6 +59,7 @@ java 8 迁移java 11
 java.lang.TypeNotPresentException: Type javax.xml.bind.JAXBContext not present
 ...
 Caused by: java.lang.ClassNotFoundException: javax.xml.bind.JAXBContext
+org.springframework.web.util.NestedServletException: Handler dispatch failed; nested exception is java.lang.NoClassDefFoundError: javax/xml/bind/DatatypeConverter
 ```
 可以添加以下依赖：
 ```xml
@@ -82,8 +83,6 @@ Caused by: java.lang.ClassNotFoundException: javax.xml.bind.JAXBContext
     <version>1.1.1</version>
 </dependency>
 ```
-或者直接升级Spring boot和cloud到最新版本可以直接解决
-
 
 2.常见异常警告
 ```log
