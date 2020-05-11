@@ -53,3 +53,47 @@ public boolean onPreHandle(ServletRequest request, ServletResponse response, Obj
         return isAccessAllowed(request, response, mappedValue);
     }
 ```
+java 8 迁移java 11  
+1. eureka 无法启动
+```log
+java.lang.TypeNotPresentException: Type javax.xml.bind.JAXBContext not present
+...
+Caused by: java.lang.ClassNotFoundException: javax.xml.bind.JAXBContext
+```
+可以添加以下依赖：
+```xml
+<dependency>
+   <groupId>javax.xml.bind</groupId>
+    <artifactId>jaxb-api</artifactId>
+</dependency>
+<dependency>
+    <groupId>com.sun.xml.bind</groupId>
+    <artifactId>jaxb-impl</artifactId>
+    <version>2.3.0</version>
+</dependency>
+<dependency>
+    <groupId>org.glassfish.jaxb</groupId>
+    <artifactId>jaxb-runtime</artifactId>
+    <version>2.3.0</version>
+</dependency>
+<dependency>
+    <groupId>javax.activation</groupId>
+    <artifactId>activation</artifactId>
+    <version>1.1.1</version>
+</dependency>
+```
+或者直接升级Spring boot和cloud到最新版本可以直接解决
+
+
+2.常见异常警告
+```log
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.thoughtworks.xstream.core.util.Fields (file:/F:/apache-maven-3.3.3/repository/com/thoughtworks/xstream/xstream/1.4.11.1/xstream-1.4.11.1.jar) to field java.util.TreeMap.comparator
+WARNING: Please consider reporting this to the maintainers of com.thoughtworks.xstream.core.util.Fields
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+```
+解决方法:添加启动参数
+```
+--add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.lang.reflect=ALL-UNNAMED --add-opens java.base/java.text=ALL-UNNAMED --add-opens java.desktop/java.awt.font=ALL-UNNAMED
+```

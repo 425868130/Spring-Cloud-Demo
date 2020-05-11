@@ -4,7 +4,7 @@ import com.example.authcenter.dao.user.User;
 import com.example.authcenter.dao.user.UserDTO;
 import com.example.authcenter.dao.user.UserMapStruct;
 import com.example.common.util.JSON;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 

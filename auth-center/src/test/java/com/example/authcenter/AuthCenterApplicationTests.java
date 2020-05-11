@@ -3,21 +3,13 @@ package com.example.authcenter;
 import com.example.authcenter.service.tokenService.TokenService;
 import com.example.common.define.ClientAgent;
 import com.example.common.define.ConstVal;
-import com.example.common.define.ShiroJWTAuthenticationToken;
-import com.example.common.define.jwt.JwtPayload;
 import com.example.common.define.jwt.UserPayload;
 import com.example.common.util.jwt.JwtRs256Util;
-import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.impl.DefaultClaims;
-import org.apache.shiro.SecurityUtils;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 
-@RunWith(SpringRunner.class)
 @SpringBootTest
 public class AuthCenterApplicationTests {
     @Value("${key-pair.auth-center.public}")

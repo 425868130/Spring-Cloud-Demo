@@ -13,8 +13,8 @@
     <description>本pom用于集中管理当前项目的公共第三方依赖包版本</description>
 
     <properties>
-        <spring-boot.version>2.1.7.RELEASE</spring-boot.version>
-        <spring-cloud.version>Greenwich.SR1</spring-cloud.version>
+        <spring-boot.version>2.2.7.RELEASE</spring-boot.version>
+        <spring-cloud.version>Hoxton.SR4</spring-cloud.version>
         <mybatis.version>2.1.0</mybatis.version>
         <jjwt.version>0.9.1</jjwt.version>
         <shiro-version>1.4.0</shiro-version>
@@ -47,8 +47,8 @@
             <scope>test</scope>
             <exclusions>
                 <exclusion>
-                    <artifactId>objenesis</artifactId>
-                    <groupId>org.objenesis</groupId>
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
@@ -63,6 +63,11 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
             <optional>true</optional>
         </dependency>
     </dependencies>

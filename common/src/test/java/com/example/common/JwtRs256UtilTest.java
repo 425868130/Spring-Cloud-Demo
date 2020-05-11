@@ -5,7 +5,7 @@ import com.example.common.define.jwt.DefaultJwtPayload;
 import com.example.common.define.jwt.JwtPayload;
 import com.example.common.util.JSON;
 import com.example.common.util.jwt.JwtRs256Util;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class JwtRs256UtilTest {
     /**

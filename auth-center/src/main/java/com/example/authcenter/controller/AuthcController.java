@@ -63,9 +63,9 @@ public class AuthcController {
         // 获取url与类和方法的对应信息
         Map<RequestMappingInfo, HandlerMethod> map = mapping.getHandlerMethods();
 
-        List<Map<String, String>> list = new ArrayList<Map<String, String>>();
+        List<Map<String, String>> list = new ArrayList<>();
         for (Map.Entry<RequestMappingInfo, HandlerMethod> m : map.entrySet()) {
-            Map<String, String> map1 = new HashMap<String, String>();
+            Map<String, String> map1 = new HashMap<>();
             RequestMappingInfo info = m.getKey();
             HandlerMethod method = m.getValue();
             PatternsRequestCondition p = info.getPatternsCondition();

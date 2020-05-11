@@ -53,6 +53,7 @@ public class HomeController {
         ShiroJWTAuthenticationToken jwtAuthenticationToken = new ShiroJWTAuthenticationToken(tokenStr);
 
         User user = (User) subject.getSession().getAttribute("user");
+        System.out.println(user);
         return Result.success();
     }
 
@@ -62,7 +63,6 @@ public class HomeController {
         user.setUsername(username);
         user.setPassword(password);
         passwordHelper.encryptPassword(user);
-
         userService.save(user);
         return "SUCCESS";
     }
