@@ -29,6 +29,11 @@ management:
 server:
   port: 8301
 eureka:
+  # 指定eureka客户端ip地址,如果要公网访问则必须配置公网ip,否则其他微服务调用时默认返回内网ip将导致访问失败
+  instance:
+    ip-address: 106.12.48.228
+    # 外网访问时也必须设置为true优先以ip进行访问
+    prefer-ip-address: true
   client:
     service-url:
       #将配置中心注册到eureka

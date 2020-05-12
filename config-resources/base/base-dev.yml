@@ -6,6 +6,7 @@ cloud-server:
   tencent: 123.207.43.56
 eureka:
   instance:
+    prefer-ip-address: true
     hostname: ${spring.cloud.client.ip-address}
     instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}
 
@@ -34,7 +35,7 @@ spring:
   redis:
     host: ${cloud-server.baidu}
     port: 6379
-    password: 123456
+    password: 1320074071
     database: 15
     pool:
       # 连接池最大连接数（使用负值表示没有限制）
@@ -50,8 +51,8 @@ spring:
   rabbitmq:
     host: ${cloud-server.baidu}
     port: 5672
-    username: guest
-    password: guest
+    username: xujw
+    password: 1320074071
 
 mybatis:
   mapper-locations: classpath:mapping/*Mapper.xml

@@ -1,6 +1,10 @@
 spring:
   application:
     name: eureka-server
+  # 为eureka指定公网ip,从而支持远程连接
+  cloud:
+    inetutils:
+      preferred-networks: 106.12.48.228
   profiles:
     #通过多配置实现单机集群模拟
     #      active: server1
