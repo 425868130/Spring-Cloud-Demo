@@ -1,5 +1,9 @@
 # 基础公共配置文件
 env: dev
+cloud-server:
+  baidu: 106.12.48.228
+  ali: 47.102.137.235
+  tencent: 123.207.43.56
 #hystrix的超时时间,feign默认整合hystrix和ribbon,默认超时时间1s,调试时容易超时失败
 hystrix:
   command:
@@ -23,7 +27,7 @@ spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
   redis:
-    host: 127.0.0.1
+    host: ${cloud-server.baidu}
     port: 6379
     password: 123456
     database: 15
@@ -39,7 +43,7 @@ spring:
       # 连接超时时间（毫秒）
       timeout: 500
   rabbitmq:
-    host: localhost
+    host: ${cloud-server.baidu}
     port: 5672
     username: guest
     password: guest

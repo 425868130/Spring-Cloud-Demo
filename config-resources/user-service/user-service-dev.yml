@@ -5,8 +5,8 @@ spring:
   datasource:
     user-service:
       username: xujw
-      password: 1320074071
-      jdbc-url: jdbc:mysql://localhost:3306/${spring.application.name}?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+      password: Xujw!1320074071
+      jdbc-url: jdbc:mysql://${cloud-server.baidu}:3306/${spring.application.name}?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
       driver-class-name: com.mysql.cj.jdbc.Driver
 mybatis:
   mapper-locations: classpath:mapping/*Mapper.xml
