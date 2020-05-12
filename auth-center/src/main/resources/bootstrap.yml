@@ -16,4 +16,4 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://${cloud-server.baidu}/eureka/
+      defaultZone: http://106.12.48.228/eureka/
