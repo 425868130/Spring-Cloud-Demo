@@ -3,7 +3,10 @@ server:
   port: 8101
 eureka:
   instance:
-    hostname: server01
+    # 需要远程连接时需配置公网ip
+    ip-address: 106.12.48.228
+    hostname: ${eureka.instance.ip-address}
+    instance-id: ${eureka.instance.ip-address}:${spring.application.name}:${server.port}
   client:
     serviceUrl:
       #必须配置否则会报错,在集群模式下填写其他eureka节点地址,单机模式下填自身地址

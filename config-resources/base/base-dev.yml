@@ -6,8 +6,8 @@ cloud-server:
   tencent: 123.207.43.56
 eureka:
   instance:
-    preferIpAddress: true
-    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+    hostname: ${spring.cloud.client.ip-address}
+    instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}
 
 #hystrix的超时时间,feign默认整合hystrix和ribbon,默认超时时间1s,调试时容易超时失败
 hystrix:
