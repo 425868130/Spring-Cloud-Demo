@@ -37,4 +37,4 @@ eureka:
   client:
     service-url:
       #将配置中心注册到eureka
-      defaultZone: http://localhost/eureka/
+      defaultZone: http://xujw:1320074071@localhost/eureka/

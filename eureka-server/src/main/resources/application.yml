@@ -11,3 +11,8 @@ spring:
     #      active: server2
     #      active: server3
     active: server4
+# 配置eureka用户名密码
+  security:
+    user:
+      name: xujw
+      password: 1320074071
