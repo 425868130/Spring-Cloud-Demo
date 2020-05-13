@@ -1,0 +1,80 @@
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        # 配置文件存放git地址,基于哪个git平台或自己搭建
+        git:
+          uri: git@github.com:425868130/spring-cloud-demo.git
+          # 配置文件存放路径(文件夹)，如果配置文件在项目根目录，则不需要配置该值
+          search-paths: config-resources/**
+          # git账号  当git项目创建为public时，不需要username和password
+          #username: 425868130@qq.com
+          # git密码
+          #password: qq!1320074071
+          clone-on-start: true
+          #指定默认使用的git分支,如果不指定则每个使用云配置的模块都要手动指定具体分支
+          default-label: develop
+          # 私有秘钥加密密码
+          passphrase: 1320074071
+          private-key: ${sshPrivateKey}
+          # 关闭host-key严格校验,开启的话只会接受已知主机,如果本机没有与git建立过连接会导致验证失败
+          strict-host-key-checking: false
+          # 忽略系统本地的ssh设置使用本配置文件中的ssh配置
+          ignore-local-ssh-settings: true
+      #配置中心服务本身也可以加载远程配置
+      profile: dev
+      #指定配置名称,如果为空默认使用applicationName,此处可以配多可以同时加载多个配置,比如额外增加公共配置
+      name: base
+#通过消息服务自动刷新配置
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
+server:
+  port: 8301
+eureka:
+  # 指定eureka客户端ip地址,如果要公网访问则必须配置公网ip,否则其他微服务调用时默认返回内网ip将导致访问失败
+  instance:
+    ip-address: 106.12.48.228
+    # 外网访问时也必须设置为true优先以ip进行访问
+    prefer-ip-address: true
+  client:
+    service-url:
+      #将配置中心注册到eureka
+      defaultZone: http://xujw:1320074071@localhost/eureka/
+
+
+sshPrivateKey: |
+  -----BEGIN RSA PRIVATE KEY-----
+  Proc-Type: 4,ENCRYPTED
+  DEK-Info: DES-EDE3-CBC,2DB10E20A88115D7
+
+  VrMncXtQTQwrtWCKXs+8xez1syLuuRGxipt+TCZk7lIh3JEPl8m9MJ4O/6J2ARg2
+  quvTjwflZxEB+L/OpuweOKZ+OVpRhmgFZZymQJjYQb/O2mSbdwIZunW/WZEaLM8K
+  LKsHPw5aVOhIilbCk6P9wuYI1cfHGEU01MYR/B4ksawQ6qprP1FfWcVY6Ymtn25Q
+  MwIdcWKjR6gRWHQYVdJRc6bRlNJZJR4CYMlqapEMOe7XinyMjgqPePCD1tR4VlMt
+  EHDY4yJeeHio0bZ2Pm+08LqYkH7huV//rorDslIOAwHr0H9NVlO9J2JWJ4pmCZNi
+  YFOsoLjHq7mNB0kvavmeyBmwuWiHqDa/nD1PbQOhbvmyQ263SIws0FkucD+xVC1a
+  KwnPvqVoeeEDl5gCPp1I7TWBHVsoDOoGnWqajZHFhvUrKFd7NPPHYwGRXCCe0KRw
+  xG+LxSVs8+1a8dko1DSZ+RaaqAQL05JSP+HtNLavKe1y3HYJ7zMAsJ8/xcqm1dx7
+  nykbGljZ1aZA89I3RWdGBVtnAOGbKFra7Vm1p0CGdzGe1cmkljm3DT/+0pARjOpq
+  RmTbMX5YosbUCJfQZeNw1OtoPIQ4a52QjUTikc9HlhF+BJ2piQ+t9Ac8xZi2xxAA
+  w7WoTVDhjP9ixeUcvasuKtN+3VijvIcnBAWSV3zFV+4fKfsoUWwT+v72KiAuqVC5
+  R9+hKbPq2YyR9nJM5cITAsixtn0a7mriebCbiR5KqesfHFJY/1rYoSRlkbRdmImp
+  zT13cSY3b9SqK9ZysbVo+NFzMTK3odAF+zDwMPB9eSvhRZ7RleIP9m3L3Qw+d/Lp
+  CC0kwfdkZ2e6042oIA7yHQmn4y4a+6TBLSi/3EpOd4wyE83lA7dR0pt36C7lkt3x
+  XRTLmK5vJuaCnKye4hMMNmLNaXbr9OGNPZx/8hmGJcR7ySZtorsGp6DU1RYDff1M
+  TMh2fiNcF91j5hSpfvCuPnIbskj0mvW+ZKdMAhbDe/dBbMdTmXzp6AFnCZZ30I6q
+  ajyoaLVY2y5te26+TEFfnjPoEwTEBet9eSJyw209CYXf7KlgvleCVyZ/3Ac5EHwL
+  iJ95d0WwGI8ZPYYHgTSNOpzsruUw5/pEEyw1/Ar/Q8O9GU4IUpsKjzhFN2sWR35W
+  NSvKLNI/BicjeneVv6lzIDwW0qhL0TVt9at5L8hRYEr3p9hlCg4vlqs400P+YRFr
+  aYbiQy8CW1V9nRY0geNjLAco3/6BPAyH3iApDgwtnxFHdJoCCKQWiaxq1Zc6vIy8
+  iDymZit0hUq7wJJ8mTW23ic57liuyEh06/Op8NSPY0OIlSOcr9sC9+RjOOrq+qhE
+  CaYeft+A0aw0HIqJVrrFQkxizNqDsY+vN5KKwZz3orrJVHv3jAz9rM5xItkG5Cv0
+  lAXqSA0olhrNzB7d3OCeSwqu6VCAdXVE+rpk1Ia3mtnD6VptHdzk9yuSjzAgYk9i
+  AUM8R/SnUAvp47FqWxPX8bW0083AJhpGLJaj8jJN+OPoNPfEvb9D6X7xcSLNB++B
+  ZTS/TZER/ptIUZ0/TQ7ra5eSlrGGMZnAVzz9B7PUHZ0kDA9YPQvtaw==
+  -----END RSA PRIVATE KEY-----
