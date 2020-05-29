@@ -19,7 +19,7 @@ import java.util.List;
  */
 @Slf4j
 public class JSON {
-    private static ObjectMapper objectMapper = new ObjectMapper();
+    private static final ObjectMapper objectMapper = new ObjectMapper();
 
     static {
         //对象的所有字段全部列入
