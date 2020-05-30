@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.authcenter.dao.UserInfoDao">
+    <resultMap id="BaseResultMap" type="com.example.authcenter.entity.UserInfo">
+        <id column="uid" jdbcType="VARCHAR" property="uid"/>
+        <result column="account_name" jdbcType="VARCHAR" property="accountName"/>
+        <result column="nick_name" jdbcType="VARCHAR" property="nickName"/>
+        <result column="email" jdbcType="VARCHAR" property="email"/>
+        <result column="telephone" jdbcType="VARCHAR" property="telephone"/>
+        <result column="head_img" jdbcType="VARCHAR" property="headImg"/>
+        <result column="location" jdbcType="VARCHAR" property="location"/>
+        <result column="birthday" jdbcType="DATE" property="birthday"/>
+        <result column="status_id" jdbcType="INTEGER" property="statusId"/>
+        <result column="deleted" jdbcType="BIT" property="deleted"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+        <result column="delete_time" jdbcType="TIMESTAMP" property="deleteTime"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        `uid`, account_name, nick_name, email, telephone, head_img, `location`, birthday,
+    status_id, deleted, create_time, update_time, delete_time
+    </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from user_info
+        where `uid` = #{uid,jdbcType=VARCHAR}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+        delete
+        from user_info
+        where `uid` = #{uid,jdbcType=VARCHAR}
+    </delete>
+    <insert id="insert" keyColumn="uid" keyProperty="uid" parameterType="com.example.authcenter.entity.UserInfo"
+            useGeneratedKeys="true">
+        insert into user_info (account_name, nick_name, email,
+                               telephone, head_img, `location`,
+                               birthday, status_id, deleted,
+                               create_time, update_time, delete_time)
+        values (#{accountName,jdbcType=VARCHAR}, #{nickName,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR},
+                #{telephone,jdbcType=VARCHAR}, #{headImg,jdbcType=VARCHAR}, #{location,jdbcType=VARCHAR},
+                #{birthday,jdbcType=DATE}, #{statusId,jdbcType=INTEGER}, #{deleted,jdbcType=BIT},
+                #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{deleteTime,jdbcType=TIMESTAMP})
+    </insert>
+    <insert id="insertSelective" keyColumn="uid" keyProperty="uid"
+            parameterType="com.example.authcenter.entity.UserInfo" useGeneratedKeys="true">
+        insert into user_info
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="accountName != null">
+                account_name,
+            </if>
+            <if test="nickName != null">
+                nick_name,
+            </if>
+            <if test="email != null">
+                email,
+            </if>
+            <if test="telephone != null">
+                telephone,
+            </if>
+            <if test="headImg != null">
+                head_img,
+            </if>
+            <if test="location != null">
+                `location`,
+            </if>
+            <if test="birthday != null">
+                birthday,
+            </if>
+            <if test="statusId != null">
+                status_id,
+            </if>
+            <if test="deleted != null">
+                deleted,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+            <if test="deleteTime != null">
+                delete_time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="accountName != null">
+                #{accountName,jdbcType=VARCHAR},
+            </if>
+            <if test="nickName != null">
+                #{nickName,jdbcType=VARCHAR},
+            </if>
+            <if test="email != null">
+                #{email,jdbcType=VARCHAR},
+            </if>
+            <if test="telephone != null">
+                #{telephone,jdbcType=VARCHAR},
+            </if>
+            <if test="headImg != null">
+                #{headImg,jdbcType=VARCHAR},
+            </if>
+            <if test="location != null">
+                #{location,jdbcType=VARCHAR},
+            </if>
+            <if test="birthday != null">
+                #{birthday,jdbcType=DATE},
+            </if>
+            <if test="statusId != null">
+                #{statusId,jdbcType=INTEGER},
+            </if>
+            <if test="deleted != null">
+                #{deleted,jdbcType=BIT},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="deleteTime != null">
+                #{deleteTime,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.example.authcenter.entity.UserInfo">
+        update user_info
+        <set>
+            <if test="accountName != null">
+                account_name = #{accountName,jdbcType=VARCHAR},
+            </if>
+            <if test="nickName != null">
+                nick_name = #{nickName,jdbcType=VARCHAR},
+            </if>
+            <if test="email != null">
+                email = #{email,jdbcType=VARCHAR},
+            </if>
+            <if test="telephone != null">
+                telephone = #{telephone,jdbcType=VARCHAR},
+            </if>
+            <if test="headImg != null">
+                head_img = #{headImg,jdbcType=VARCHAR},
+            </if>
+            <if test="location != null">
+                `location` = #{location,jdbcType=VARCHAR},
+            </if>
+            <if test="birthday != null">
+                birthday = #{birthday,jdbcType=DATE},
+            </if>
+            <if test="statusId != null">
+                status_id = #{statusId,jdbcType=INTEGER},
+            </if>
+            <if test="deleted != null">
+                deleted = #{deleted,jdbcType=BIT},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="deleteTime != null">
+                delete_time = #{deleteTime,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where `uid` = #{uid,jdbcType=VARCHAR}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.example.authcenter.entity.UserInfo">
+        update user_info
+        set account_name = #{accountName,jdbcType=VARCHAR},
+            nick_name    = #{nickName,jdbcType=VARCHAR},
+            email        = #{email,jdbcType=VARCHAR},
+            telephone    = #{telephone,jdbcType=VARCHAR},
+            head_img     = #{headImg,jdbcType=VARCHAR},
+            `location`   = #{location,jdbcType=VARCHAR},
+            birthday     = #{birthday,jdbcType=DATE},
+            status_id    = #{statusId,jdbcType=INTEGER},
+            deleted      = #{deleted,jdbcType=BIT},
+            create_time  = #{createTime,jdbcType=TIMESTAMP},
+            update_time  = #{updateTime,jdbcType=TIMESTAMP},
+            delete_time  = #{deleteTime,jdbcType=TIMESTAMP}
+        where `uid` = #{uid,jdbcType=VARCHAR}
+    </update>
+</mapper>
