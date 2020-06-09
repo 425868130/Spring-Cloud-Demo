@@ -9,7 +9,7 @@
     <packaging>pom</packaging>
     <description>本POM文件负责保存当前项目的全部微服务项目的版本依赖信息,同时作为maven统一打包入口</description>
     <modules>
-        <module>../../parent-pom</module>
+        <module>../</module>
         <module>../auth-center</module>
         <module>../common</module>
         <module>../config-server</module>
