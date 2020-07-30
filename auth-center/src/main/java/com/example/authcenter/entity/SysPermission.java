@@ -8,8 +8,8 @@ import lombok.Data;
 /**
  * sys_permission
  *
+ * @since 2020-07-30 15:17:15
  * @author xujw
- * @since 2020-5-23 11:01:00
  */
 @Data
 public class SysPermission implements Serializable {
@@ -26,9 +26,14 @@ public class SysPermission implements Serializable {
     private String description;
 
     /**
-     * 状态定义
+     * 权限状态定义
      */
     private Integer status;
+
+    /**
+     * 过期时间
+     */
+    private Date expireTime;
 
     /**
      * 创建时间
@@ -36,7 +41,7 @@ public class SysPermission implements Serializable {
     private Date createTime;
 
     /**
-     * 更新时间，缺少过期时间
+     * 更新时间
      */
     private Date updateTime;
 

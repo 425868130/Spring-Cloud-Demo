@@ -1,7 +1,9 @@
 package com.example.authcenter.dao;
 
 import com.example.authcenter.entity.SysRole;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface SysRoleDao {
     int deleteByPrimaryKey(Long id);
 

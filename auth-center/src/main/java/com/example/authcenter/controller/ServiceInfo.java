@@ -1,9 +1,6 @@
 package com.example.authcenter.controller;
 
-import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.subject.Subject;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
+import com.example.common.define.Result;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,51 +11,22 @@ import org.springframework.web.servlet.mvc.condition.RequestMethodsRequestCondit
 import org.springframework.web.servlet.mvc.method.RequestMappingInfo;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("authc")
-public class AuthcController {
-    @Autowired
-    private HttpServletRequest httpServletRequest;
+@RequestMapping("info")
+public class ServiceInfo {
+    private final WebApplicationContext applicationContext;
 
-    @GetMapping("index")
-    public Object index() {
-        return "index";
+    public ServiceInfo(WebApplicationContext applicationContext) {
+        this.applicationContext = applicationContext;
     }
 
-    @GetMapping("admin")
-    public Object admin() {
-        Subject subject = SecurityUtils.getSubject();
-        return httpServletRequest.getAttribute("userId");
-    }
-
-    // delete
-    @GetMapping("removable")
-    public Object removable() {
-        return "removable";
-    }
-
-    // insert & update
-    @GetMapping("renewable")
-    public Object renewable() {
-        return "renewable";
-    }
-
-    @Autowired
-    WebApplicationContext applicationContext;
-
-    /**
-     * 获取全部注册的请求路径
-     *
-     * @return
-     */
-    @RequestMapping("v1/getAllUrl")
-    public Object getAllUrl() {
+    @RequestMapping("/url/all")
+    public Result getAllUrl() {
         RequestMappingHandlerMapping mapping = applicationContext.getBean(RequestMappingHandlerMapping.class);
         // 获取url与类和方法的对应信息
         Map<RequestMappingInfo, HandlerMethod> map = mapping.getHandlerMethods();
@@ -81,6 +49,6 @@ public class AuthcController {
 
             list.add(map1);
         }
-        return list;
+        return Result.ok(list);
     }
 }

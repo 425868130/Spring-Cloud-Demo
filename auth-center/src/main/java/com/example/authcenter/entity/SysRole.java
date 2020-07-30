@@ -13,6 +13,7 @@ import lombok.Data;
  */
 @Data
 public class SysRole implements Serializable {
+    private static final long serialVersionUID = -477953957979377592L;
     /**
      * id主键
      */
@@ -42,6 +43,4 @@ public class SysRole implements Serializable {
      * 更新时间
      */
     private Date updateTime;
-
-    private static final long serialVersionUID = 1L;
 }

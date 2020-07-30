@@ -1,7 +1,9 @@
 package com.example.authcenter.dao;
 
 import com.example.authcenter.entity.SysPermission;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface SysPermissionDao {
     int deleteByPrimaryKey(Long id);
 

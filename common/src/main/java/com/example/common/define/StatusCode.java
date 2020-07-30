@@ -1,9 +1,10 @@
 package com.example.common.define;
 
 /**
- * 响应状态码
+ * 系统全局统一响应状态码
  *
- * @author xujw 2019-8-5 17:54:12
+ * @author xujw
+ * @since 2019-8-5 17:54:12
  */
 public enum StatusCode {
     SUCCESS(1000, "请求成功"),

@@ -13,6 +13,8 @@ import lombok.Data;
  */
 @Data
 public class Company implements Serializable {
+    private static final long serialVersionUID = 6407403659376236681L;
+
     private Integer id;
 
     /**
@@ -54,6 +56,4 @@ public class Company implements Serializable {
      * 更新时间
      */
     private Date updateTime;
-
-    private static final long serialVersionUID = 1L;
 }

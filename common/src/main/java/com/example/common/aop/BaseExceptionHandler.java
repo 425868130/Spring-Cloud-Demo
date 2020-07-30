@@ -40,6 +40,6 @@ public class BaseExceptionHandler {
     @ResponseStatus(HttpStatus.OK)
     public Result ServiceExceptionHandler(ServiceException serviceException) {
         log.error("[业务异常]:" + serviceException.getMessage() + serviceException.getCode());
-        return new Result().setMsg(serviceException.getMessage()).setStatus(serviceException.getCode());
+        return new Result().setMsg(serviceException.getMessage()).setStatus(serviceException.getCode().getCode());
     }
 }

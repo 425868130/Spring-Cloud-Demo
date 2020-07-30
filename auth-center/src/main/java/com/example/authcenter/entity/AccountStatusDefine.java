@@ -12,7 +12,8 @@ import lombok.Data;
  * @since 2020-5-23 11:07:02
  */
 @Data
-public class UserStatusDefine implements Serializable {
+public class AccountStatusDefine implements Serializable {
+    private static final long serialVersionUID = -1221161658556909581L;
     /**
      * 状态id
      */
@@ -37,6 +38,4 @@ public class UserStatusDefine implements Serializable {
      * 更新时间
      */
     private Date updateTime;
-
-    private static final long serialVersionUID = 1L;
 }

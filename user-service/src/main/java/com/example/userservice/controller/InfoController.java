@@ -34,7 +34,7 @@ public class InfoController {
     public Result client() {
         String services = "Services: " + discoveryClient.getServices() + " ip :" + ip;
         logger.info(services);
-        return Result.success(services);
+        return Result.ok(services);
     }
 
     @RequestMapping("info")
@@ -44,7 +44,7 @@ public class InfoController {
         user.setAge(20);
         user.setName("info");
         logger.info("接口访问");
-        return Result.success(user);
+        return Result.ok(user);
     }
 
     @RequestMapping("test")

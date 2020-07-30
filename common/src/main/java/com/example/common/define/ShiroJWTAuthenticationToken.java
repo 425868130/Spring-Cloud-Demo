@@ -9,7 +9,7 @@ import org.apache.shiro.authc.AuthenticationToken;
 public class ShiroJWTAuthenticationToken implements AuthenticationToken {
     private static final long serialVersionUID = 8513061440977320446L;
     /*token字符串*/
-    private String token;
+    private final String token;
 
     public ShiroJWTAuthenticationToken(String token) {
         this.token = token;

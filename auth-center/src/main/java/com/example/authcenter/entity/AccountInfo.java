@@ -6,17 +6,18 @@ import java.util.Date;
 import lombok.Data;
 
 /**
- * user_info
+ * account_info
  *
  * @author xujw
- * @since 2020-5-23 11:06:17
+ * @since 2020-07-30 15:36:55
  */
 @Data
-public class UserInfo implements Serializable {
+public class AccountInfo implements Serializable {
+    private static final long serialVersionUID = 3070187599550381705L;
     /**
      * 用户唯一标识
      */
-    private String uid;
+    private Long uid;
 
     /**
      * 账户名
@@ -78,5 +79,4 @@ public class UserInfo implements Serializable {
      */
     private Date deleteTime;
 
-    private static final long serialVersionUID = 1L;
 }

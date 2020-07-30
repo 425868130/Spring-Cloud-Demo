@@ -1,7 +1,9 @@
 package com.example.authcenter.dao;
 
 import com.example.authcenter.entity.Company;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface CompanyDao {
     int deleteByPrimaryKey(Integer id);
 

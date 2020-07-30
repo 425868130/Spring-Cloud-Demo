@@ -1,7 +1,7 @@
 package com.example.authcenter.config;
 
-import com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean;
 import org.apache.ibatis.session.SqlSessionFactory;
+import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -36,7 +36,7 @@ public class DataSourceConfig {
     public SqlSessionFactory sqlSessionFactory(@Qualifier("ds-auth-center") DataSource dataSource) throws Exception {
         /*使用了mybatis plus插件后 SqlSessionFactory必须使用MybatisSqlSessionFactoryBean,
         不能使用SqlSessionFactoryBean,否则出现 Invalid bound statement (not found) */
-        MybatisSqlSessionFactoryBean factoryBean = new MybatisSqlSessionFactoryBean();
+        SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();
         factoryBean.setDataSource(dataSource);
         return factoryBean.getObject();
     }

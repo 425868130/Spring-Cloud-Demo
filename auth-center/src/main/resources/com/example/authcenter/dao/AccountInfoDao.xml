@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.authcenter.dao.UserInfoDao">
-    <resultMap id="BaseResultMap" type="com.example.authcenter.entity.UserInfo">
-        <id column="uid" jdbcType="VARCHAR" property="uid"/>
+<mapper namespace="com.example.authcenter.dao.AccountInfoDao">
+    <resultMap id="BaseResultMap" type="com.example.authcenter.entity.AccountInfo">
+        <id column="uid" jdbcType="BIGINT" property="uid"/>
         <result column="account_name" jdbcType="VARCHAR" property="accountName"/>
         <result column="nick_name" jdbcType="VARCHAR" property="nickName"/>
         <result column="email" jdbcType="VARCHAR" property="email"/>
@@ -20,31 +20,31 @@
         `uid`, account_name, nick_name, email, telephone, head_img, `location`, birthday,
     status_id, deleted, create_time, update_time, delete_time
     </sql>
-    <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>
-        from user_info
-        where `uid` = #{uid,jdbcType=VARCHAR}
+        from account_info
+        where `uid` = #{uid,jdbcType=BIGINT}
     </select>
-    <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
         delete
-        from user_info
-        where `uid` = #{uid,jdbcType=VARCHAR}
+        from account_info
+        where `uid` = #{uid,jdbcType=BIGINT}
     </delete>
-    <insert id="insert" keyColumn="uid" keyProperty="uid" parameterType="com.example.authcenter.entity.UserInfo"
+    <insert id="insert" keyColumn="uid" keyProperty="uid" parameterType="com.example.authcenter.entity.AccountInfo"
             useGeneratedKeys="true">
-        insert into user_info (account_name, nick_name, email,
-                               telephone, head_img, `location`,
-                               birthday, status_id, deleted,
-                               create_time, update_time, delete_time)
+        insert into account_info (account_name, nick_name, email,
+                                  telephone, head_img, `location`,
+                                  birthday, status_id, deleted,
+                                  create_time, update_time, delete_time)
         values (#{accountName,jdbcType=VARCHAR}, #{nickName,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR},
                 #{telephone,jdbcType=VARCHAR}, #{headImg,jdbcType=VARCHAR}, #{location,jdbcType=VARCHAR},
                 #{birthday,jdbcType=DATE}, #{statusId,jdbcType=INTEGER}, #{deleted,jdbcType=BIT},
                 #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{deleteTime,jdbcType=TIMESTAMP})
     </insert>
     <insert id="insertSelective" keyColumn="uid" keyProperty="uid"
-            parameterType="com.example.authcenter.entity.UserInfo" useGeneratedKeys="true">
-        insert into user_info
+            parameterType="com.example.authcenter.entity.AccountInfo" useGeneratedKeys="true">
+        insert into account_info
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="accountName != null">
                 account_name,
@@ -122,8 +122,8 @@
             </if>
         </trim>
     </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="com.example.authcenter.entity.UserInfo">
-        update user_info
+    <update id="updateByPrimaryKeySelective" parameterType="com.example.authcenter.entity.AccountInfo">
+        update account_info
         <set>
             <if test="accountName != null">
                 account_name = #{accountName,jdbcType=VARCHAR},
@@ -162,10 +162,10 @@
                 delete_time = #{deleteTime,jdbcType=TIMESTAMP},
             </if>
         </set>
-        where `uid` = #{uid,jdbcType=VARCHAR}
+        where `uid` = #{uid,jdbcType=BIGINT}
     </update>
-    <update id="updateByPrimaryKey" parameterType="com.example.authcenter.entity.UserInfo">
-        update user_info
+    <update id="updateByPrimaryKey" parameterType="com.example.authcenter.entity.AccountInfo">
+        update account_info
         set account_name = #{accountName,jdbcType=VARCHAR},
             nick_name    = #{nickName,jdbcType=VARCHAR},
             email        = #{email,jdbcType=VARCHAR},
@@ -178,6 +178,6 @@
             create_time  = #{createTime,jdbcType=TIMESTAMP},
             update_time  = #{updateTime,jdbcType=TIMESTAMP},
             delete_time  = #{deleteTime,jdbcType=TIMESTAMP}
-        where `uid` = #{uid,jdbcType=VARCHAR}
+        where `uid` = #{uid,jdbcType=BIGINT}
     </update>
 </mapper>

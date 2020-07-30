@@ -6,17 +6,18 @@ import java.util.Date;
 import lombok.Data;
 
 /**
- * user_role_relation
+ * account_role_relation
  *
  * @author xujw
- * @since 2020-5-23 11:06:36
+ * @since 2020-07-30 15:55:06
  */
 @Data
-public class UserRoleRelation implements Serializable {
+public class AccountRoleRelation implements Serializable {
+    private static final long serialVersionUID = -5108558317443540853L;
     /**
      * 用户id
      */
-    private String uid;
+    private Long uid;
 
     /**
      * 角色id
@@ -32,6 +33,4 @@ public class UserRoleRelation implements Serializable {
      * 更新时间
      */
     private Date updateTime;
-
-    private static final long serialVersionUID = 1L;
 }

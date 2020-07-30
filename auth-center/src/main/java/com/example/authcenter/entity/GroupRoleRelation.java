@@ -13,6 +13,7 @@ import lombok.Data;
  */
 @Data
 public class GroupRoleRelation implements Serializable {
+    private static final long serialVersionUID = -1478280122756053355L;
     /**
      * 小组id
      */
@@ -37,6 +38,4 @@ public class GroupRoleRelation implements Serializable {
      * 更新时间
      */
     private Date updateTime;
-
-    private static final long serialVersionUID = 1L;
 }
