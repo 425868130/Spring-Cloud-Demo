@@ -17,7 +17,7 @@ public class GroupUserRelation implements Serializable {
     /**
      * 用户id主键
      */
-    private String uid;
+    private Long uid;
 
     /**
      * 小组id

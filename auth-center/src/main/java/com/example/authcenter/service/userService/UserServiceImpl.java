@@ -1,7 +1,5 @@
 package com.example.authcenter.service.userService;
 
-import com.example.authcenter.dao.AccountAuthProfileDao;
-import com.example.authcenter.dao.AccountInfoDao;
 import com.example.authcenter.service.tokenService.TokenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,13 +9,13 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private TokenService tokenService;
 
-    private final AccountInfoDao accountInfoDao;
-    private final AccountAuthProfileDao accountAuthProfileDao;
-
-    public UserServiceImpl(AccountInfoDao accountInfoDao, AccountAuthProfileDao accountAuthProfileDao) {
-        this.accountInfoDao = accountInfoDao;
-        this.accountAuthProfileDao = accountAuthProfileDao;
-    }
+//    private final AccountInfoDao accountInfoDao;
+//    private final AccountSecretProfileDao accountAuthProfileDao;
+//
+//    public UserServiceImpl(AccountInfoDao accountInfoDao, AccountSecretProfileDao accountAuthProfileDao) {
+//        this.accountInfoDao = accountInfoDao;
+//        this.accountAuthProfileDao = accountAuthProfileDao;
+//    }
 //
 //    @Override
 //    public Optional<String> loginCheck(String accountName, String password) {

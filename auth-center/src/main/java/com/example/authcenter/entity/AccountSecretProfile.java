@@ -6,28 +6,28 @@ import java.util.Date;
 import lombok.Data;
 
 /**
- * account_auth_profile
+ * account_secret_profile
  *
  * @author xujw
- * @since 2020-07-30 15:38:46
+ * @since 2020-07-31 15:47:17
  */
 @Data
-public class AccountAuthProfile implements Serializable {
-    private static final long serialVersionUID = -6992456299506346246L;
+public class AccountSecretProfile implements Serializable {
+    private static final long serialVersionUID = 7757929369674129798L;
     /**
      * 用户唯一标识
      */
-    private String uid;
-
-    /**
-     * 账户名
-     */
-    private String accountName;
+    private Long uid;
 
     /**
      * 密码
      */
     private String password;
+
+    /**
+     * 身份证信息,加密存储
+     */
+    private String idCard;
 
     /**
      * 密码加密盐

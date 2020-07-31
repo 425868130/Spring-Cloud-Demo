@@ -1,7 +1,7 @@
 -- ----------------------------
 -- Table structure for account_auth_profile
 -- ----------------------------
-DROP TABLE IF EXISTS `account_auth_profile`;
+DROP TABLE IF EXISTS account_secret_profile;
 CREATE TABLE `account_auth_profile`
 (
     `uid`          bigint unsigned                                               NOT NULL COMMENT '用户唯一标识',

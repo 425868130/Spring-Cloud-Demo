@@ -15,4 +15,8 @@ public class PasswordHelper {
 //                ByteSource.Util.bytes(user.getCredentialsSalt()), HASH_ITERATIONS).toHex();
 //        user.setPassword(newPassword);
 //    }
+
+    public void encryptPassword(String password, String salt) {
+
+    }
 }

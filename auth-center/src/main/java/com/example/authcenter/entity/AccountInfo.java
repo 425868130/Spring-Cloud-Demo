@@ -20,14 +20,24 @@ public class AccountInfo implements Serializable {
     private Long uid;
 
     /**
-     * 账户名
+     * 账户名,用于登录识别
      */
-    private String accountName;
+    private String account;
 
     /**
      * 用户昵称
      */
     private String nickName;
+
+    /**
+     * 用户真实姓名
+     */
+    private String realName;
+
+    /**
+     * 性别:1男0女-1未知
+     */
+    private Byte sex;
 
     /**
      * 邮箱
@@ -78,5 +88,4 @@ public class AccountInfo implements Serializable {
      * 删除时间，只在deleted字段为1时有意义
      */
     private Date deleteTime;
-
 }

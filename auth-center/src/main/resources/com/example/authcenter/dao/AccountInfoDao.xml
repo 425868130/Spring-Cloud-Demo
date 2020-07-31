@@ -3,8 +3,10 @@
 <mapper namespace="com.example.authcenter.dao.AccountInfoDao">
     <resultMap id="BaseResultMap" type="com.example.authcenter.entity.AccountInfo">
         <id column="uid" jdbcType="BIGINT" property="uid"/>
-        <result column="account_name" jdbcType="VARCHAR" property="accountName"/>
+        <result column="account" jdbcType="VARCHAR" property="account"/>
         <result column="nick_name" jdbcType="VARCHAR" property="nickName"/>
+        <result column="real_name" jdbcType="VARCHAR" property="realName"/>
+        <result column="sex" jdbcType="TINYINT" property="sex"/>
         <result column="email" jdbcType="VARCHAR" property="email"/>
         <result column="telephone" jdbcType="VARCHAR" property="telephone"/>
         <result column="head_img" jdbcType="VARCHAR" property="headImg"/>
@@ -17,8 +19,8 @@
         <result column="delete_time" jdbcType="TIMESTAMP" property="deleteTime"/>
     </resultMap>
     <sql id="Base_Column_List">
-        `uid`, account_name, nick_name, email, telephone, head_img, `location`, birthday,
-    status_id, deleted, create_time, update_time, delete_time
+        `uid`, account, nick_name, real_name, sex, email, telephone, head_img, `location`,
+    birthday, status_id, deleted, create_time, update_time, delete_time
     </sql>
     <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
         select
@@ -33,24 +35,32 @@
     </delete>
     <insert id="insert" keyColumn="uid" keyProperty="uid" parameterType="com.example.authcenter.entity.AccountInfo"
             useGeneratedKeys="true">
-        insert into account_info (account_name, nick_name, email,
-                                  telephone, head_img, `location`,
-                                  birthday, status_id, deleted,
-                                  create_time, update_time, delete_time)
-        values (#{accountName,jdbcType=VARCHAR}, #{nickName,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR},
-                #{telephone,jdbcType=VARCHAR}, #{headImg,jdbcType=VARCHAR}, #{location,jdbcType=VARCHAR},
-                #{birthday,jdbcType=DATE}, #{statusId,jdbcType=INTEGER}, #{deleted,jdbcType=BIT},
-                #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{deleteTime,jdbcType=TIMESTAMP})
+        insert into account_info (account, nick_name, real_name,
+                                  sex, email, telephone,
+                                  head_img, `location`, birthday,
+                                  status_id, deleted, create_time,
+                                  update_time, delete_time)
+        values (#{account,jdbcType=VARCHAR}, #{nickName,jdbcType=VARCHAR}, #{realName,jdbcType=VARCHAR},
+                #{sex,jdbcType=TINYINT}, #{email,jdbcType=VARCHAR}, #{telephone,jdbcType=VARCHAR},
+                #{headImg,jdbcType=VARCHAR}, #{location,jdbcType=VARCHAR}, #{birthday,jdbcType=DATE},
+                #{statusId,jdbcType=INTEGER}, #{deleted,jdbcType=BIT}, #{createTime,jdbcType=TIMESTAMP},
+                #{updateTime,jdbcType=TIMESTAMP}, #{deleteTime,jdbcType=TIMESTAMP})
     </insert>
     <insert id="insertSelective" keyColumn="uid" keyProperty="uid"
             parameterType="com.example.authcenter.entity.AccountInfo" useGeneratedKeys="true">
         insert into account_info
         <trim prefix="(" suffix=")" suffixOverrides=",">
-            <if test="accountName != null">
-                account_name,
+            <if test="account != null">
+                account,
             </if>
             <if test="nickName != null">
                 nick_name,
+            </if>
+            <if test="realName != null">
+                real_name,
+            </if>
+            <if test="sex != null">
+                sex,
             </if>
             <if test="email != null">
                 email,
@@ -84,11 +94,17 @@
             </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
-            <if test="accountName != null">
-                #{accountName,jdbcType=VARCHAR},
+            <if test="account != null">
+                #{account,jdbcType=VARCHAR},
             </if>
             <if test="nickName != null">
                 #{nickName,jdbcType=VARCHAR},
+            </if>
+            <if test="realName != null">
+                #{realName,jdbcType=VARCHAR},
+            </if>
+            <if test="sex != null">
+                #{sex,jdbcType=TINYINT},
             </if>
             <if test="email != null">
                 #{email,jdbcType=VARCHAR},
@@ -125,11 +141,17 @@
     <update id="updateByPrimaryKeySelective" parameterType="com.example.authcenter.entity.AccountInfo">
         update account_info
         <set>
-            <if test="accountName != null">
-                account_name = #{accountName,jdbcType=VARCHAR},
+            <if test="account != null">
+                account = #{account,jdbcType=VARCHAR},
             </if>
             <if test="nickName != null">
                 nick_name = #{nickName,jdbcType=VARCHAR},
+            </if>
+            <if test="realName != null">
+                real_name = #{realName,jdbcType=VARCHAR},
+            </if>
+            <if test="sex != null">
+                sex = #{sex,jdbcType=TINYINT},
             </if>
             <if test="email != null">
                 email = #{email,jdbcType=VARCHAR},
@@ -166,18 +188,20 @@
     </update>
     <update id="updateByPrimaryKey" parameterType="com.example.authcenter.entity.AccountInfo">
         update account_info
-        set account_name = #{accountName,jdbcType=VARCHAR},
-            nick_name    = #{nickName,jdbcType=VARCHAR},
-            email        = #{email,jdbcType=VARCHAR},
-            telephone    = #{telephone,jdbcType=VARCHAR},
-            head_img     = #{headImg,jdbcType=VARCHAR},
-            `location`   = #{location,jdbcType=VARCHAR},
-            birthday     = #{birthday,jdbcType=DATE},
-            status_id    = #{statusId,jdbcType=INTEGER},
-            deleted      = #{deleted,jdbcType=BIT},
-            create_time  = #{createTime,jdbcType=TIMESTAMP},
-            update_time  = #{updateTime,jdbcType=TIMESTAMP},
-            delete_time  = #{deleteTime,jdbcType=TIMESTAMP}
+        set account     = #{account,jdbcType=VARCHAR},
+            nick_name   = #{nickName,jdbcType=VARCHAR},
+            real_name   = #{realName,jdbcType=VARCHAR},
+            sex         = #{sex,jdbcType=TINYINT},
+            email       = #{email,jdbcType=VARCHAR},
+            telephone   = #{telephone,jdbcType=VARCHAR},
+            head_img    = #{headImg,jdbcType=VARCHAR},
+            `location`  = #{location,jdbcType=VARCHAR},
+            birthday    = #{birthday,jdbcType=DATE},
+            status_id   = #{statusId,jdbcType=INTEGER},
+            deleted     = #{deleted,jdbcType=BIT},
+            create_time = #{createTime,jdbcType=TIMESTAMP},
+            update_time = #{updateTime,jdbcType=TIMESTAMP},
+            delete_time = #{deleteTime,jdbcType=TIMESTAMP}
         where `uid` = #{uid,jdbcType=BIGINT}
     </update>
 </mapper>
