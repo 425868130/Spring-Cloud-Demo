@@ -6,7 +6,7 @@
         <groupId>com.example</groupId>
         <artifactId>parent-pom</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath/>
+        <relativePath>../pom.xml</relativePath>
     </parent>
     <artifactId>user-service</artifactId>
     <description>用户微服务</description>

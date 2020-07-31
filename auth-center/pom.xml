@@ -6,7 +6,7 @@
         <groupId>com.example</groupId>
         <artifactId>parent-pom</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath/>
+        <relativePath>../pom.xml</relativePath>
     </parent>
     <artifactId>auth-center</artifactId>
     <description>用户认证中心</description>
