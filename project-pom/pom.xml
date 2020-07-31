@@ -24,7 +24,7 @@
         <spring-boot>org.springframework.boot</spring-boot>
         <spring-cloud>org.springframework.cloud</spring-cloud>
         <!--统一配置子模块版本号-->
-        <version.dependencies-pom>0.0.1-SNAPSHOT</version.dependencies-pom>
+        <version.parent-pom>0.0.1-SNAPSHOT</version.parent-pom>
         <version.user-service>0.0.1-SNAPSHOT</version.user-service>
         <version.common>0.0.1-SNAPSHOT</version.common>
         <version.auth-center>0.0.1-SNAPSHOT</version.auth-center>
