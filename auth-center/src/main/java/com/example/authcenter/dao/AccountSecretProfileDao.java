@@ -1,6 +1,7 @@
 package com.example.authcenter.dao;
 
 import com.example.authcenter.entity.AccountSecretProfile;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -11,9 +12,11 @@ public interface AccountSecretProfileDao {
 
     int insertSelective(AccountSecretProfile record);
 
-    AccountSecretProfile selectByPrimaryKey(Long uid);
-
     int updateByPrimaryKeySelective(AccountSecretProfile record);
 
     int updateByPrimaryKey(AccountSecretProfile record);
+
+    int countByUidPassword(@Param("uid") long uid, @Param("password") String password);
+
+    String selectSaltByPrimaryKey(long uid);
 }

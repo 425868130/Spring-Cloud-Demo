@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.Date;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 
 /**
  * group
@@ -12,6 +14,8 @@ import lombok.Data;
  * @since 2020-5-23 11:01:00
  */
 @Data
+@NoArgsConstructor
+@Accessors(chain = true)
 public class Group implements Serializable {
     private static final long serialVersionUID = -8717266412636806029L;
 

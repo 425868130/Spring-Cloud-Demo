@@ -2,7 +2,6 @@ package com.example.authcenter.config;
 
 import com.example.authcenter.entity.StatelessDefaultSubjectFactory;
 import com.example.authcenter.realm.JsonWebTokenRealm;
-import com.example.authcenter.util.PasswordHelper;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.mgt.DefaultSessionStorageEvaluator;
@@ -80,10 +79,5 @@ public class ShiroConfig {
         securityManager.setSubjectFactory(subjectFactory);
         securityManager.setSessionManager(sessionManager);
         return securityManager;
-    }
-
-    @Bean
-    public PasswordHelper passwordHelper() {
-        return new PasswordHelper();
     }
 }

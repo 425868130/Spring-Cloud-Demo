@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.Date;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 
 /**
  * sys_permission
@@ -12,6 +14,8 @@ import lombok.Data;
  * @author xujw
  */
 @Data
+@NoArgsConstructor
+@Accessors(chain = true)
 public class SysPermission implements Serializable {
     private Long id;
 

@@ -16,4 +16,8 @@ public interface AccountInfoDao {
     int updateByPrimaryKeySelective(AccountInfo record);
 
     int updateByPrimaryKey(AccountInfo record);
+
+    int countByAccount(String account);
+
+    AccountInfo getByAccount(String account);
 }

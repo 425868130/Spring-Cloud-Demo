@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.Date;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 
 /**
  * user_status_define
@@ -12,6 +14,8 @@ import lombok.Data;
  * @since 2020-5-23 11:07:02
  */
 @Data
+@NoArgsConstructor
+@Accessors(chain = true)
 public class AccountStatusDefine implements Serializable {
     private static final long serialVersionUID = -1221161658556909581L;
     /**

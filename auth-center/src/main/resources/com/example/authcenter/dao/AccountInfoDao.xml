@@ -33,23 +33,24 @@
         from account_info
         where `uid` = #{uid,jdbcType=BIGINT}
     </delete>
-    <insert id="insert" keyColumn="uid" keyProperty="uid" parameterType="com.example.authcenter.entity.AccountInfo"
-            useGeneratedKeys="true">
-        insert into account_info (account, nick_name, real_name,
+    <insert id="insert" parameterType="com.example.authcenter.entity.AccountInfo">
+        insert into account_info (uid, account, nick_name, real_name,
                                   sex, email, telephone,
                                   head_img, `location`, birthday,
                                   status_id, deleted, create_time,
                                   update_time, delete_time)
-        values (#{account,jdbcType=VARCHAR}, #{nickName,jdbcType=VARCHAR}, #{realName,jdbcType=VARCHAR},
-                #{sex,jdbcType=TINYINT}, #{email,jdbcType=VARCHAR}, #{telephone,jdbcType=VARCHAR},
-                #{headImg,jdbcType=VARCHAR}, #{location,jdbcType=VARCHAR}, #{birthday,jdbcType=DATE},
-                #{statusId,jdbcType=INTEGER}, #{deleted,jdbcType=BIT}, #{createTime,jdbcType=TIMESTAMP},
-                #{updateTime,jdbcType=TIMESTAMP}, #{deleteTime,jdbcType=TIMESTAMP})
+        values (#{uid,jdbcType=BIGINT}, #{account,jdbcType=VARCHAR}, #{nickName,jdbcType=VARCHAR},
+                #{realName,jdbcType=VARCHAR}, #{sex,jdbcType=TINYINT}, #{email,jdbcType=VARCHAR},
+                #{telephone,jdbcType=VARCHAR}, #{headImg,jdbcType=VARCHAR}, #{location,jdbcType=VARCHAR},
+                #{birthday,jdbcType=DATE}, #{statusId,jdbcType=INTEGER}, #{deleted,jdbcType=BIT},
+                #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{deleteTime,jdbcType=TIMESTAMP})
     </insert>
-    <insert id="insertSelective" keyColumn="uid" keyProperty="uid"
-            parameterType="com.example.authcenter.entity.AccountInfo" useGeneratedKeys="true">
+    <insert id="insertSelective" parameterType="com.example.authcenter.entity.AccountInfo">
         insert into account_info
         <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="uid != null">
+                uid,
+            </if>
             <if test="account != null">
                 account,
             </if>
@@ -94,6 +95,9 @@
             </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="uid != null">
+                #{uid,jdbcType=BIGINT},
+            </if>
             <if test="account != null">
                 #{account,jdbcType=VARCHAR},
             </if>
@@ -204,4 +208,15 @@
             delete_time = #{deleteTime,jdbcType=TIMESTAMP}
         where `uid` = #{uid,jdbcType=BIGINT}
     </update>
+    <select id="getByAccount" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from account_info
+        where account = #{account}
+    </select>
+    <select id="countByAccount" resultType="java.lang.Integer">
+        select count(1)
+        from account_info
+        where account = #{account}
+    </select>
 </mapper>

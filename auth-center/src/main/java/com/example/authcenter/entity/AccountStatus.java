@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.Date;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 
 /**
  * account_status
@@ -12,6 +14,8 @@ import lombok.Data;
  * @since 2020-07-30 15:53:56
  */
 @Data
+@NoArgsConstructor
+@Accessors(chain = true)
 public class AccountStatus implements Serializable {
     private static final long serialVersionUID = 1823914892344543331L;
     /**

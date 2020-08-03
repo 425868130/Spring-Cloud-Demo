@@ -1,4 +1,4 @@
-package com.example.authcenter.service.account;
+package com.example.authcenter.service.account.base;
 
 import com.example.authcenter.entity.AccountSecretProfile;
 
@@ -9,7 +9,7 @@ import com.example.authcenter.entity.AccountSecretProfile;
  */
 public interface AccountSecretProfileService {
     /**
-     * 创建新配置信息
+     * 创建新配置信息,用于新用户注册创建时
      *
      * @param secretProfile 加密信息对象
      */
@@ -19,7 +19,7 @@ public interface AccountSecretProfileService {
      * 用户密码校验
      *
      * @param uid      要校验密码的账号id
-     * @param password 要校验的密码(已加密)
+     * @param password 要校验的密码(已进行前端加密,未进行后端加密)
      * @return 校验是否通过
      */
     boolean validationAccountPassword(long uid, String password);
@@ -28,7 +28,7 @@ public interface AccountSecretProfileService {
      * 更新账号密码
      *
      * @param uid         要操作的账号id
-     * @param newPassword 新密码
+     * @param newPassword 新密码(已进行前端加密,未进行后端加密)
      */
     void updatePassword(long uid, String newPassword);
 

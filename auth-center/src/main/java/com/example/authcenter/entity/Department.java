@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.Date;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 
 /**
  * department
@@ -12,6 +14,8 @@ import lombok.Data;
  * @since 2020-5-23 11:01:00
  */
 @Data
+@NoArgsConstructor
+@Accessors(chain = true)
 public class Department implements Serializable {
     private static final long serialVersionUID = -4311673062272297538L;
 

@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.Date;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 
 /**
  * account_secret_profile
@@ -12,6 +14,8 @@ import lombok.Data;
  * @since 2020-07-31 15:47:17
  */
 @Data
+@NoArgsConstructor
+@Accessors(chain = true)
 public class AccountSecretProfile implements Serializable {
     private static final long serialVersionUID = 7757929369674129798L;
     /**

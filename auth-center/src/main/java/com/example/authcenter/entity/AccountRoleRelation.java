@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.Date;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 
 /**
  * account_role_relation
@@ -12,6 +14,8 @@ import lombok.Data;
  * @since 2020-07-30 15:55:06
  */
 @Data
+@NoArgsConstructor
+@Accessors(chain = true)
 public class AccountRoleRelation implements Serializable {
     private static final long serialVersionUID = -5108558317443540853L;
     /**
