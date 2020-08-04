@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.security.*;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
+import java.util.Arrays;
 import java.util.Base64;
 
 /**
@@ -102,7 +103,12 @@ public class RSAUtil {
         PublicKey pubKey = keyPair.getPublic();
         PrivateKey priKey = keyPair.getPrivate();
         // 保存 公钥 和 私钥
-        saveKeyForEncodedBase64(pubKey, new File("id_rsa.pub"));
-        saveKeyForEncodedBase64(priKey, new File("id_rsa"));
+//        saveKeyForEncodedBase64(pubKey, new File("id_rsa.pub"));
+//        saveKeyForEncodedBase64(priKey, new File("id_rsa"));
+
+        byte[] encryptBytes = encrypt("1320074071".getBytes(), pubKey);
+        System.out.println(encryptBytes);
+
+        System.out.println("解密:" + new String(decrypt(encryptBytes, priKey)));
     }
 }

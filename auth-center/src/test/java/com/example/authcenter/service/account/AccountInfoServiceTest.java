@@ -14,9 +14,19 @@ public class AccountInfoServiceTest {
     @Test
     void addAccount() {
         AccountCreateForm accountCreateForm = new AccountCreateForm();
-        accountCreateForm.setAccount("xjw19960613");
+        accountCreateForm.setAccount("13254@sss123");
         accountCreateForm.setEmail("425868130@qq.com");
-        accountCreateForm.setPassword("");
-        accountInfoService.createAccount(accountCreateForm);
+        accountCreateForm.setPassword("5151445664684");
+        accountInfoService.create(accountCreateForm);
+    }
+
+    @Test
+    void deleteAccount() {
+        accountInfoService.delete(-1);
+    }
+
+    @Test
+    void getByAccountName() {
+        accountInfoService.getByAccountName("");
     }
 }

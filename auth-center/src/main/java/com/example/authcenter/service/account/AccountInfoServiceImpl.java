@@ -16,18 +16,13 @@ import com.example.common.util.SequenceGenerator;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.util.StringUtils;
-import org.springframework.validation.annotation.Validated;
-
-import javax.validation.Valid;
 
 @Slf4j
 @Service
-@Validated
 public class AccountInfoServiceImpl implements AccountInfoService {
 
     private final AccountMapper accountMapper = AccountMapper.INSTANCE;
-    
+
     private final AccountInfoDao accountInfoDao;
     private final ServiceEventBus serviceEventBus;
     private final AccountSecretProfileService accountSecretProfileService;
@@ -41,9 +36,7 @@ public class AccountInfoServiceImpl implements AccountInfoService {
 
     @Override
     @Transactional
-    public void createAccount(@Valid AccountCreateForm form) {
-        //todo 参数校验
-
+    public void create(AccountCreateForm form) {
         int existCount = accountInfoDao.countByAccount(form.getAccount());
         if (existCount > 0) {
             throw new ServiceException(StatusCode.TIMEOUT, "当前账号已存在!");
@@ -56,13 +49,13 @@ public class AccountInfoServiceImpl implements AccountInfoService {
     }
 
     @Override
-    public void deleteAccount(long uid) {
+    public void delete(long uid) {
         accountInfoDao.deleteByPrimaryKey(uid);
         serviceEventBus.emit(AccountInfoEvent.onDelete(uid));
     }
 
     @Override
-    public void updateAccount(AccountUpdateForm form) {
+    public void update(AccountUpdateForm form) {
         AccountInfo accountInfo = accountMapper.formToAccountInfo(form);
         serviceEventBus.emit(AccountInfoEvent.onUpdate(accountInfo));
     }
@@ -74,9 +67,6 @@ public class AccountInfoServiceImpl implements AccountInfoService {
 
     @Override
     public AccountInfoBo getByAccountName(String accountName) {
-        if (StringUtils.isEmpty(accountName)) {
-            return null;
-        }
         return accountMapper.toAccountBo(accountInfoDao.getByAccount(accountName));
     }
 }

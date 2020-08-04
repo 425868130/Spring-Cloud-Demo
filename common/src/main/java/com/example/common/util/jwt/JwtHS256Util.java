@@ -16,9 +16,9 @@ import java.util.*;
  **/
 public class JwtHS256Util {
     //token失效时间
-    private static int expiresMs = 10000;
+    private final static int expiresMs = 10000;
 
-    private static String iss = "xjwcode.com";
+    private final static String iss = "xjwcode.com";
 
     /**
      * 创建jwt
@@ -64,10 +64,9 @@ public class JwtHS256Util {
      */
     public static Claims parseJWT(String jsonWebToken, String secretKey) {
         try {
-            Claims claims = Jwts.parser()
+            return Jwts.parser()
                     .setSigningKey(Base64.getEncoder().encodeToString(secretKey.getBytes()))
                     .parseClaimsJws(jsonWebToken).getBody();
-            return claims;
         } catch (Exception ex) {
             //未找到对应jwt信息
             return null;

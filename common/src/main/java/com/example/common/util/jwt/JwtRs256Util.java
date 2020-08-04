@@ -20,7 +20,7 @@ import java.util.UUID;
 @Slf4j
 public class JwtRs256Util {
 
-    private static String iss = "xjwcode.com";
+    private final static String iss = "xjwcode.com";
 
     /**
      * 根据给定条件创建token

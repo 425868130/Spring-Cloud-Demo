@@ -15,5 +15,10 @@ public interface EventListener {
      */
     boolean accept(ServiceEvent event);
 
+    /**
+     * 处理指定事件
+     *
+     * @param event 待处理的事件对象
+     */
     void handle(ServiceEvent event);
 }
