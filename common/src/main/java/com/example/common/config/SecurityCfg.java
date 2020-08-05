@@ -12,5 +12,5 @@ import java.io.Serializable;
 public class SecurityCfg implements Serializable {
     private static final long serialVersionUID = 3411302122676764455L;
     private AccountAuthCfg account;
-    private ServiceAuthCfg service;
+//    private ServiceAuthCfg service;
 }

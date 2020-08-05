@@ -68,14 +68,4 @@ system:
         jOzUTEuhz8YtCBA6Ii1iWG6h14LjBa3npw0p7ARel9o4yoHpvlEbDjnBZAP1Xio3z8kxPpjZVvPL
         6uZJbxAVaCVi15YVL8syYqUvypMubJdXO+9yXSwSRWXf9xx/T/7YQvZJd9JOiPst48Z88W00QrVn
         ukdMGQIDAQAB
-      privateKey:
     service:
-key-pair:
-  auth-center:
-    # 每行末尾要添加反斜杠符号 \ 表示保留换行符,否则在获取秘钥是会提示格式错误
-    public: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmsXJCHl7gSGkSb7m7MdssmvF82vly7ht\
-             kxH2yBKZyH+INxy9fb+9LS04zDufFsw3nfjfSu1l2+el76YL/PNvRMI85yhqtVAq71SdzCIA3o1J\
-             5V2WmMZEdLBhe3ApvDKk5VSS1GslcQuaAmiikPXX/JumIemxje8XWwXtE9ealpGZgk+xnNpQKTO6\
-             jOzUTEuhz8YtCBA6Ii1iWG6h14LjBa3npw0p7ARel9o4yoHpvlEbDjnBZAP1Xio3z8kxPpjZVvPL\
-             6uZJbxAVaCVi15YVL8syYqUvypMubJdXO+9yXSwSRWXf9xx/T/7YQvZJd9JOiPst48Z88W00QrVn\
-             ukdMGQIDAQAB"

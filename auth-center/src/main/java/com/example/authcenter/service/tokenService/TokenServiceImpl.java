@@ -1,9 +1,11 @@
 package com.example.authcenter.service.tokenService;
 
+import com.example.common.config.SystemCfg;
 import com.example.common.define.ConstVal;
 import com.example.common.define.jwt.JwtPayload;
 import com.example.common.util.jwt.JwtRs256Util;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -20,12 +22,18 @@ import java.util.concurrent.TimeUnit;
 @Service
 @RefreshScope
 public class TokenServiceImpl implements TokenService {
-    @Value("${key-pair.auth-center.private}")
-    private String authPrivateKey;
-    @Value("${key-pair.auth-center.public}")
-    private String authPublicKey;
+    private final String authPrivateKey;
+    private final String authPublicKey;
+    @Value("${system.security.account.privateKey}")
+    private String privateKey;
     @Resource
     private RedisTemplate<String, Object> redisTemplate;
+
+    public TokenServiceImpl(SystemCfg systemCfg) {
+        this.authPrivateKey = systemCfg.getSecurity().getAccount().getPrivateKey();
+        this.authPublicKey = systemCfg.getSecurity().getAccount().getPublicKey();
+        System.out.println("privateKey:" + privateKey);
+    }
 
     @Override
     public Optional<String> generateToken(JwtPayload jwtPayload) {
