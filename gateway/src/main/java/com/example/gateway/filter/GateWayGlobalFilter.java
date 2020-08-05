@@ -38,7 +38,7 @@ public class GateWayGlobalFilter implements GlobalFilter, Ordered {
         /*不在白名单中则进行Token校验*/
         org.springframework.http.HttpHeaders headers = exchange.getRequest().getHeaders();
         String token = headers.getFirst(HttpHeaders.AUTHORIZATION);
-        if (!JwtRs256Util.parseJWT(token, publicKey).isPresent()) {
+        if (JwtRs256Util.parseJWT(token, publicKey).isEmpty()) {
             return ResponseUtil.result(exchange.getResponse(), new Result(StatusCode.TOKEN_INVALID), null);
         }
         return chain.filter(exchange);

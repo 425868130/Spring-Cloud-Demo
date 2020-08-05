@@ -1,6 +1,6 @@
 server:
   port: 8401
-msg: hello spring cloud dev
+msg: hello spring cloud prod
 spring:
   datasource:
     auth-center:
@@ -8,32 +8,30 @@ spring:
       password: 1320074071
       jdbc-url: jdbc:mysql://localhost:3306/${spring.application.name}?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
       driver-class-name: com.mysql.cj.jdbc.Driver
-mybatis-plus:
-  configuration:
-    # 开启下划线转驼峰
-    mapUnderscoreToCamelCase: true
-key-pair:
-  auth-center:
-    # 每行末尾要添加反斜杠符号 \ 表示保留换行符,否则在获取秘钥时会提示格式错误
-    private: "MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCaxckIeXuBIaRJvubsx2yya8Xz\
-              a+XLuG2TEfbIEpnIf4g3HL19v70tLTjMO58WzDed+N9K7WXb56Xvpgv8829EwjznKGq1UCrvVJ3M\
-              IgDejUnlXZaYxkR0sGF7cCm8MqTlVJLUayVxC5oCaKKQ9df8m6Yh6bGN7xdbBe0T15qWkZmCT7Gc\
-              2lApM7qM7NRMS6HPxi0IEDoiLWJYbqHXguMFreenDSnsBF6X2jjKgem+URsOOcFkA/VeKjfPyTE+\
-              mNlW88vq5klvEBVoJWLXlhUvyzJipS/Kky5sl1c773JdLBJFZd/3HH9P/thC9kl30k6I+y3jxnzx\
-              bTRCtWe6R0wZAgMBAAECggEASVNVF/++BIK0u/+Glj0xASLQKLBAsZCR0TCck1NEqlnJZhrmp5HU\
-              hXe8Rf4lM/7ShrQmze/E5zdLRUuMuG14lMHVasqaK4ZsoPCcxd6CPO4BSXpaY8zjF8mMlZehHjl8\
-              J+42lg6hMXqGn4eFJVpj1pjDT6PQ6+aPUR9wn4rxAU4AtuWUFtrdn+64wgEp62x5nKHDGt77peKO\
-              lHaCxq5xJ6NhTzis7Ow69BYVYT32eiN8ulkcMlNXeEt4sjWQuntJfL+csvufwCf6hDk+Ti622/Cn\
-              XbAv4r6s1Mpgly2GfRdxC5hbyAB4VMmQVl/aQyMzO/xP8R9KMYVDexE12JjJhQKBgQDpzHpAu4d5\
-              JGuYVe09ekkQGK1+SbAW1XD5viLgRpe0VpVtVQ4FnmMmixNI+dnOltmbpLL+a4cDpVGCMvVIcX8s\
-              SmHEJ9Lz6+LdOmEwZ7xBx5xfYMfWYga6t3Nx5f7vIrRSDTkIc4+a67bisD84JSSEIXAUVdYJtGSt\
-              HL/LEOFhQwKBgQCpeDl2J0ZaXRuiNoVVGkQoe6WK+s+XBzIYJ+D9PfavftVBqeneUIGIyFwJPXSN\
-              XQ9Oa+1TR6To2nhh/n8LNRHtB78LZKaXrjwDhB5cPnRpXLnwradQmFLwKZl92QSf/5to1H1JGC51\
-              hMaPipV9GAc0d48XTMsY+S5hf60Y/XnJcwKBgG7cisvPIHoNDwf5FrmkFqkPSpUrk9f/9cY2por6\
-              bk0REWH6ht+bLyDDqa1c7C7N0PnAqy+BBVBxP6khSLXFO6xgyOMejyUioTyNxjARwG7gnAGN/rRl\
-              XxOCkbdce/og1qhhpL2hLmMjimELea7BzgLpaB/8Y7XOWD7N9xPvOS/JAoGALKe+VHDy69q+7lZ5\
-              ebxLG3PBYkbGrqA5xf20HmbWetXr8bqJIoiKKXXKMrEb5igQYXS0+43UWXs/32qFJXndeFzjLWhf\
-              MXa6355PtbTLTfweDtpjTSxmJlx/0pZ9zn82/z+Gp90UWOkcvTQiQe0z8NJURSp6FeGLJCvVe9FG\
-              5xsCgYEAuVHQMxgQb1UkdGQQjxaJqW/xd8IHIBV4jRHKEq8BjqnpayhyEOY+C9E7NvrRvx63JyWd\
-              v2+fPSFbJTedf9U6s64rnaJIKL/9gUqqJeSjZr+KGux68xrzzqsBSMhJGiyHoWNAJ6DiVPPgn0n7\
-              lrFvGL1XIYaoSc6Oe1ZfmLowSrs="
+system:
+  security:
+    account:
+      privateKey: |
+        MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCaxckIeXuBIaRJvubsx2yya8Xz
+        a+XLuG2TEfbIEpnIf4g3HL19v70tLTjMO58WzDed+N9K7WXb56Xvpgv8829EwjznKGq1UCrvVJ3M
+        IgDejUnlXZaYxkR0sGF7cCm8MqTlVJLUayVxC5oCaKKQ9df8m6Yh6bGN7xdbBe0T15qWkZmCT7Gc
+        2lApM7qM7NRMS6HPxi0IEDoiLWJYbqHXguMFreenDSnsBF6X2jjKgem+URsOOcFkA/VeKjfPyTE+
+        mNlW88vq5klvEBVoJWLXlhUvyzJipS/Kky5sl1c773JdLBJFZd/3HH9P/thC9kl30k6I+y3jxnzx
+        bTRCtWe6R0wZAgMBAAECggEASVNVF/++BIK0u/+Glj0xASLQKLBAsZCR0TCck1NEqlnJZhrmp5HU
+        hXe8Rf4lM/7ShrQmze/E5zdLRUuMuG14lMHVasqaK4ZsoPCcxd6CPO4BSXpaY8zjF8mMlZehHjl8
+        J+42lg6hMXqGn4eFJVpj1pjDT6PQ6+aPUR9wn4rxAU4AtuWUFtrdn+64wgEp62x5nKHDGt77peKO
+        lHaCxq5xJ6NhTzis7Ow69BYVYT32eiN8ulkcMlNXeEt4sjWQuntJfL+csvufwCf6hDk+Ti622/Cn
+        XbAv4r6s1Mpgly2GfRdxC5hbyAB4VMmQVl/aQyMzO/xP8R9KMYVDexE12JjJhQKBgQDpzHpAu4d5
+        JGuYVe09ekkQGK1+SbAW1XD5viLgRpe0VpVtVQ4FnmMmixNI+dnOltmbpLL+a4cDpVGCMvVIcX8s
+        SmHEJ9Lz6+LdOmEwZ7xBx5xfYMfWYga6t3Nx5f7vIrRSDTkIc4+a67bisD84JSSEIXAUVdYJtGSt
+        HL/LEOFhQwKBgQCpeDl2J0ZaXRuiNoVVGkQoe6WK+s+XBzIYJ+D9PfavftVBqeneUIGIyFwJPXSN
+        XQ9Oa+1TR6To2nhh/n8LNRHtB78LZKaXrjwDhB5cPnRpXLnwradQmFLwKZl92QSf/5to1H1JGC51
+        hMaPipV9GAc0d48XTMsY+S5hf60Y/XnJcwKBgG7cisvPIHoNDwf5FrmkFqkPSpUrk9f/9cY2por6
+        bk0REWH6ht+bLyDDqa1c7C7N0PnAqy+BBVBxP6khSLXFO6xgyOMejyUioTyNxjARwG7gnAGN/rRl
+        XxOCkbdce/og1qhhpL2hLmMjimELea7BzgLpaB/8Y7XOWD7N9xPvOS/JAoGALKe+VHDy69q+7lZ5
+        ebxLG3PBYkbGrqA5xf20HmbWetXr8bqJIoiKKXXKMrEb5igQYXS0+43UWXs/32qFJXndeFzjLWhf
+        MXa6355PtbTLTfweDtpjTSxmJlx/0pZ9zn82/z+Gp90UWOkcvTQiQe0z8NJURSp6FeGLJCvVe9FG
+        5xsCgYEAuVHQMxgQb1UkdGQQjxaJqW/xd8IHIBV4jRHKEq8BjqnpayhyEOY+C9E7NvrRvx63JyWd
+        v2+fPSFbJTedf9U6s64rnaJIKL/9gUqqJeSjZr+KGux68xrzzqsBSMhJGiyHoWNAJ6DiVPPgn0n7
+        lrFvGL1XIYaoSc6Oe1ZfmLowSrs=
+    service:

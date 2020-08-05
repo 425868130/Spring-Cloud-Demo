@@ -10,9 +10,9 @@ spring:
           # 配置文件存放路径(文件夹)，如果配置文件在项目根目录，则不需要配置该值
           search-paths: config-resources/**
           # git账号  当git项目创建为public时，不需要username和password
-          #username: 425868130@qq.com
+          #username:
           # git密码
-          #password: qq!1320074071
+          #password:
           clone-on-start: true
           #指定默认使用的git分支,如果不指定则每个使用云配置的模块都要手动指定具体分支
           default-label: develop

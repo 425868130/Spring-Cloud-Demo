@@ -45,6 +45,8 @@ spring:
     password: guest
 
 mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
   mapper-locations: classpath:mapping/*Mapper.xml
 
 key-pair:
