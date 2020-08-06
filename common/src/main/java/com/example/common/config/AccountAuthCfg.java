@@ -24,7 +24,7 @@ public class AccountAuthCfg implements Serializable {
             return;
         }
         System.out.println("publicKey:\n" + publicKey);
-        this.publicKey = publicKey.trim();
+        this.publicKey = publicKey;
         this.publicKeyObj = RSAUtil.getPublicKey(this.publicKey);
     }
 
@@ -33,7 +33,7 @@ public class AccountAuthCfg implements Serializable {
             return;
         }
         System.out.println("privateKey:\n" + privateKey);
-        this.privateKey = privateKey.trim();
+        this.privateKey = privateKey;
         this.privateKeyObj = RSAUtil.getPrivateKey(this.privateKey);
     }
 }
