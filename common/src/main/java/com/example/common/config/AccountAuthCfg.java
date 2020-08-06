@@ -2,6 +2,7 @@ package com.example.common.config;
 
 import com.example.common.util.RSAUtil;
 import lombok.Getter;
+import org.springframework.util.StringUtils;
 
 import java.io.Serializable;
 import java.security.PrivateKey;
@@ -19,12 +20,20 @@ public class AccountAuthCfg implements Serializable {
 
 
     public void setPublicKey(String publicKey) {
-        this.publicKey = publicKey;
-        this.publicKeyObj = RSAUtil.getPublicKey(publicKey);
+        if (StringUtils.isEmpty(publicKey)) {
+            return;
+        }
+        System.out.println("publicKey:\n" + publicKey);
+        this.publicKey = publicKey.trim();
+        this.publicKeyObj = RSAUtil.getPublicKey(this.publicKey);
     }
 
     public void setPrivateKey(String privateKey) {
-        this.privateKey = privateKey;
-        this.privateKeyObj = RSAUtil.getPrivateKey(privateKey);
+        if (StringUtils.isEmpty(privateKey)) {
+            return;
+        }
+        System.out.println("privateKey:\n" + privateKey);
+        this.privateKey = privateKey.trim();
+        this.privateKeyObj = RSAUtil.getPrivateKey(this.privateKey);
     }
 }
