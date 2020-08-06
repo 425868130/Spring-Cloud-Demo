@@ -1,14 +1,14 @@
 package com.example.gateway.filter;
 
+import com.example.common.config.AccountAuthCfg;
+import com.example.common.config.SystemCfg;
 import com.example.common.define.HttpHeaders;
-import com.example.common.define.StatusCode;
 import com.example.common.define.Result;
+import com.example.common.define.StatusCode;
 import com.example.common.util.ResponseUtil;
 import com.example.common.util.jwt.JwtRs256Util;
 import com.example.gateway.config.WhitelistConfig;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.core.Ordered;
@@ -24,11 +24,13 @@ import reactor.core.publisher.Mono;
 @Component
 public class GateWayGlobalFilter implements GlobalFilter, Ordered {
 
-    @Autowired
-    private WhitelistConfig whitelistConfig;
+    private final WhitelistConfig whitelistConfig;
+    private final AccountAuthCfg accountAuthCfg;
 
-    @Value("${key-pair.auth-center.public}")
-    private String publicKey;
+    public GateWayGlobalFilter(WhitelistConfig whitelistConfig, SystemCfg systemCfg) {
+        this.whitelistConfig = whitelistConfig;
+        this.accountAuthCfg = systemCfg.getSecurity().getAccount();
+    }
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
@@ -38,7 +40,7 @@ public class GateWayGlobalFilter implements GlobalFilter, Ordered {
         /*不在白名单中则进行Token校验*/
         org.springframework.http.HttpHeaders headers = exchange.getRequest().getHeaders();
         String token = headers.getFirst(HttpHeaders.AUTHORIZATION);
-        if (JwtRs256Util.parseJWT(token, publicKey).isEmpty()) {
+        if (JwtRs256Util.parseJWT(token, accountAuthCfg.getPrivateKey()).isEmpty()) {
             return ResponseUtil.result(exchange.getResponse(), new Result(StatusCode.TOKEN_INVALID), null);
         }
         return chain.filter(exchange);

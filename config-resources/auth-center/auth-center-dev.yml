@@ -11,7 +11,7 @@ spring:
 system:
   security:
     account:
-      privateKey: |
+      privateKey: |-
         MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCaxckIeXuBIaRJvubsx2yya8Xz
         a+XLuG2TEfbIEpnIf4g3HL19v70tLTjMO58WzDed+N9K7WXb56Xvpgv8829EwjznKGq1UCrvVJ3M
         IgDejUnlXZaYxkR0sGF7cCm8MqTlVJLUayVxC5oCaKKQ9df8m6Yh6bGN7xdbBe0T15qWkZmCT7Gc

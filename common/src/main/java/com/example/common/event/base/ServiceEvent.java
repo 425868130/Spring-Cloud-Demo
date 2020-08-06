@@ -6,13 +6,15 @@ import com.example.common.event.define.EventAction;
 import com.example.common.event.define.EventGroup;
 import com.example.common.event.define.EventStatus;
 
+import java.io.Serializable;
+
 /**
  * 业务层事件,一个事件必须属于唯一一个事件组下的某个事件动作
  *
  * @author xujw
  * @since 2020-08-03 14:25:52
  */
-public interface ServiceEvent {
+public interface ServiceEvent extends Serializable {
     /**
      * 获取当前的事件组类型
      *

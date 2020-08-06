@@ -61,7 +61,7 @@ mybatis:
 system:
   security:
     account:
-      publicKey: |
+      publicKey: |-
         MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmsXJCHl7gSGkSb7m7MdssmvF82vly7ht
         kxH2yBKZyH+INxy9fb+9LS04zDufFsw3nfjfSu1l2+el76YL/PNvRMI85yhqtVAq71SdzCIA3o1J
         5V2WmMZEdLBhe3ApvDKk5VSS1GslcQuaAmiikPXX/JumIemxje8XWwXtE9ealpGZgk+xnNpQKTO6

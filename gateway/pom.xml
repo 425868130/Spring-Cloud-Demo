@@ -40,5 +40,9 @@
             <groupId>${project.groupId}</groupId>
             <artifactId>${name.feign-provider}</artifactId>
         </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>${name.common}</artifactId>
+        </dependency>
     </dependencies>
 </project>

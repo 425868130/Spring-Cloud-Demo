@@ -25,12 +25,12 @@ public class JwtRs256Util {
     /**
      * 根据给定条件创建token
      *
-     * @param privateKeyStr 用于签名的私钥字符串
-     * @param payload       荷载内容对象,JwtPayload对象
-     * @param duration      有效持续时间,单位毫秒
-     * @return
+     * @param signKeyStr 用于签名的密钥字符串
+     * @param payload    荷载内容对象,JwtPayload对象
+     * @param duration   有效持续时间,单位毫秒
+     * @return 生成的token字符串
      */
-    public static Optional<String> createJWT(String privateKeyStr, JwtPayload payload, long duration) {
+    public static Optional<String> createJWT(String signKeyStr, JwtPayload payload, long duration) {
         String token = null;
         Date now = new Date();
         long expMillis = duration <= 0 ? ConstVal.Token.EXPIRES : now.getTime() + duration;
@@ -47,7 +47,7 @@ public class JwtRs256Util {
                     .setClaims(payload)
                     .setIssuedAt(now)
                     .setExpiration(new Date(expMillis))
-                    .signWith(SignatureAlgorithm.RS256, RSAUtil.getPrivateKey(privateKeyStr))
+                    .signWith(SignatureAlgorithm.RS256, RSAUtil.getPublicKey(signKeyStr))
                     .compact();
         } catch (Exception e) {
             log.error("token生成失败:" + e.getMessage());
@@ -55,13 +55,13 @@ public class JwtRs256Util {
         return Optional.ofNullable(token);
     }
 
-    public static Optional<JwtPayload> parseJWT(String jsonWebToken, String publicKeyStr) {
-        if (jsonWebToken == null || publicKeyStr == null || "".equals(jsonWebToken)) {
+    public static Optional<JwtPayload> parseJWT(String jsonWebToken, String signKeyStr) {
+        if (jsonWebToken == null || signKeyStr == null || "".equals(jsonWebToken)) {
             return Optional.empty();
         }
         try {
             Claims claims = Jwts.parser()
-                    .setSigningKey(RSAUtil.getPublicKey(publicKeyStr))
+                    .setSigningKey(RSAUtil.getPrivateKey(signKeyStr))
                     .parseClaimsJws(jsonWebToken).getBody();
             return Optional.of(new DefaultJwtPayload(claims));
         } catch (Exception ex) {

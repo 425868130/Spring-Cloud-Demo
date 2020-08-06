@@ -11,10 +11,14 @@ import lombok.experimental.Accessors;
 
 import java.util.Date;
 
+/**
+ * 账号信息相关事件对象,扩展自基础业务事件,增加账号相关信息
+ */
 @Getter
 @Setter
 @Accessors(chain = true)
 public class AccountInfoEvent extends BaseServiceEvent {
+    private static final long serialVersionUID = 3998731585153871437L;
     //额外扩展信息
     private String account;
     private String headImg;

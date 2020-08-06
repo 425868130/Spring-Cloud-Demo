@@ -29,12 +29,12 @@ public class TokenServiceImpl implements TokenService {
 
     @Override
     public Optional<String> generateToken(JwtPayload jwtPayload) {
-        return JwtRs256Util.createJWT(accountAuthCfg.getPrivateKey(), jwtPayload, ConstVal.Token.EXPIRES);
+        return JwtRs256Util.createJWT(accountAuthCfg.getPublicKey(), jwtPayload, ConstVal.Token.EXPIRES);
     }
 
     @Override
     public Optional<JwtPayload> parseJWT(String tokenStr) {
-        return JwtRs256Util.parseJWT(tokenStr, accountAuthCfg.getPublicKey());
+        return JwtRs256Util.parseJWT(tokenStr, accountAuthCfg.getPrivateKey());
     }
 
     /**

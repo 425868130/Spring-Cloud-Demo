@@ -22,7 +22,7 @@ import java.util.Map;
 @Configuration
 public class ShiroConfig {
     @Bean
-    public ShiroFilterFactoryBean shirFilter(SecurityManager securityManager, JWTFilter jwtFilter) {
+    public ShiroFilterFactoryBean shiroFilter(SecurityManager securityManager, JWTFilter jwtFilter) {
         ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
         // 必须设置 SecurityManager
         shiroFilterFactoryBean.setSecurityManager(securityManager);
