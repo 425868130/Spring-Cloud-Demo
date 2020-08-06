@@ -1,4 +1,4 @@
-package com.example.authcenter.util;
+package com.example.common.component;
 
 import com.example.common.config.AccountAuthCfg;
 import com.example.common.config.SystemCfg;
@@ -23,7 +23,7 @@ public class PasswordUtil {
      */
     public String encrypt(String originPassword) {
         if (StringUtils.isEmpty(originPassword)) {
-            return null;
+            return "";
         }
         return Base64Utils.encodeToString(RSAUtil.encrypt(originPassword.getBytes(), accountAuthCfg.getPublicKeyObj()));
     }
@@ -36,7 +36,7 @@ public class PasswordUtil {
      */
     public String decrypt(String passwordWithBase64) {
         if (StringUtils.isEmpty(passwordWithBase64)) {
-            return null;
+            return "";
         }
         return new String(RSAUtil.decrypt(Base64Utils.decode(passwordWithBase64.getBytes()), accountAuthCfg.getPrivateKeyObj()));
     }
