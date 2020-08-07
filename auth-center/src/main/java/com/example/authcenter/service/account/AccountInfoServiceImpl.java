@@ -43,7 +43,6 @@ public class AccountInfoServiceImpl implements AccountInfoService {
         }
         AccountInfo accountInfo = accountMapper.formToAccountInfo(form);
         accountInfo.setUid(SequenceGenerator.nextId());
-
         accountInfoDao.insertSelective(accountInfo);
         serviceEventBus.emit(AccountInfoEvent.onAdd(accountInfo));
     }
