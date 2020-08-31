@@ -2,6 +2,7 @@ package com.example.authcenter.service.account;
 
 import com.example.authcenter.dao.AccountInfoDao;
 import com.example.authcenter.entity.AccountInfo;
+import com.example.authcenter.entity.AccountSecretProfile;
 import com.example.authcenter.service.account.ao.AccountCreateForm;
 import com.example.authcenter.service.account.ao.AccountUpdateForm;
 import com.example.authcenter.service.account.base.AccountInfoService;
@@ -44,6 +45,7 @@ public class AccountInfoServiceImpl implements AccountInfoService {
         AccountInfo accountInfo = accountMapper.formToAccountInfo(form);
         accountInfo.setUid(SequenceGenerator.nextId());
         accountInfoDao.insertSelective(accountInfo);
+        accountSecretProfileService.createProfile(new AccountSecretProfile(accountInfo.getUid(), form.getPassword()));
         serviceEventBus.emit(AccountInfoEvent.onAdd(accountInfo));
     }
 

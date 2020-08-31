@@ -26,6 +26,7 @@ public class AccountSecretProfileServiceImpl implements AccountSecretProfileServ
             throw new ServiceException(PARAM_INVALID, "非法的用户信息");
         }
         secretProfile.setSalt(HashEncryptUtil.getSalt());
+        secretProfile.setPassword(HashEncryptUtil.encryptWithSalt(secretProfile.getPassword(), secretProfile.getSalt()));
         accountSecretProfileDao.insertSelective(secretProfile);
     }
 

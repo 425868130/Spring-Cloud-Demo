@@ -47,4 +47,9 @@ public class AccountSecretProfile implements Serializable {
      * 更新时间
      */
     private Date updateTime;
+
+    public AccountSecretProfile(Long uid, String password) {
+        this.uid = uid;
+        this.password = password;
+    }
 }
