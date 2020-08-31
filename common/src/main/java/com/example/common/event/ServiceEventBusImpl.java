@@ -20,7 +20,6 @@ public class ServiceEventBusImpl implements ServiceEventBus {
         if (applicationEvent == null) {
             return;
         }
-        System.out.println("触发事件...");
         applicationContext.publishEvent(applicationEvent);
     }
 }
