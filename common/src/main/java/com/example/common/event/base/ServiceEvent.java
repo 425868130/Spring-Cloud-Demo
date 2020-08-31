@@ -5,63 +5,45 @@ import com.example.common.define.StatusCode;
 import com.example.common.event.define.EventAction;
 import com.example.common.event.define.EventGroup;
 import com.example.common.event.define.EventStatus;
-
-import java.io.Serializable;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.experimental.Accessors;
+import org.springframework.context.ApplicationEvent;
 
 /**
- * 业务层事件,一个事件必须属于唯一一个事件组下的某个事件动作
- *
- * @author xujw
- * @since 2020-08-03 14:25:52
+ * 业务层事件对象包装
  */
-public interface ServiceEvent extends Serializable {
-    /**
-     * 获取当前的事件组类型
-     *
-     * @return 事件组类型对应枚举类
-     */
-    EventGroup getGroup();
+@Getter
+@Setter
+@Accessors(chain = true)
+public abstract class ServiceEvent extends ApplicationEvent {
+    private static final long serialVersionUID = -2388635158259770079L;
+    //获取事件id,由事件触发方生成,用于事件处理方识别
+    private String eventId;
+    //当前的事件组类型
+    private EventGroup group;
+    //事件动作类型
+    private EventAction action;
+    private EventStatus status;
 
     /**
-     * 获取事件动作类型
+     * Create a new {@code ApplicationEvent}.
      *
-     * @return 事件动作类型
+     * @param source the object on which the event initially occurred or with
+     *               which the event is associated (never {@code null})
      */
-    EventAction getAction();
-
-    /**
-     * 获取事件编码,事件编码默认由事件组名-事件动作组合而成
-     *
-     * @return 事件编码值
-     */
-    default String getEventCode() {
-        return getGroup() + "-" + getAction();
+    public ServiceEvent() {
+        super(new Object());
     }
 
-    /**
-     * 获取事件id,由事件触发方生成,用于事件处理方识别
-     *
-     * @return 事件id
-     */
-    String getEventId();
-
-    /**
-     * 获取当前事件的处理状态
-     *
-     * @return 状态枚举对象
-     */
-    EventStatus getStatus();
-
-    /**
-     * 获取当前事件处理结果信息，通常在处理失败时返回异常信息
-     *
-     * @return 处理结果信息字符串
-     */
-    default String getResultMsg() {
-        return "";
+    public ServiceEvent(EventGroup group, EventAction action, EventStatus status) {
+        super(new Object());
+        this.group = group;
+        this.action = action;
+        this.status = status;
     }
 
-    default boolean mandatoryCheck() throws ServiceException {
+    public boolean mandatoryCheck() throws ServiceException {
         if (getGroup() == null || getAction() == null) {
             throw new ServiceException(StatusCode.PARAM_BLANK, "触发事件group/action参数不能为空");
         }

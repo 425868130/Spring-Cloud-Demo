@@ -2,46 +2,25 @@ package com.example.common.event;
 
 import com.example.common.event.base.ServiceEvent;
 import com.example.common.event.base.ServiceEventBus;
-import com.example.common.event.base.EventListener;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.scheduling.annotation.Async;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
-import org.springframework.util.CollectionUtils;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Slf4j
 @Component
 public class ServiceEventBusImpl implements ServiceEventBus {
-    private final List<EventListener> listenerList;
+    private final ApplicationContext applicationContext;
 
-    public ServiceEventBusImpl(List<EventListener> listenerList) {
-        this.listenerList = listenerList;
+    public ServiceEventBusImpl(ApplicationContext applicationContext) {
+        this.applicationContext = applicationContext;
     }
 
-    private List<EventListener> getEventListener(ServiceEvent event) {
-        List<EventListener> notifyList = new ArrayList<>();
-        if (CollectionUtils.isEmpty(listenerList)) {
-            return notifyList;
-        }
-        for (EventListener listener : listenerList) {
-            if (listener.accept(event)) {
-                notifyList.add(listener);
-            }
-        }
-        return notifyList;
-    }
-
-    @Async
     @Override
-    public void emit(ServiceEvent event) {
-        if (event == null || event.mandatoryCheck()) {
+    public void publishEvent(ServiceEvent applicationEvent) {
+        if (applicationEvent == null) {
             return;
         }
-        List<EventListener> listeners = getEventListener(event);
-        for (EventListener listener : listeners) {
-            listener.handle(event);
-        }
+        System.out.println("触发事件...");
+        applicationContext.publishEvent(applicationEvent);
     }
 }

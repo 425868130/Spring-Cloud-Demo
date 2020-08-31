@@ -1,7 +1,7 @@
 package com.example.authcenter.service.account.event;
 
 import com.example.authcenter.entity.AccountInfo;
-import com.example.common.event.base.BaseServiceEvent;
+import com.example.common.event.base.ServiceEvent;
 import com.example.common.event.define.EventAction;
 import com.example.common.event.define.EventGroup;
 import com.example.common.event.define.EventStatus;
@@ -17,7 +17,7 @@ import java.util.Date;
 @Getter
 @Setter
 @Accessors(chain = true)
-public class AccountInfoEvent extends BaseServiceEvent {
+public class AccountInfoEvent extends ServiceEvent {
     private static final long serialVersionUID = 3998731585153871437L;
     //额外扩展信息
     private String account;
@@ -33,7 +33,7 @@ public class AccountInfoEvent extends BaseServiceEvent {
         AccountInfoEvent accountInfoEvent = new AccountInfoEvent(EventGroup.ACCOUNT_INFO, EventAction.ADD, EventStatus.EMIT, accountInfo.getUid());
         accountInfoEvent.setAccount(accountInfo.getAccount());
         accountInfoEvent.setHeadImg(accountInfo.getHeadImg());
-        accountInfoEvent.setCreateTime(accountInfo.getCreateTime());
+        accountInfoEvent.setCreateTime(accountInfo.getCreateTime() == null ? new Date() : accountInfo.getCreateTime());
         return accountInfoEvent;
     }
 

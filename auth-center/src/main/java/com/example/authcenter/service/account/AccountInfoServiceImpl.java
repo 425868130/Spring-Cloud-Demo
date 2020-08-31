@@ -40,25 +40,25 @@ public class AccountInfoServiceImpl implements AccountInfoService {
     public void create(AccountCreateForm form) {
         int existCount = accountInfoDao.countByAccount(form.getAccount());
         if (existCount > 0) {
-            throw new ServiceException(StatusCode.TIMEOUT, "当前账号已存在!");
+            throw new ServiceException(StatusCode.ACCOUNT_EXISTED, "当前账号已存在!");
         }
         AccountInfo accountInfo = accountMapper.formToAccountInfo(form);
         accountInfo.setUid(SequenceGenerator.nextId());
         accountInfoDao.insertSelective(accountInfo);
         accountSecretProfileService.createProfile(new AccountSecretProfile(accountInfo.getUid(), form.getPassword()));
-        serviceEventBus.emit(AccountInfoEvent.onAdd(accountInfo));
+        serviceEventBus.publishEvent(AccountInfoEvent.onAdd(accountInfo));
     }
 
     @Override
     public void delete(long uid) {
         accountInfoDao.deleteByPrimaryKey(uid);
-        serviceEventBus.emit(AccountInfoEvent.onDelete(uid));
+        serviceEventBus.publishEvent(AccountInfoEvent.onDelete(uid));
     }
 
     @Override
     public void update(AccountUpdateForm form) {
         AccountInfo accountInfo = accountMapper.formToAccountInfo(form);
-        serviceEventBus.emit(AccountInfoEvent.onUpdate(accountInfo));
+        serviceEventBus.publishEvent(AccountInfoEvent.onUpdate(accountInfo));
     }
 
     @Override

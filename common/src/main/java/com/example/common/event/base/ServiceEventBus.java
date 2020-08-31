@@ -12,5 +12,5 @@ public interface ServiceEventBus {
      *
      * @param event 被触发的事件对象
      */
-    void emit(ServiceEvent event);
+    void publishEvent(ServiceEvent event);
 }
