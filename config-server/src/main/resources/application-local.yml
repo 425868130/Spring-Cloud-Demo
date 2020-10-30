@@ -1,0 +1,9 @@
+spring:
+  rabbitmq:
+    host: 106.12.48.228
+    port: 5672
+    username: xujw
+    password: 1320074071
+eureka:
+  instance:
+    ip-address: 127.0.0.1

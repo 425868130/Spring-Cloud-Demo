@@ -19,4 +19,8 @@ public class AccountController {
     public Result getAccount(@PathVariable("uid") Long uid) {
         return Result.ok(accountInfoService.getByUid(uid));
     }
+
+    public Result create() {
+        return null;
+    }
 }

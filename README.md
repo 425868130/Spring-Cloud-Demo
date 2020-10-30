@@ -36,3 +36,14 @@ modules-pom：保存当前项目下的全部模块版本信息,聚合全部子�
 提供统一后台管理页面  
 支持单点登录sso、支持第三方登录  
 
+### 概念及包名约定
+* config  
+保存当前项目的spring配置类
+* controller
+保存全部http接口类,对应spring的Controller概念
+    - vo (View Object)  
+    视图对象用于展示层,保存的是返回给前端的接口数据对象
+        - form (视图对象表单)  
+        保存前端传入接口的数据对象  
+* service
+业务逻辑主包

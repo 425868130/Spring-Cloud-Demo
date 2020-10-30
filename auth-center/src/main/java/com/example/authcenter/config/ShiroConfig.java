@@ -19,9 +19,9 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 @Slf4j
-@Configuration
+//@Configuration
 public class ShiroConfig {
-    @Bean
+//    @Bean
     public ShiroFilterFactoryBean shiroFilter(SecurityManager securityManager, JWTFilter jwtFilter) {
         ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
         // 必须设置 SecurityManager
@@ -57,7 +57,7 @@ public class ShiroConfig {
     /**
      * 注入 securityManager
      */
-    @Bean
+//    @Bean
     public SecurityManager securityManager(JsonWebTokenRealm jsonWebTokenRealm, StatelessDefaultSubjectFactory subjectFactory) {
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
         // 设置 realm.

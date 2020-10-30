@@ -14,6 +14,9 @@ import lombok.experimental.Accessors;
 @NoArgsConstructor
 @Accessors(chain = true)
 public class Result {
+
+    public final static Result OK = new Result(StatusCode.SUCCESS);
+
     private int status;
     private String msg;
     private Object data;
@@ -34,13 +37,8 @@ public class Result {
         this.msg = msg;
     }
 
-    /*快捷构建方法*/
-    public static Result ok() {
-        return new Result(StatusCode.SUCCESS);
-    }
-
     public static Result ok(Object data) {
-        return ok().setData(data);
+        return new Result(StatusCode.SUCCESS, data);
     }
 
     public static Result error(StatusCode code) {
